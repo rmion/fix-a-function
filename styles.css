@@ -1,0 +1,165 @@
+body {
+    margin: 0;
+    color: white;
+    background-color: #121212;
+    font-family: Roboto, sans-serif;
+}
+body > * {
+    margin: 1rem;
+}
+h1 {
+    text-align: center;
+    font-size: 6vh;
+    margin: 0;
+}
+h1 + p {
+    text-align: center;
+}
+h1, h2 {
+    font-family: Pacifico, cursive;
+    font-weight: normal;
+}
+p:not(.is-centered),
+ul {
+    margin: 0;
+}
+.code-title {
+    margin: 0;
+    background-color: #454545;
+    padding: 10px 25px;
+    font-size: 1.25rem;
+    font-family: monospace;
+    line-height: 1;
+}
+.code-title.test {
+    background-color: darkmagenta;
+}
+.code-title.solved {
+    color: white;
+    background-color: forestgreen;
+}
+.is-centered {
+    text-align: center;
+}
+.is-centered button {
+    font-size: 1.5rem;
+    background-color: white;
+    color: #121212;
+    padding: 1rem 2rem;
+}
+.is-centered button:disabled {
+    background-color: #ddd;
+}
+button, .button {
+    font-family: Roboto, sans-serif;
+    font-size: 1rem;
+    background: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    padding: 0.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+button:disabled, .button:disabled {
+    font-style: italic;
+    color: #454545;
+    border-color: #454545;
+    cursor: initial;
+}
+pre {
+    background-color: black;
+    margin: 0;
+}
+.is-code > div:first-of-type {
+    margin-bottom: 1rem;
+}
+code {
+    font-size: 1.25rem;
+}
+.solved {
+    background-color:aquamarine;
+    color: #333;
+}
+.incorrect {
+    background-color:firebrick;
+}
+img {
+    max-width: 50%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+input {
+    box-sizing: border-box;
+    width: 100%;
+    display: block;
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+input[type="submit"] {
+    background: blue;
+    color: white;
+    border: 1px solid white;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+}
+.game-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+.game-bar > * {
+    margin: 1rem 0.5rem;
+}
+.game-bar span {
+    font-family: Pacifico, cursive;
+    font-size: 1.5rem;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    background-color: white;
+    color: #121212;
+    font-size: 1rem;
+    text-align: center;
+    padding: 1rem;
+    margin: 0;
+}
+.fa-heart {
+    color: red;
+}
+@media only screen and (min-width: 768px) {
+    body {
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.5rem;
+    }
+    .desktop-col-group, .game-bar {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+    .desktop-col-group > div {
+        flex: 1;
+    }
+    .game-bar {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .game-bar > div {
+        order: 0;
+    }
+    .is-code > div:first-of-type {
+        margin-bottom: 0;
+    }
+}
