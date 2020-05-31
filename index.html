@@ -25,7 +25,7 @@
             <div>
                 <section class="exercise">
                     <p>
-                        {{ isSolved ? "Success" : "Expect" }}: {{exercises[counter].test}}
+                        {{ isSolved ? "Success" : "When fixed" }}: {{ isSolved ? "" : exercises[counter].test}}
                     </p>
                     <pre 
                         contenteditable="true" 
@@ -34,7 +34,7 @@
                     </pre>
                 </section>
                 <section class="exercise" v-show="didGiveUp || isSolved">
-                    <p>Solution</p>
+                    <p>Correct answer</p>
                     <pre>
                         <code>{{exercises[counter].answer}}</code>
                     </pre>
