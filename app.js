@@ -42,7 +42,7 @@ let app = new Vue({
         markIncorrectAnswer() {
             this.isWrongAnswer = true;
             this.awaitingAnotherTry = true;
-            this.livesRemaining -= 1;
+            this.subtractFromLives(1);
         },
         checkAttemptedFix() {
             this.answerMatchesSolution() ? this.markCorrectAnswer() : this.markIncorrectAnswer();
@@ -53,8 +53,8 @@ let app = new Vue({
         getIndexOfRandomExercise() {
             return Math.floor(Math.random() * this.exercises.length);
         },
-        removeOneHeart() {
-            this.livesRemaining -= 1;
+        subtractFromLives(num) {
+            this.livesRemaining -= num;
         },
         enableSolveButton() {
             this.awaitingAnotherTry = false;
@@ -73,7 +73,7 @@ let app = new Vue({
         giveUp() {
             this.didGiveUp = true;
             this.needsHint = false;
-            this.removeOneHeart();
+            this.subtractFromLives(3);
         },
         recordGame() {
             if (this.score > 0 && this.email !== '') {
