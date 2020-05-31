@@ -50,7 +50,7 @@
                 <button 
                     @click="updateChallengeFn" 
                     v-show="!isSolved && !didGiveUp">
-                    Reset exercise
+                    Reset
                 </button>
                 <button 
                     @click="giveUp" 
@@ -83,7 +83,7 @@
                 </div>
                 <div>
                     <dt>Lives</dt>
-                    <dd><i class="fas fa-heart fa-sm"></i> {{livesRemaining}}</dd>
+                    <dd>{{livesRemaining}}</dd>
                 </div>
             </dl>
             <button 

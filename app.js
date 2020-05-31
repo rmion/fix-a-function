@@ -64,6 +64,7 @@ let app = new Vue({
             this.isWrongAnswer = false;
             this.didGiveUp = false;
             this.needsHint = false;
+            this.awaitingAnotherTry = false;
             this.nextHint = 0;
             this.removePreviousExercise();
             this.counter = this.getIndexOfRandomExercise();

@@ -1,6 +1,6 @@
 body {
     color: white;
-    background-color: #121212;
+    background-color: #343434;
     font-family: Roboto, sans-serif;
     text-align: center;
 }
@@ -37,7 +37,7 @@ pre {
     margin-top: 0;
 }
 .solved {
-    color: #121212;
+    color: #343434;
     background-color: aquamarine;
 }
 .incorrect {
@@ -59,8 +59,8 @@ dl {
 dl > div {
     flex: 1;
     padding: 1rem 0;
-    border: 2px solid #343434;
-    border-radius: 10px;
+    border-radius: 20px;
+    background-color: #121212;
 }
 dl > div:not(:last-of-type) {
     margin-right: 10px;
@@ -96,7 +96,7 @@ button {
 button.primary {
     font-size: 2rem;
     background-color: white;
-    color: #121212;
+    color: #343434;
 }
 button:disabled {
     font-style: italic;
@@ -105,9 +105,6 @@ button:disabled {
     cursor: initial;
 }
 @media only screen and (min-width: 960px) {
-    header p {
-        font-size: 2rem;
-    }
     main > div {
         display: flex;
         max-width: 960px;
@@ -119,6 +116,6 @@ button:disabled {
     .exercise > * {
         margin: 0;
         line-height: 1.5;
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
 }
