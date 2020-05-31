@@ -7,6 +7,8 @@ body {
 h1 {
     font-family: Pacifico, cursive;
     font-size: 3rem;
+}
+h1, h2 {
     margin: 0;
 }
 em {
@@ -45,10 +47,13 @@ ul {
     list-style-type: none;
     padding: 0;
 }
+li {
+    line-height: 2;
+}
 dl {
     display: flex;
     flex-wrap: wrap;
-    max-width: 768px;
+    max-width: 540px;
     margin: 1rem auto;
 }
 dl > div {
@@ -81,12 +86,17 @@ button {
     border: 1px solid white;
     color: white;
     padding: 0.5rem 1rem;
-    margin: 0.5rem 1rem;
+    margin: 0.5rem;
     background: none;
     border-radius: 10px;
     font-size: 1rem;
     font-family: Roboto, sans-serif;
     cursor: pointer;
+}
+button.primary {
+    font-size: 2rem;
+    background-color: white;
+    color: #121212;
 }
 button:disabled {
     font-style: italic;

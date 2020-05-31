@@ -15,7 +15,11 @@
     <div id="app">
         <header>
             <h1>Fix a function!</h1>
-            <p>How to win: change one thing to meet the <em>expectation</em></p>
+            <h2>How to play</h2>
+            <ul>
+                <li>Each exercise needs one change</li>
+                <li>Match the <em>expected</em> behavior</li>
+            </ul>
         </header>
         <main v-if="exercises.length > 0 && livesRemaining > 0">
             <div>
@@ -83,12 +87,14 @@
                 </div>
             </dl>
             <button 
+                class="primary"
                 v-show="!didGiveUp && !isSolved" 
                 @click="checkAttemptedFix" 
                 :disabled="awaitingAnotherTry">
                 {{ isWrongAnswer ? "Nope. Try again!" : "Did I fix it?" }}
             </button>
             <button 
+                class="primary"
                 v-show="isSolved || didGiveUp" 
                 @click="prepareNextExercise">
                 Play again?

@@ -1,7 +1,7 @@
 var listOfExercises = [
     {
-        fn:     "\n  function double(n) {\n    return n  n;\n  }\n",
-        answer: "\n  function double(n) {\n    return n + n;\n  }\n",
+        fn:     "\n  function double(n) {\n    return n  n;\n  }",
+        answer: "\n  function double(n) {\n    return n + n;\n  }",
         test: "double(1) → 2",
         hints: [
             'Read between the n\'s',
@@ -11,8 +11,8 @@ var listOfExercises = [
         difficulty: 'easy'
     },
     {
-        fn:     "\n  function double() {\n    return n + n;\n  }\n",
-        answer: "\n  function double(n) {\n    return n + n;\n  }\n",
+        fn:     "\n  function double() {\n    return n + n;\n  }",
+        answer: "\n  function double(n) {\n    return n + n;\n  }",
         test: "double(1) → 2",
         hints: [
             'Where\'s it getting n from?',
@@ -22,8 +22,8 @@ var listOfExercises = [
         difficulty: 'easy'
     },
     {
-        fn:     "\n  function double(n) {\n    n + n;\n  }\n",
-        answer: "\n  function double(n) {\n   return n + n;\n  }\n",
+        fn:     "\n  function double(n) {\n    n + n;\n  }",
+        answer: "\n  function double(n) {\n   return n + n;\n  }",
         test: "double(3) → 6",
         hints: [
             'To come back',
@@ -33,8 +33,8 @@ var listOfExercises = [
         difficulty: 'easy'
     },
     {
-        fn:     "\n   double(n) {\n    return n + n;\n  }\n",
-        answer: "\n  function double(n) {\n    return n + n;\n  }\n",
+        fn:     "\n   double(n) {\n    return n + n;\n  }",
+        answer: "\n  function double(n) {\n    return n + n;\n  }",
         test: "double(4) → 8",
         hints: [
             'What is double?',
@@ -44,8 +44,8 @@ var listOfExercises = [
         difficulty: 'easy'
     },
     {
-        fn:     "\n  function double(n) \n    return n + n;\n  }\n",
-        answer: "\n  function double(n) {\n    return n + n;\n  }\n",
+        fn:     "\n  function double(n) \n    return n + n;\n  }",
+        answer: "\n  function double(n) {\n    return n + n;\n  }",
         test: "double(5) → 10",
         hints: [
             'Where is the start?',
