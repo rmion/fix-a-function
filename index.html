@@ -15,17 +15,17 @@
     <div id="app">
         <header>
             <h1>Fix a function!</h1>
+        </header>
+        <main v-if="exercisesAttempted < exerciseCap && livesRemaining > 0">
             <h2>How to play</h2>
             <ul>
                 <li>Each exercise needs one change</li>
                 <li>Match the <em>expected</em> behavior</li>
             </ul>
-        </header>
-        <main v-if="exercises.length > 0 && livesRemaining > 0">
             <div>
                 <section class="exercise">
                     <p>
-                        {{ isSolved ? "Success" : "Expectation" }}: {{exercises[counter].test}}
+                        {{ isSolved ? "Success" : "Expect" }}: {{exercises[counter].test}}
                     </p>
                     <pre 
                         contenteditable="true" 
@@ -84,6 +84,10 @@
                 <div>
                     <dt>Lives</dt>
                     <dd>{{livesRemaining}}</dd>
+                </div>
+                <div>
+                    <dt>Round</dt>
+                    <dd>{{exercisesAttempted + 1}}/{{exerciseCap}}</dd>
                 </div>
             </dl>
             <button 

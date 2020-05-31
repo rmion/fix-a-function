@@ -13,6 +13,9 @@ let app = new Vue({
         counter: 0,
         score: 0,
         livesRemaining: 10,
+        exerciseCap: 5,
+        exercisesSolved: 0,
+        exercisesAttempted: 0,
         exercises: listOfExercises,
     },
     computed: {
@@ -38,6 +41,7 @@ let app = new Vue({
             this.isSolved = true;
             this.isWrongAnswer = false;
             this.score += (this.exercises[this.counter].hints.length - this.nextHint);
+            this.exercisesSolved += 1;
         },
         markIncorrectAnswer() {
             this.isWrongAnswer = true;
@@ -66,6 +70,7 @@ let app = new Vue({
             this.needsHint = false;
             this.awaitingAnotherTry = false;
             this.nextHint = 0;
+            this.exercisesAttempted += 1;
             this.removePreviousExercise();
             this.counter = this.getIndexOfRandomExercise();
             this.updateChallengeFn();
