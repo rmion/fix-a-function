@@ -27,6 +27,10 @@ let app = new Vue({
         updateChallengeFn() {
             document.getElementById('fn').textContent = this.exercises[this.counter].fn;
         },
+        getHint() {
+            this.needsHint = true; 
+            this.nextHint += 1;
+        },
         answerMatchesSolution() {
             return document.getElementById('fn').textContent.trim().replace(/\s/g,'') === this.trimmedSolutions[this.counter];
         },

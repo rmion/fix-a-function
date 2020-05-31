@@ -13,55 +13,91 @@
 </head>
 <body>
     <div id="app">
-        <h1>Fix a function!</h1>
-        <p>For each exercise: change one thing to meet the <span style="background-color: darkmagenta; font-family: monospace; padding: 4px;">Expectation</span></p>
+        <header>
+            <h1>Fix a function!</h1>
+            <p>How to win: change one thing to meet the <em>expectation</em></p>
+        </header>
         <main v-if="exercises.length > 0 && livesRemaining > 0">
-            <div class="game-bar">
-                <div>
-                    <a class="button" :href=`https://twitter.com/intent/tweet?hashtags=javascript&ref_src=twsrc%5Etfw&text=I%20scored%20${score}%20playing%20%22Fix%20a%20function%22!%20Can%20you%20beat%20that%3F%20Play%20free%20to%20practice%20your%20JavaScript%20skills!&tw_p=tweetbutton&url=http%3A%2F%2Ffixafunction.com&via=putmionyourteam`>
-                        <i class="fab fa-twitter"></i> Score: {{score}}
-                    </a>
-                    <button v-show="!isSolved && nextHint < exercises[counter].hints.length" @click="needsHint = true; nextHint += 1;" :disabled="didGiveUp">
-                        Get hint
-                    </button>
-                    <button @click="updateChallengeFn" v-show="!isSolved && !didGiveUp">
-                        Reset exercise
-                    </button>
-                    <button class="small" @click="giveUp" v-show="!isSolved" :disabled="didGiveUp">Give up</button>    
-                </div>
-                <div>
-                    <span><i class="fas fa-heart"></i> {{livesRemaining}}</span>
-                </div>
+            <div>
+                <section class="exercise">
+                    <p>
+                        {{ isSolved ? "Success" : "Expectation" }}: {{exercises[counter].test}}
+                    </p>
+                    <pre 
+                        contenteditable="true" 
+                        :class="{ solved: isSolved, incorrect: (!isSolved && isWrongAnswer) }">
+                        <code id="fn" @click="enableSolveButton"></code>
+                    </pre>
+                </section>
+                <section class="exercise" v-show="didGiveUp || isSolved">
+                    <p>Solution</p>
+                    <pre>
+                        <code>{{exercises[counter].answer}}</code>
+                    </pre>
+                </section>
             </div>
+            <section>
+                <button 
+                    v-show="!isSolved && nextHint < exercises[counter].hints.length" 
+                    @click="getHint" 
+                    :disabled="didGiveUp">
+                    Get hint
+                </button>
+                <button 
+                    @click="updateChallengeFn" 
+                    v-show="!isSolved && !didGiveUp">
+                    Reset exercise
+                </button>
+                <button 
+                    @click="giveUp" 
+                    v-show="!isSolved" 
+                    :disabled="didGiveUp">
+                    Give up
+                </button>    
+            </section>
             <ul v-show="needsHint">
                 <li v-for="(hint, index) in exercises[counter].hints" v-show="index == nextHint - 1">
                     Hint {{index + 1}} of {{exercises[counter].hints.length}}: {{hint}}
                 </li>
             </ul>
-            <section class="desktop-col-group is-code">
+            <dl>
                 <div>
-                    <p class="code-title test" :class="{ solved: isSolved }">{{ isSolved ? "Success" : "Expectation" }}: {{exercises[counter].test}}</p>
-                    <pre contenteditable="true" :class="{ solved: isSolved, incorrect: (!isSolved && isWrongAnswer) }">
-                        <code id="fn" @click="enableSolveButton"></code>
-                    </pre>
-                    <p class="code-title">Hints: {{ nextHint }}/{{exercises[counter].hints.length}}, Points: {{ didGiveUp ? 0 : exercises[counter].hints.length - nextHint }}/3</p>
+                    <dt>Hints</dt>
+                    <dd>{{ nextHint }}/{{exercises[counter].hints.length}}</dd>
                 </div>
-                <div v-show="didGiveUp || isSolved">
-                    <p class="code-title">Solution</p>
-                    <pre class="solved">
-                        <code>{{exercises[counter].answer}}</code>
-                    </pre>
-                    <p class="code-title">Keep going!</p>
+                <div>
+                    <dt>Points</dt>
+                    <dd>{{ didGiveUp ? 0 : exercises[counter].hints.length - nextHint }}/3</dd>
                 </div>
-            </section>
-            <p class="is-centered">
-                <button v-show="!didGiveUp && !isSolved" @click="checkAttemptedFix" :disabled="awaitingAnotherTry">{{ isWrongAnswer ? "Nope. Try again!" : "Did I fix it?" }}</button>
-                <button v-show="isSolved || didGiveUp" @click="prepareNextExercise">Play again?</button>
-            </p>
+                <div>
+                    <dt>Score</dt>
+                    <dd>
+                        <a class="button" :href=`https://twitter.com/intent/tweet?hashtags=javascript&ref_src=twsrc%5Etfw&text=I%20scored%20${score}%20playing%20%22Fix%20a%20function%22!%20Can%20you%20beat%20that%3F%20Play%20free%20to%20practice%20your%20JavaScript%20skills!&tw_p=tweetbutton&url=http%3A%2F%2Ffixafunction.com&via=putmionyourteam`>
+                            {{score}} <i class="fab fa-twitter fa-sm"></i>
+                        </a>
+                    </dd>
+                </div>
+                <div>
+                    <dt>Lives</dt>
+                    <dd><i class="fas fa-heart fa-sm"></i> {{livesRemaining}}</dd>
+                </div>
+            </dl>
+            <button 
+                v-show="!didGiveUp && !isSolved" 
+                @click="checkAttemptedFix" 
+                :disabled="awaitingAnotherTry">
+                {{ isWrongAnswer ? "Nope. Try again!" : "Did I fix it?" }}
+            </button>
+            <button 
+                v-show="isSolved || didGiveUp" 
+                @click="prepareNextExercise">
+                Play again?
+            </button>
         </main>
         <aside v-else>
             <h2 class="is-centered">Want more? Ask Robert!</h2>
-            <img src="https://rmion.com/images/ux-designer-robert-mion.jpg" width="200" height="200" alt="Developer, Robert Mion">
+            <img src="https://rmion.com/images/ux-designer-robert-mion.jpg" 
+                width="200" height="200" alt="Creator, Robert Mion" />
             <form action="" @submit.prevent="recordGame">
                 <label for="email">What's your email?</label>
                 <input type="email" id="email" v-model="email" required />
