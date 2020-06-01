@@ -16,11 +16,21 @@ let app = new Vue({
         exerciseCap: 5,
         exercisesSolved: 0,
         exercisesAttempted: 0,
+        timer: 'Off',
+        timeLimit: 5,
+        timeRemaining: 0,
+        timerID: null,
+        difficulty: 'all',
         exercises: listOfExercises,
     },
     computed: {
         trimmedSolutions() {
-            return this.exercises.map(exercise => exercise.answer.trim().replace(/\s/g,''))
+            return this.filteredExercises.map(exercise => exercise.answer.trim().replace(/\s/g,''))
+        },
+        filteredExercises() {
+            return  this.difficulty === 'all' ? 
+                    this.exercises : 
+                    this.exercises.filter(exercise => exercise.difficulty == this.difficulty);
         }
     },
     mounted() {
@@ -28,7 +38,7 @@ let app = new Vue({
     },
     methods: {
         updateChallengeFn() {
-            document.getElementById('fn').textContent = this.exercises[this.counter].fn;
+            document.getElementById('fn').textContent = this.filteredExercises[this.counter].fn;
         },
         getHint() {
             this.needsHint = true; 
@@ -40,7 +50,7 @@ let app = new Vue({
         markCorrectAnswer() {
             this.isSolved = true;
             this.isWrongAnswer = false;
-            this.score += (this.exercises[this.counter].hints.length - this.nextHint);
+            this.score += (this.filteredExercises[this.counter].hints.length - this.nextHint);
             this.exercisesSolved += 1;
         },
         markIncorrectAnswer() {
@@ -52,10 +62,13 @@ let app = new Vue({
             this.answerMatchesSolution() ? this.markCorrectAnswer() : this.markIncorrectAnswer();
         },
         removePreviousExercise() {
-            this.exercises.splice(this.counter, 1);
+            this.filteredExercises.splice(this.counter, 1);
+            if (this.filteredExercises.length == 0) {
+                this.endGame();
+            }
         },
         getIndexOfRandomExercise() {
-            return Math.floor(Math.random() * this.exercises.length);
+            return Math.floor(Math.random() * this.filteredExercises.length);
         },
         subtractFromLives(num) {
             this.livesRemaining -= num;
@@ -74,11 +87,32 @@ let app = new Vue({
             this.removePreviousExercise();
             this.counter = this.getIndexOfRandomExercise();
             this.updateChallengeFn();
+            if (this.timer === "On") {
+                this.resetTimer()
+            }
         },
         giveUp() {
             this.didGiveUp = true;
             this.needsHint = false;
             this.subtractFromLives(3);
+        },
+        timeIsUp() {
+            clearInterval(this.timerID);
+            this.giveUp();
+        },
+        resetTimer() {
+            this.timeRemaining = this.timeLimit;
+            this.timerID = setInterval(this.decrementTimer, 1000);
+        },
+        decrementTimer() {
+            if (this.timeRemaining < 1) {
+                this.timeIsUp()
+            } else {
+                this.timeRemaining -= 1;
+            }
+        },
+        endGame() {
+            this.livesRemaining = 0;
         },
         recordGame() {
             if (this.score > 0 && this.email !== '') {
@@ -103,6 +137,19 @@ let app = new Vue({
                 })
                 .catch(err => console.error(err))                
             }
+        }
+    },
+    watch: {
+        timer(newVal, oldVal) {
+            if (newVal === "On") {
+                this.resetTimer();
+            } else {
+                this.timeRemaining = 0;
+                this.timeIsUp();
+            }
+        },
+        difficulty(newVal, oldVal) {
+            this.updateChallengeFn()
         }
     }
 })

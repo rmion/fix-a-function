@@ -44,7 +44,7 @@ var listOfExercises = [
         ],
     },
     {
-        difficulty: 'normal',
+        difficulty: 'hard',
         fn:     "\n  function double(n) \n    return n + n;\n  }",
         answer: "\n  function double(n) {\n    return n + n;\n  }",
         test:   "double(5) → 10",
