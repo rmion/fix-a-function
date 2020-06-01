@@ -145,7 +145,7 @@ summary > h2 {
         font-size: 2rem;
         margin-top: 0;
     }    
-    main > div:not(:first-of-type) {
+    main > div:not(:last-of-type) {
         text-align: center;
     }
     .exercise {

@@ -16,6 +16,96 @@
         <h1>Fix a function!</h1>
         <main v-if="exercisesAttempted < exerciseCap && livesRemaining > 0">
             <div>
+                <section>
+                    <button 
+                        @click="giveUp" 
+                        v-show="!isSolved" 
+                        :disabled="didGiveUp">
+                        Give up
+                    </button>
+                    <button 
+                        @click="updateChallengeFn" 
+                        v-show="!isSolved && !didGiveUp">
+                        Reset
+                    </button>
+                    <button 
+                        v-show="!isSolved && nextHint < filteredExercises[counter].hints.length" 
+                        @click="getHint" 
+                        :disabled="didGiveUp">
+                        Get hint
+                    </button>    
+                </section>
+                <dl>
+                    <div>
+                        <dt>Hints</dt>
+                        <dd>{{ nextHint }}/{{filteredExercises[counter].hints.length}}</dd>
+                    </div>
+                    <div>
+                        <dt>Points</dt>
+                        <dd>{{ didGiveUp ? 0 : filteredExercises[counter].hints.length - nextHint }}/3</dd>
+                    </div>
+                    <div>
+                        <dt>Score</dt>
+                        <dd>
+                            <a class="button" :href=`https://twitter.com/intent/tweet?hashtags=javascript&ref_src=twsrc%5Etfw&text=I%20scored%20${score}%20playing%20%22Fix%20a%20function%22!%20Can%20you%20beat%20that%3F%20Play%20free%20to%20practice%20your%20JavaScript%20skills!&tw_p=tweetbutton&url=http%3A%2F%2Ffixafunction.com&via=putmionyourteam`>
+                                {{score}} <i class="fab fa-twitter fa-sm"></i>
+                            </a>
+                        </dd>
+                    </div>
+                    <div>
+                        <dt>Lives</dt>
+                        <dd>{{livesRemaining}}</dd>
+                    </div>
+                    <div>
+                        <dt>Round</dt>
+                        <dd>{{exercisesAttempted + 1}}/{{exerciseCap}}</dd>
+                    </div>
+                    <div>
+                        <dt>Time</dt>
+                        <dd v-if="timer === 'On'">:{{timeRemaining < 10 ? ("0" + timeRemaining) : timeRemaining}}</dd>
+                        <dd v-else>--</dd>
+                    </div>
+                </dl>    
+            </div>
+            <div>
+                <p v-show="needsHint">
+                    Hint {{nextHint}} of {{filteredExercises[counter].hints.length}}: {{filteredExercises[counter].hints[nextHint - 1]}}
+                </p>
+                <div>
+                    <section class="exercise">
+                        <p>
+                            {{ isSolved ? "Success" : filteredExercises[counter].test }}
+                        </p>
+                        <pre 
+                            contenteditable="true" 
+                            :class="{ solved: isSolved, incorrect: (!isSolved && isWrongAnswer) }">
+                            <code id="fn" @click="enableSolveButton"></code>
+                        </pre>
+                    </section>
+                    <section class="exercise" v-show="didGiveUp || isSolved">
+                        <p>Correct answer</p>
+                        <pre>
+                            <code>{{filteredExercises[counter].answer}}</code>
+                        </pre>
+                    </section>    
+                </div>
+                <p>
+                    <button 
+                        class="primary"
+                        v-show="!didGiveUp && !isSolved" 
+                        @click="checkAttemptedFix" 
+                        :disabled="awaitingAnotherTry">
+                        {{ isWrongAnswer ? "Nope. Try again!" : "Did I fix it?" }}
+                    </button>
+                    <button 
+                        class="primary"
+                        v-show="isSolved || didGiveUp" 
+                        @click="prepareNextExercise">
+                        Play again?
+                    </button>
+                </p>    
+            </div>
+            <div>
                 <h2>How to play</h2>
                 <ul>
                     <li>Each exercise requires one change</li>
@@ -79,96 +169,6 @@
                         </form>        
                     </section>
                 </details>    
-            </div>
-            <div>
-                <p v-show="needsHint">
-                    Hint {{nextHint}} of {{filteredExercises[counter].hints.length}}: {{filteredExercises[counter].hints[nextHint - 1]}}
-                </p>
-                <div>
-                    <section class="exercise">
-                        <p>
-                            {{ isSolved ? "Success" : filteredExercises[counter].test }}
-                        </p>
-                        <pre 
-                            contenteditable="true" 
-                            :class="{ solved: isSolved, incorrect: (!isSolved && isWrongAnswer) }">
-                            <code id="fn" @click="enableSolveButton"></code>
-                        </pre>
-                    </section>
-                    <section class="exercise" v-show="didGiveUp || isSolved">
-                        <p>Correct answer</p>
-                        <pre>
-                            <code>{{filteredExercises[counter].answer}}</code>
-                        </pre>
-                    </section>    
-                </div>
-                <p>
-                    <button 
-                        class="primary"
-                        v-show="!didGiveUp && !isSolved" 
-                        @click="checkAttemptedFix" 
-                        :disabled="awaitingAnotherTry">
-                        {{ isWrongAnswer ? "Nope. Try again!" : "Did I fix it?" }}
-                    </button>
-                    <button 
-                        class="primary"
-                        v-show="isSolved || didGiveUp" 
-                        @click="prepareNextExercise">
-                        Play again?
-                    </button>
-                </p>    
-            </div>
-            <div>
-                <section>
-                    <button 
-                        v-show="!isSolved && nextHint < filteredExercises[counter].hints.length" 
-                        @click="getHint" 
-                        :disabled="didGiveUp">
-                        Get hint
-                    </button>
-                    <button 
-                        @click="updateChallengeFn" 
-                        v-show="!isSolved && !didGiveUp">
-                        Reset
-                    </button>
-                    <button 
-                        @click="giveUp" 
-                        v-show="!isSolved" 
-                        :disabled="didGiveUp">
-                        Give up
-                    </button>    
-                </section>
-                <dl>
-                    <div>
-                        <dt>Hints</dt>
-                        <dd>{{ nextHint }}/{{filteredExercises[counter].hints.length}}</dd>
-                    </div>
-                    <div>
-                        <dt>Points</dt>
-                        <dd>{{ didGiveUp ? 0 : filteredExercises[counter].hints.length - nextHint }}/3</dd>
-                    </div>
-                    <div>
-                        <dt>Score</dt>
-                        <dd>
-                            <a class="button" :href=`https://twitter.com/intent/tweet?hashtags=javascript&ref_src=twsrc%5Etfw&text=I%20scored%20${score}%20playing%20%22Fix%20a%20function%22!%20Can%20you%20beat%20that%3F%20Play%20free%20to%20practice%20your%20JavaScript%20skills!&tw_p=tweetbutton&url=http%3A%2F%2Ffixafunction.com&via=putmionyourteam`>
-                                {{score}} <i class="fab fa-twitter fa-sm"></i>
-                            </a>
-                        </dd>
-                    </div>
-                    <div>
-                        <dt>Lives</dt>
-                        <dd>{{livesRemaining}}</dd>
-                    </div>
-                    <div>
-                        <dt>Round</dt>
-                        <dd>{{exercisesAttempted + 1}}/{{exerciseCap}}</dd>
-                    </div>
-                    <div>
-                        <dt>Time</dt>
-                        <dd v-if="timer === 'On'">:{{timeRemaining < 10 ? ("0" + timeRemaining) : timeRemaining}}</dd>
-                        <dd v-else>--</dd>
-                    </div>
-                </dl>    
             </div>
         </main>
         <aside v-else>
