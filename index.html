@@ -13,146 +13,177 @@
 </head>
 <body>
     <div id="app">
-        <header>
-            <h1>Fix a function!</h1>
-        </header>
+        <h1>Fix a function!</h1>
         <main v-if="exercisesAttempted < exerciseCap && livesRemaining > 0">
-            <h2>How to play</h2>
-            <ul>
-                <li>Each exercise requires one change</li>
-                <li>Fix to match the <em>expected behavior</em></li>
-            </ul>
             <div>
-                <section class="exercise">
-                    <p>
-                        {{ isSolved ? "Success" : filteredExercises[counter].test }}
-                    </p>
-                    <pre 
-                        contenteditable="true" 
-                        :class="{ solved: isSolved, incorrect: (!isSolved && isWrongAnswer) }">
-                        <code id="fn" @click="enableSolveButton"></code>
-                    </pre>
-                </section>
-                <section class="exercise" v-show="didGiveUp || isSolved">
-                    <p>Correct answer</p>
-                    <pre>
-                        <code>{{filteredExercises[counter].answer}}</code>
-                    </pre>
-                </section>
+                <h2>How to play</h2>
+                <ul>
+                    <li>Each exercise requires one change</li>
+                    <li>Fix to match the <em>expected behavior</em></li>
+                </ul>
+                <details>
+                    <summary><h2>Game settings</h2></summary>
+                    <section>
+                        <form action="">
+                            <fieldset>
+                                <legend>
+                                    Timer
+                                </legend>
+                                <input type="radio" id="off" name="timer" value="Off" v-model="timer" />
+                                <label for="off">
+                                    Off
+                                </label>
+                                <input type="radio" id="on" name="timer" value="On" v-model="timer" />
+                                <label for="on">
+                                    On
+                                </label>
+                            </fieldset>
+                            <fieldset>
+                                <legend>
+                                    Time limit (in seconds)
+                                </legend>
+                                <input type="radio" id="easy" name="limit" value="30" v-model="timeLimit" />
+                                <label for="easy">
+                                    30
+                                </label>
+                                <input type="radio" id="normal" name="limit" value="15" v-model="timeLimit" />
+                                <label for="normal">
+                                    15
+                                </label>
+                                <input type="radio" id="hard" name="limit" value="10" v-model="timeLimit" />
+                                <label for="hard">
+                                    10
+                                </label>
+                            </fieldset>
+                            <fieldset>
+                                <legend>
+                                    Difficulty
+                                </legend>
+                                <input type="radio" id="all" name="difficulty" value="all" v-model="difficulty" />
+                                <label for="all">
+                                    All
+                                </label>
+                                <input type="radio" id="easy" name="difficulty" value="easy" v-model="difficulty" />
+                                <label for="easy">
+                                    Easy
+                                </label>
+                                <input type="radio" id="normal" name="difficulty" value="normal" v-model="difficulty" />
+                                <label for="normal">
+                                    Normal
+                                </label>
+                                <input type="radio" id="hard" name="difficulty" value="hard" v-model="difficulty" />
+                                <label for="hard">
+                                    Hard
+                                </label>
+                            </fieldset>
+                        </form>        
+                    </section>
+                </details>    
             </div>
-            <section>
-                <button 
-                    v-show="!isSolved && nextHint < filteredExercises[counter].hints.length" 
-                    @click="getHint" 
-                    :disabled="didGiveUp">
-                    Get hint
-                </button>
-                <button 
-                    @click="updateChallengeFn" 
-                    v-show="!isSolved && !didGiveUp">
-                    Reset
-                </button>
-                <button 
-                    @click="giveUp" 
-                    v-show="!isSolved" 
-                    :disabled="didGiveUp">
-                    Give up
-                </button>    
-            </section>
-            <ul v-show="needsHint">
-                <li v-for="(hint, index) in filteredExercises[counter].hints" v-show="index == nextHint - 1">
-                    Hint {{index + 1}} of {{filteredExercises[counter].hints.length}}: {{hint}}
-                </li>
-            </ul>
-            <dl>
+            <div>
+                <p v-show="needsHint">
+                    Hint {{nextHint}} of {{filteredExercises[counter].hints.length}}: {{filteredExercises[counter].hints[nextHint - 1]}}
+                </p>
                 <div>
-                    <dt>Hints</dt>
-                    <dd>{{ nextHint }}/{{filteredExercises[counter].hints.length}}</dd>
+                    <section class="exercise">
+                        <p>
+                            {{ isSolved ? "Success" : filteredExercises[counter].test }}
+                        </p>
+                        <pre 
+                            contenteditable="true" 
+                            :class="{ solved: isSolved, incorrect: (!isSolved && isWrongAnswer) }">
+                            <code id="fn" @click="enableSolveButton"></code>
+                        </pre>
+                    </section>
+                    <section class="exercise" v-show="didGiveUp || isSolved">
+                        <p>Correct answer</p>
+                        <pre>
+                            <code>{{filteredExercises[counter].answer}}</code>
+                        </pre>
+                    </section>    
                 </div>
-                <div>
-                    <dt>Points</dt>
-                    <dd>{{ didGiveUp ? 0 : filteredExercises[counter].hints.length - nextHint }}/3</dd>
-                </div>
-                <div>
-                    <dt>Score</dt>
-                    <dd>
-                        <a class="button" :href=`https://twitter.com/intent/tweet?hashtags=javascript&ref_src=twsrc%5Etfw&text=I%20scored%20${score}%20playing%20%22Fix%20a%20function%22!%20Can%20you%20beat%20that%3F%20Play%20free%20to%20practice%20your%20JavaScript%20skills!&tw_p=tweetbutton&url=http%3A%2F%2Ffixafunction.com&via=putmionyourteam`>
-                            {{score}} <i class="fab fa-twitter fa-sm"></i>
-                        </a>
-                    </dd>
-                </div>
-                <div>
-                    <dt>Lives</dt>
-                    <dd>{{livesRemaining}}</dd>
-                </div>
-                <div>
-                    <dt>Round</dt>
-                    <dd>{{exercisesAttempted + 1}}/{{exerciseCap}}</dd>
-                </div>
-                <div v-show="timer === 'On'">
-                    <dt>Time</dt>
-                    <dd>:{{timeRemaining}}</dd>
-                </div>
-            </dl>
-            <button 
-                class="primary"
-                v-show="!didGiveUp && !isSolved" 
-                @click="checkAttemptedFix" 
-                :disabled="awaitingAnotherTry">
-                {{ isWrongAnswer ? "Nope. Try again!" : "Did I fix it?" }}
-            </button>
-            <button 
-                class="primary"
-                v-show="isSolved || didGiveUp" 
-                @click="prepareNextExercise">
-                Play again?
-            </button>
-            <h2>Settings</h2>
-            <form action="">
-                <fieldset>
-                    <legend>
-                        Timer
-                    </legend>
-                    <input type="radio" id="off" name="timer" value="Off" v-model="timer" />
-                    <label for="off">
-                        Off
-                    </label>
-                    <input type="radio" id="on" name="timer" value="On" v-model="timer" />
-                    <label for="on">
-                        On
-                    </label>
-                </fieldset>
-                <fieldset>
-                    <legend>
-                        Difficulty
-                    </legend>
-                    <input type="radio" id="all" name="difficulty" value="all" v-model="difficulty" />
-                    <label for="all">
-                        All
-                    </label>
-                    <input type="radio" id="easy" name="difficulty" value="easy" v-model="difficulty" />
-                    <label for="easy">
-                        Easy
-                    </label>
-                    <input type="radio" id="normal" name="difficulty" value="normal" v-model="difficulty" />
-                    <label for="normal">
-                        Normal
-                    </label>
-                    <input type="radio" id="hard" name="difficulty" value="hard" v-model="difficulty" />
-                    <label for="hard">
-                        Hard
-                    </label>
-                </fieldset>
-            </form>
+                <p>
+                    <button 
+                        class="primary"
+                        v-show="!didGiveUp && !isSolved" 
+                        @click="checkAttemptedFix" 
+                        :disabled="awaitingAnotherTry">
+                        {{ isWrongAnswer ? "Nope. Try again!" : "Did I fix it?" }}
+                    </button>
+                    <button 
+                        class="primary"
+                        v-show="isSolved || didGiveUp" 
+                        @click="prepareNextExercise">
+                        Play again?
+                    </button>
+                </p>    
+            </div>
+            <div>
+                <section>
+                    <button 
+                        v-show="!isSolved && nextHint < filteredExercises[counter].hints.length" 
+                        @click="getHint" 
+                        :disabled="didGiveUp">
+                        Get hint
+                    </button>
+                    <button 
+                        @click="updateChallengeFn" 
+                        v-show="!isSolved && !didGiveUp">
+                        Reset
+                    </button>
+                    <button 
+                        @click="giveUp" 
+                        v-show="!isSolved" 
+                        :disabled="didGiveUp">
+                        Give up
+                    </button>    
+                </section>
+                <dl>
+                    <div>
+                        <dt>Hints</dt>
+                        <dd>{{ nextHint }}/{{filteredExercises[counter].hints.length}}</dd>
+                    </div>
+                    <div>
+                        <dt>Points</dt>
+                        <dd>{{ didGiveUp ? 0 : filteredExercises[counter].hints.length - nextHint }}/3</dd>
+                    </div>
+                    <div>
+                        <dt>Score</dt>
+                        <dd>
+                            <a class="button" :href=`https://twitter.com/intent/tweet?hashtags=javascript&ref_src=twsrc%5Etfw&text=I%20scored%20${score}%20playing%20%22Fix%20a%20function%22!%20Can%20you%20beat%20that%3F%20Play%20free%20to%20practice%20your%20JavaScript%20skills!&tw_p=tweetbutton&url=http%3A%2F%2Ffixafunction.com&via=putmionyourteam`>
+                                {{score}} <i class="fab fa-twitter fa-sm"></i>
+                            </a>
+                        </dd>
+                    </div>
+                    <div>
+                        <dt>Lives</dt>
+                        <dd>{{livesRemaining}}</dd>
+                    </div>
+                    <div>
+                        <dt>Round</dt>
+                        <dd>{{exercisesAttempted + 1}}/{{exerciseCap}}</dd>
+                    </div>
+                    <div>
+                        <dt>Time</dt>
+                        <dd v-if="timer === 'On'">:{{timeRemaining < 10 ? ("0" + timeRemaining) : timeRemaining}}</dd>
+                        <dd v-else>--</dd>
+                    </div>
+                </dl>    
+            </div>
         </main>
         <aside v-else>
             <h2 class="is-centered">Want more? Ask Robert!</h2>
             <img src="https://rmion.com/images/ux-designer-robert-mion.jpg" 
                 width="200" height="200" alt="Creator, Robert Mion" />
             <form action="" @submit.prevent="recordGame">
-                <label for="email">What's your email?</label>
-                <input type="email" id="email" v-model="email" required />
-                <input type="submit" :value="submitLabel" :disabled="isRecordingSubmission" />
+                <fieldset>
+                    <legend>
+                        Get more practice
+                    </legend>
+                    <label for="email">What's your email?</label>
+                    <input type="email" id="email" v-model="email" required />
+                    <input type="submit" :value="submitLabel" :disabled="isRecordingSubmission" />    
+                </fieldset>
             </form>
         </aside>
     </div>
