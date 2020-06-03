@@ -74,7 +74,8 @@
                 <div>
                     <section class="exercise">
                         <p>
-                            {{ isSolved ? "Success" : filteredExercises[counter].test }}
+                            {{ isSolved ? "Great job!" : "With one change, make..." }}<br />
+                            {{filteredExercises[counter].test}}
                         </p>
                         <pre 
                             contenteditable="true" 
@@ -106,11 +107,6 @@
                 </p>    
             </div>
             <div>
-                <h2>How to play</h2>
-                <ul>
-                    <li>Each exercise requires one change</li>
-                    <li>Fix to match the <em>expected behavior</em></li>
-                </ul>
                 <h2>Game settings</h2>
                     <form action="">
                         <fieldset>
