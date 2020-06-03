@@ -125,11 +125,17 @@ let app = new Vue({
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                                "fields": {
-                                    "Email": this.email,
-                                    "Score": this.score
-                                }
-                            })
+                        "fields": {
+                            "Email": this.email,
+                            "Score": this.score,
+                            "Lives": this.livesRemaining,
+                            "Solved": this.exercisesSolved,
+                            "Attempts": this.exercisesAttempted,
+                            "Timer": this.timer,
+                            "Time Limit": this.timeLimit,
+                            "Difficulty": this.difficulty,
+                        }
+                    })
                 })
                 .then(response => response.json())
                 .then(data => {

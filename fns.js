@@ -1,25 +1,3 @@
-function double(n) {
-    return n + n;
-}
-
-function today() {
-    return new Date();
-}
-
-function bigger(a,b) {
-    return Math.max(a,b);
-}
-
-function loop(list) {
-    for (i=0;i<list.length;i++) {
-        console.log(list[i])
-    }
-}
-
-function sayHello() {
-    return "Hello";
-}
-
 function sum(a,b,c) {
     return a + b + c;
 }
