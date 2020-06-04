@@ -1,11 +1,3 @@
-function sum(a,b,c) {
-    return a + b + c;
-}
-
-function loop(list) {
-    list.forEach(i => list[i]);
-}
-
 function equals(number) {
     return number == String(number);
 }

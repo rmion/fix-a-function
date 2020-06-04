@@ -274,4 +274,114 @@ var listOfExercises = [
             'Initial value of i should be 0, not 1'
         ]
     },
+    {
+        difficulty: 'easy',
+        fn:     "\n  function sum(a,b,c) {\n    return a + b  c;\n  }",
+        answer: "\n  function sum(a,b,c) {\n    return a + b + c;\n  }",
+        test:   "sum(1,1,1) → 3",
+        hints: [
+            'Fill the gap',
+            'Stopped short of c',
+            'Missing + between b and c'
+        ]
+    },
+    {
+        difficulty: 'easy',
+        fn:     "\n  function sum(a,b,c) {\n    return a + b + C;\n  }",
+        answer: "\n  function sum(a,b,c) {\n    return a + b + c;\n  }",
+        test:   "sum(2,2,2) → 6",
+        hints: [
+            'Can you C it?',
+            'Looked for C. Came up empty.',
+            'Incorrectly capitalized c'
+        ]
+    },
+    {
+        difficulty: 'normal',
+        fn:     "\n  function sum(a,b,b) {\n    return a + b + c;\n  }",
+        answer: "\n  function sum(a,b,c) {\n    return a + b + c;\n  }",
+        test:   "sum(1,2,3) → 6",
+        hints: [
+            'Comes after b',
+            'b extra careful',
+            'Duplicate b in parameter list'
+        ]
+    },
+    {
+        difficulty: 'hard',
+        fn:     "\n  function sum(a,b,c) {\n    retrun a + b + c;\n  }",
+        answer: "\n  function sum(a,b,c) {\n    return a + b + c;\n  }",
+        test:   "sum(3,1,1) → 5",
+        hints: [
+            'rut-ro!',
+            'Stopped short of returning',
+            'return is misspelled'
+        ]
+    },
+    {
+        difficulty: 'hard',
+        fn:     "\n  function sum(a,b,c) {\n    return a + b + c;\n  }",
+        answer: "\n  function sum(a,b,c) {\n    return a + b + c;\n  ",
+        test:   "sum(3,2,1) → 6",
+        hints: [
+            'It never ends!',
+            'What starts, must end',
+            'Missing closing function curly brace'
+        ]
+    },
+    {
+        difficulty: 'hard',
+        fn:     "\n  function each(list) {\n    return list.forEach(i > list[i]);\n  }",
+        answer: "\n  function each(list) {\n    return list.forEach(i => list[i]);\n  ",
+        test:   "each(3,2,1) → 3 2 1",
+        hints: [
+            'Where\'s the arrow?',
+            'Greater than?',
+            'Arrow function is missing equal sign'
+        ]
+    },
+    {
+        difficulty: 'easy',
+        fn:     "\n  function each(list) {\n    return list.for Each(i => list[i]);\n  }",
+        answer: "\n  function each(list) {\n    return list.forEach(i => list[i]);\n  ",
+        test:   "each(1,2,3) → 1 2 3",
+        hints: [
+            'The final frontier',
+            'For...Each?',
+            'Incorrect space before Each'
+        ]
+    },
+    {
+        difficulty: 'normal',
+        fn:     "\n  function each(list) {\n    return list.foreach(i => list[i]);\n  }",
+        answer: "\n  function each(list) {\n    return list.forEach(i => list[i]);\n  ",
+        test:   "each(2,4,6) → 2 4 6",
+        hints: [
+            'Camel case',
+            'Every second word',
+            'e in each must be capital'
+        ]
+    },
+    {
+        difficulty: 'normal',
+        fn:     "\n  function each(List) {\n    return list.forEach(i => list[i]);\n  }",
+        answer: "\n  function each(list) {\n    return list.forEach(i => list[i]);\n  ",
+        test:   "each(1,2,3) → 1 2 3",
+        hints: [
+            'Check the first case',
+            'All lower',
+            'Parameter list should be lowercase'
+        ]
+    },
+    {
+        difficulty: 'hard',
+        fn:     "\n  function each(list) {\n    return list.each(i => list[i]);\n  }",
+        answer: "\n  function each(list) {\n    return list.forEach(i => list[i]);\n  ",
+        test:   "each(4,4,4) → 4 4 4",
+        hints: [
+            'Method, man',
+            'After the dot',
+            'Method name is forEach, not each'
+        ]
+    },
 ]
