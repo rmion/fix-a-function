@@ -1,6 +1,7 @@
 let app = new Vue({
     el: "#app",
     data: {
+        sessionId: new Date().getTime(),
         email: '',
         submitLabel: 'Email Robert for more!',
         isRecordingSubmission: false,
@@ -123,6 +124,7 @@ let app = new Vue({
                     },
                     body: JSON.stringify({
                         "fields": {
+                            "ID": this.sessionId,
                             "Email": this.email,
                             "Score": this.score,
                             "Lives": this.livesRemaining,
