@@ -144,8 +144,8 @@ let app = new Vue({
         recordEmailAfterGameOver() {
             this.submitLabel = "Sending...";
             this.isRecordingSubmission = true;
-            fetch('https://api.airtable.com/v0/appwFsMeOIf3lyiIw/Fix%20A%20Function', {
-                method: "POST",
+            fetch(`https://api.airtable.com/v0/appwFsMeOIf3lyiIw/Fix%20A%20Function/${this.airTableId}`, {
+                method: "PATCH",
                 headers: { 
                     Authorization: "Bearer "+ 'keyP1MqDtZjN0eBc8',
                     'Content-Type': 'application/json'
