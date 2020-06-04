@@ -33,7 +33,7 @@ var listOfExercises = [
         ],
     },
     {
-        difficulty: 'easy',
+        difficulty: 'normal',
         fn:     "\n   double(n) {\n    return n + n;\n  }",
         answer: "\n  function double(n) {\n    return n + n;\n  }",
         test:   "double(4) → 8",
@@ -77,7 +77,7 @@ var listOfExercises = [
         ]
     },
     {
-        difficulty: 'normal',
+        difficulty: 'hard',
         fn:     "\n  function today() {\n    return new date();\n  }",
         answer: "\n  function today() {\n    return new Date();\n  }",
         test:   "today() → Date object",
@@ -154,7 +154,7 @@ var listOfExercises = [
         ]
     },
     {
-        difficulty: 'hard',
+        difficulty: 'normal',
         fn:     "\n  function bigger(a,b) {\n    Math.max(a,b);\n  }",
         answer: "\n  function bigger(a,b) {\n    return Math.max(a,b);\n  }",
         test:   "bigger(2,12) → 12",
@@ -165,7 +165,7 @@ var listOfExercises = [
         ]
     },
     {
-        difficulty: 'hard',
+        difficulty: 'normal',
         fn:     "\n  function sayHello() {\n    return \"Hello\';\n  }",
         answer: "\n  function sayHello() {\n    return \"Hello\";\n  }",
         test:   "sayHello() → \"Hello\"",
@@ -187,14 +187,14 @@ var listOfExercises = [
         ]
     },
     {
-        difficulty: 'normal',
-        fn:     "\n  function sayHelo() {\n    return Hello;\n  }",
+        difficulty: 'hard',
+        fn:     "\n  function sayHe11o() {\n    return Hello;\n  }",
         answer: "\n  function sayHello() {\n    return \"Hello\";\n  }",
         test:   "sayHello() → \"Hello\"",
         hints: [
             'H-E- double hockey stick',
             'We\'re not saying the same thing',
-            'Missing l in function name'
+            'function name should use l\'s not 1\'s'
         ]
     },
     {
@@ -221,8 +221,8 @@ var listOfExercises = [
     },
     {
         difficulty: 'normal',
-        fn:     "\n  function loopy(list) {\n    for (i=0;i<list.length;i++) {\n        console.log(list(i))\n    }\n  }",
-        answer: "\n  function loopy(list) {\n    for (i=0;i<list.length;i++) {\n        console.log(list[i])\n    }\n  }",
+        fn:     "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(list(i))\n    }\n  }",
+        answer: "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(list[i])\n    }\n  }",
         test:   "loopy([1,2,3]) → 1 2 3",
         hints: [
             'That\'s a function?!',
@@ -232,8 +232,8 @@ var listOfExercises = [
     },
     {
         difficulty: 'hard',
-        fn:     "\n  function loopy(list) {\n    for (i==0;i<list.length;i++) {\n        console.log(list[i])\n    }\n  }",
-        answer: "\n  function loopy(list) {\n    for (i=0;i<list.length;i++) {\n        console.log(list[i])\n    }\n  }",
+        fn:     "\n  function loopy(list) {\n    for (i==0; i<list.length; i++) {\n        console.log(list[i])\n    }\n  }",
+        answer: "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(list[i])\n    }\n  }",
         test:   "loopy([1,2,3]) → 1 2 3",
         hints: [
             'Under what condition?',
@@ -243,8 +243,8 @@ var listOfExercises = [
     },
     {
         difficulty: 'normal',
-        fn:     "\n  function loopy(list) {\n    for (i=0;i<list.length;i++) {\n        console.log(i)\n    }\n  }",
-        answer: "\n  function loopy(list) {\n    for (i=0;i<list.length;i++) {\n        console.log(list[i])\n    }\n  }",
+        fn:     "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(i)\n    }\n  }",
+        answer: "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(list[i])\n    }\n  }",
         test:   "loopy([1,2,3]) → 1 2 3",
         hints: [
             '1, 2, 3...not 0, 1, 2!',
@@ -254,8 +254,8 @@ var listOfExercises = [
     },
     {
         difficulty: 'easy',
-        fn:     "\n  function loopy(list) {\n    for (i=0;i<list.length;i++) {\n        console.log(loopy[i])\n    }\n  }",
-        answer: "\n  function loopy(list) {\n    for (i=0;i<list.length;i++) {\n        console.log(list[i])\n    }\n  }",
+        fn:     "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(loopy[i])\n    }\n  }",
+        answer: "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(list[i])\n    }\n  }",
         test:   "loopy([1,2,3]) → 1 2 3",
         hints: [
             'That\'s not an array!',
@@ -265,8 +265,8 @@ var listOfExercises = [
     },
     {
         difficulty: 'easy',
-        fn:     "\n  function loopy(list) {\n    for (i=1;i<list.length;i++) {\n        console.log(list[i])\n    }\n  }",
-        answer: "\n  function loopy(list) {\n    for (i=0;i<list.length;i++) {\n        console.log(list[i])\n    }\n  }",
+        fn:     "\n  function loopy(list) {\n    for (i=1; i<list.length; i++) {\n        console.log(list[i])\n    }\n  }",
+        answer: "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(list[i])\n    }\n  }",
         test:   "loopy([1,2,3]) → 1 2 3",
         hints: [
             'No i left behind',
