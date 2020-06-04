@@ -1,7 +1,8 @@
 let app = new Vue({
     el: "#app",
     data: {
-        sessionId: new Date().getTime(),
+        airTableId: null,
+        sessionStart: new Date().toLocaleDateString(),
         email: '',
         submitLabel: 'Email Robert for more!',
         isRecordingSubmission: false,
@@ -32,6 +33,7 @@ let app = new Vue({
         }
     },
     mounted() {
+        this.createRecordInAirTable();
         this.updateChallengeFn();
     },
     methods: {
@@ -88,6 +90,7 @@ let app = new Vue({
             if (this.timer === "On") {
                 this.resetTimer()
             }
+            this.updateAirTableRecord();
         },
         giveUp() {
             this.didGiveUp = true;
@@ -112,36 +115,86 @@ let app = new Vue({
         endGame() {
             this.livesRemaining = 0;
         },
-        recordGame() {
-            if (this.score > 0 && this.email !== '') {
-                this.submitLabel = "Sending...";
-                this.isRecordingSubmission = true;
-                fetch('https://api.airtable.com/v0/appwFsMeOIf3lyiIw/Fix%20A%20Function', {
-                    method: "POST",
-                    headers: { 
-                        Authorization: "Bearer "+ 'keyP1MqDtZjN0eBc8',
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        "fields": {
-                            "ID": this.sessionId,
-                            "Email": this.email,
-                            "Score": this.score,
-                            "Lives": this.livesRemaining,
-                            "Solved": this.exercisesSolved,
-                            "Attempts": this.exercisesAttempted,
-                            "Timer": this.timer,
-                            "Time Limit": this.timeLimit,
-                            "Difficulty": this.difficulty,
-                        }
-                    })
+        createRecordInAirTable() {
+            fetch('https://api.airtable.com/v0/appwFsMeOIf3lyiIw/Fix%20A%20Function', {
+                method: "POST",
+                headers: { 
+                    Authorization: "Bearer "+ 'keyP1MqDtZjN0eBc8',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "fields": {
+                        "Date": this.sessionStart,
+                        "Score": this.score,
+                        "Lives": this.livesRemaining,
+                        "Solved": this.exercisesSolved,
+                        "Attempts": this.exercisesAttempted,
+                        "Timer": this.timer,
+                        "Time Limit": this.timeLimit,
+                        "Difficulty": this.difficulty,
+                }
                 })
-                .then(response => response.json())
-                .then(data => {
-                    this.submitLabel = "Success!"
+            })
+            .then(response => response.json())
+            .then(data => {
+                this.airTableId = data.id;
+            })
+            .catch(err => console.error(err))
+        },
+        recordEmailAfterGameOver() {
+            this.submitLabel = "Sending...";
+            this.isRecordingSubmission = true;
+            fetch('https://api.airtable.com/v0/appwFsMeOIf3lyiIw/Fix%20A%20Function', {
+                method: "POST",
+                headers: { 
+                    Authorization: "Bearer "+ 'keyP1MqDtZjN0eBc8',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "fields": {
+                        "Date": this.sessionStart,
+                        "Email": this.email,
+                        "Score": this.score,
+                        "Lives": this.livesRemaining,
+                        "Solved": this.exercisesSolved,
+                        "Attempts": this.exercisesAttempted,
+                        "Timer": this.timer,
+                        "Time Limit": this.timeLimit,
+                        "Difficulty": this.difficulty,
+                    }
                 })
-                .catch(err => console.error(err))                
-            }
+            })
+            .then(response => response.json())
+            .then(data => {
+                this.submitLabel = "Success!"
+            })
+            .catch(err => console.error(err))        
+        },
+        updateAirTableRecord() {
+            fetch(`https://api.airtable.com/v0/appwFsMeOIf3lyiIw/Fix%20A%20Function/${this.airTableId}`, {
+                method: "PATCH",
+                headers: { 
+                    Authorization: "Bearer "+ 'keyP1MqDtZjN0eBc8',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "fields": {
+                        "Date": this.sessionStart,
+                        "Score": this.score,
+                        "Lives": this.livesRemaining,
+                        "Solved": this.exercisesSolved,
+                        "Attempts": this.exercisesAttempted,
+                        "Timer": this.timer,
+                        "Time Limit": this.timeLimit,
+                        "Difficulty": this.difficulty,
+                    }
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.success("AirTable updated!");
+            })
+            .catch(err => console.error(err))                
         }
     },
     watch: {
