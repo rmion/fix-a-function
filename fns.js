@@ -6,14 +6,96 @@ function loop(list) {
     list.forEach(i => list[i]);
 }
 
-function equals() {
-    return 3 == '3';
+function equals(number) {
+    return number == String(number);
 }
 
-function strictEquals() {
-    return 3 === 3;
+function strictEquals(number) {
+    return number === String(number);
 }
 
 function isObj(obj) {
     return typeof obj == "object";
+}
+
+function dataType(data) {
+    return typeof data;
+}
+
+function formalName(f, l) {
+    return `${l}, ${f}`;
+}
+
+function greet(name) {
+    return `Hi, ${name}`;
+}
+
+function ternary(bool) {
+    return bool ? "This" : "That";
+}
+
+function mean(list) {
+    return list.reduce((i, acc) => acc + i)/list.length;
+}
+
+function oddsOnly(numbers) {
+    return numbers.filter(n => n % 2);
+}
+
+function evensOnly(numbers) {
+    return numbers.filter(n => n % 2 == 0);
+}
+
+function negatives(numbers) {
+    return numbers.map(n => -n);
+}
+
+function newElement(tag) {
+    return document.createElement(tag);
+}
+
+function colorText(DOMNode, color) {
+    DOMNode.setAttribute('color', color);
+}
+
+function IdPlease(id) {
+    return document.getElementById(id);
+}
+
+function eventPlanner(DOMNode, e, fn) {
+    DOMNode.addEventListener(e, fn);
+}
+
+function predictable(number) {
+    return (Math.ceil(Math.random()) * number);
+}
+
+function parrot(number) {
+    return () => number;
+}
+
+function bond() {
+    return Object.values({0:0,1:0,2:7}).join("");
+}
+
+function rihanna() {
+    return "b" + "a" + +"ana" + "as";
+}
+
+function economics($) {
+    return Array(...$);
+}
+
+function factorial(x) {
+    return x <= 0 ? 1 : x * factorial(x - 1)
+}
+
+function coercion() {
+    return Boolean("0" == true);
+}
+
+function leaky(list) {
+    for (i=0;i<list.length;i++) {
+        console.log(window.i)
+    }
 }
