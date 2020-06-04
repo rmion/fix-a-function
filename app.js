@@ -2,7 +2,7 @@ let app = new Vue({
     el: "#app",
     data: {
         airTableId: null,
-        sessionStart: new Date().toLocaleDateString(),
+        sessionStart: new Date().toLocaleString(),
         email: '',
         submitLabel: 'Email Robert for more!',
         isRecordingSubmission: false,
