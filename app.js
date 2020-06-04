@@ -24,9 +24,6 @@ let app = new Vue({
         exercises: listOfExercises,
     },
     computed: {
-        trimmedSolutions() {
-            return this.filteredExercises.map(exercise => exercise.answer.trim().replace(/\s/g,''))
-        },
         filteredExercises() {
             return  this.difficulty === 'all' ? 
                     this.exercises : 
@@ -45,7 +42,7 @@ let app = new Vue({
             this.nextHint += 1;
         },
         answerMatchesSolution() {
-            return document.getElementById('fn').textContent.trim().replace(/\s/g,'') === this.trimmedSolutions[this.counter];
+            return document.getElementById('fn').textContent.trim().replace(/\s/g,'') === this.filteredExercises[this.counter].answer.trim().replace(/\s/g,'');
         },
         markCorrectAnswer() {
             this.isSolved = true;

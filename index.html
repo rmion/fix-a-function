@@ -68,7 +68,7 @@
                 </dl>    
             </div>
             <div>
-                <p v-show="needsHint">
+                <p v-show="needsHint && !isSolved">
                     Hint {{nextHint}} of {{filteredExercises[counter].hints.length}}: {{filteredExercises[counter].hints[nextHint - 1]}}
                 </p>
                 <div>
@@ -83,7 +83,7 @@
                             <code id="fn" @click="enableSolveButton"></code>
                         </pre>
                     </section>
-                    <section class="exercise" v-show="didGiveUp || isSolved">
+                    <section class="exercise" v-show="didGiveUp">
                         <p>Correct answer</p>
                         <pre>
                             <code>{{filteredExercises[counter].answer}}</code>
