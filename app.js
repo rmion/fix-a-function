@@ -2,7 +2,6 @@ let app = new Vue({
     el: "#app",
     data: {
         airTableId: null,
-        sessionStart: new Date().toISOString(),
         email: '',
         submitLabel: 'Email Robert for more!',
         isRecordingSubmission: false,
@@ -124,7 +123,7 @@ let app = new Vue({
                 },
                 body: JSON.stringify({
                     "fields": {
-                        "Date": this.sessionStart,
+                        "Date": new Date().toISOString(),
                         "Score": this.score,
                         "Lives": this.livesRemaining,
                         "Solved": this.exercisesSolved,
@@ -152,7 +151,6 @@ let app = new Vue({
                 },
                 body: JSON.stringify({
                     "fields": {
-                        "Date": this.sessionStart,
                         "Email": this.email,
                         "Score": this.score,
                         "Lives": this.livesRemaining,
@@ -179,7 +177,6 @@ let app = new Vue({
                 },
                 body: JSON.stringify({
                     "fields": {
-                        "Date": this.sessionStart,
                         "Score": this.score,
                         "Lives": this.livesRemaining,
                         "Solved": this.exercisesSolved,
