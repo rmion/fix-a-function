@@ -20,7 +20,7 @@ let app = new Vue({
         timeLimit: 30,
         timeRemaining: 0,
         timerID: null,
-        difficulty: 'all',
+        difficulty: 'easy',
         exercises: listOfExercises,
     },
     computed: {

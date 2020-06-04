@@ -111,54 +111,72 @@
                     <form action="">
                         <fieldset>
                             <legend>
+                                Difficulty
+                            </legend>
+                            <p>
+                                <input type="radio" id="easy" name="difficulty" value="easy" v-model="difficulty" />
+                                <label for="easy">
+                                    Easy: Teach me
+                                </label>    
+                            </p>
+                            <p>
+                                <input type="radio" id="normal" name="difficulty" value="normal" v-model="difficulty" />
+                                <label for="normal">
+                                    Normal: Toughen me
+                                </label>    
+                            </p>
+                            <p>
+                                <input type="radio" id="hard" name="difficulty" value="hard" v-model="difficulty" />
+                                <label for="hard">
+                                    Hard: Try me
+                                </label>    
+                            </p>
+                            <p>
+                                <input type="radio" id="all" name="difficulty" value="all" v-model="difficulty" />
+                                <label for="all">
+                                    Random: Test me
+                                </label>    
+                            </p>
+                        </fieldset>
+                        <fieldset>
+                            <legend>
                                 Timer
                             </legend>
-                            <input type="radio" id="off" name="timer" value="Off" v-model="timer" />
-                            <label for="off">
-                                Off
-                            </label>
-                            <input type="radio" id="on" name="timer" value="On" v-model="timer" />
-                            <label for="on">
-                                On
-                            </label>
+                            <p>
+                                <input type="radio" id="off" name="timer" value="Off" v-model="timer" />
+                                <label for="off">
+                                    Off
+                                </label>    
+                            </p>
+                            <p>
+                                <input type="radio" id="on" name="timer" value="On" v-model="timer" />
+                                <label for="on">
+                                    On
+                                </label>    
+                            </p>
                         </fieldset>
                         <fieldset>
                             <legend>
                                 Time limit (in seconds)
                             </legend>
-                            <input type="radio" id="thirty" name="limit" value="30" v-model="timeLimit" />
-                            <label for="thirty">
-                                30
-                            </label>
-                            <input type="radio" id="fifteen" name="limit" value="15" v-model="timeLimit" />
-                            <label for="fifteen">
-                                15
-                            </label>
-                            <input type="radio" id="ten" name="limit" value="10" v-model="timeLimit" />
-                            <label for="ten">
-                                10
-                            </label>
-                        </fieldset>
-                        <fieldset>
-                            <legend>
-                                Difficulty
-                            </legend>
-                            <input type="radio" id="all" name="difficulty" value="all" v-model="difficulty" />
-                            <label for="all">
-                                All
-                            </label>
-                            <input type="radio" id="easy" name="difficulty" value="easy" v-model="difficulty" />
-                            <label for="easy">
-                                Easy
-                            </label>
-                            <input type="radio" id="normal" name="difficulty" value="normal" v-model="difficulty" />
-                            <label for="normal">
-                                Normal
-                            </label>
-                            <input type="radio" id="hard" name="difficulty" value="hard" v-model="difficulty" />
-                            <label for="hard">
-                                Hard
-                            </label>
+                            <p>
+                                <input type="radio" id="thirty" name="limit" value="30" v-model="timeLimit" />
+                                <label for="thirty">
+                                    30
+                                </label>    
+                            </p>
+                            <p>
+                                <input type="radio" id="fifteen" name="limit" value="15" v-model="timeLimit" />
+                                <label for="fifteen">
+                                    15
+                                </label>    
+                            </p>
+                            <p>
+                                <input type="radio" id="ten" name="limit" value="10" v-model="timeLimit" />
+                                <label for="ten">
+                                    10
+                                </label>    
+                            </p>
                         </fieldset>
                     </form>        
                 </details>    

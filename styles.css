@@ -164,12 +164,21 @@ summary > h2 {
     }
     dl {
         margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        grid-gap: 0.5rem;
     }
-    dl > div {
-        min-width: 100px;
-        margin: 0.5rem;
-    }
+    dl > div:not(:last-of-type) {
+        margin-right: 0;
+    }    
     dd {
         font-size: 3rem;
+    }
+    button {
+        display: block;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
     }
 }
