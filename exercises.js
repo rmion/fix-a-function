@@ -384,4 +384,114 @@ var listOfExercises = [
             'Method name is forEach, not each'
         ]
     },
+    {
+        difficulty: 'hard',
+        fn:     "\n  function equals(num) {\n    return num === String(num);\n  }",
+        answer: "\n  function equals(num) {\n    return num == String(num);\n  }",
+        test:   "equals(3) → true",
+        hints: [
+            'One too many',
+            'Make triplicates duplicates',
+            'Use double-equals instead of triple-equals sign'
+        ]
+    },
+    {
+        difficulty: 'hard',
+        fn:     "\n  function equals(num) {\n    return num == String(num);\n  }",
+        answer: "\n  function equals(num) {\n    return num === String(num);\n  }",
+        test:   "equals(4) → false",
+        hints: [
+            'One too few',
+            'Make duplicates triplicates',
+            'Use triple-equals instead of double-equals sign'
+        ]
+    },
+    {
+        difficulty: 'normal',
+        fn:     "\n  function equals(num) {\n    return num == 'num';\n  }",
+        answer: "\n  function equals(num) {\n    return num === num;\n  }",
+        test:   "equals(5) → true",
+        hints: [
+            'Both num should be naked',
+            'Compare to 3, not \'num\'',
+            'Remove the single-quotes around the second num'
+        ]
+    },
+    {
+        difficulty: 'hard',
+        fn:     "\n  function equals(num) {\n    return num === Sting(num);\n  }",
+        answer: "\n  function equals(num) {\n    return num === String(num);\n  }",
+        test:   "equals(6) → true",
+        hints: [
+            'Call The Police',
+            'Grrrrrr',
+            'Missing r in String'
+        ]
+    },
+    {
+        difficulty: 'easy',
+        fn:     "\n  function equals(num) {\n    return num = String(num);\n  }",
+        answer: "\n  function equals(num) {\n    return num == String(num);\n  }",
+        test:   "equals(7) → true",
+        hints: [
+            'Wrong assignment',
+            'Is equal to?',
+            'Use double-equals instead of single-equal sign'
+        ]
+    },
+    {
+        difficulty: 'easy',
+        fn:     "\n  function dataType(data) {\n    return typeof dada;\n  }",
+        answer: "\n  function dataType(data) {\n    return typeof data;\n  }",
+        test:   "equals({}}) → 'object'",
+        hints: [
+            'Art history',
+            'Father, forgive me',
+            'Not dada, silly...data!'
+        ]
+    },
+    {
+        difficulty: 'normal',
+        fn:     "\n  function dataType(data) {\n    return typeof \'data\';\n  }",
+        answer: "\n  function dataType(data) {\n    return typeof data;\n  }",
+        test:   "equals({}}) → 'object'",
+        hints: [
+            'Stringing you along',
+            'Stop returning strings!',
+            'Remove single-quotes around data'
+        ]
+    },
+    {
+        difficulty: 'hard',
+        fn:     "\n  function dataType(data) {\n    return typeof data;\n  }",
+        answer: "\n  function dataType(data) {\n    return typeof +data;\n  }",
+        test:   "equals({}}) → 'number'",
+        hints: [
+            'One symbol to rule them all',
+            'Who\'s your plus-one?',
+            'Stick a plus sign just left of data'
+        ]
+    },
+    {
+        difficulty: 'hard',
+        fn:     "\n  function dataType(data) {\n    return typeof data();\n  }",
+        answer: "\n  function dataType(data) {\n    return typeof new data();\n  }",
+        test:   "equals(Date) → 'string'",
+        hints: [
+            'Something borrowed, blue, and...',
+            'What\'s new?',
+            'Missing keyword, new, before data()'
+        ]
+    },
+    {
+        difficulty: 'easy',
+        fn:     "\n  function dataType(data) {\n    return type of data;\n  }",
+        answer: "\n  function dataType(data) {\n    return typeof data;\n  }",
+        test:   "equals({}) → 'object'",
+        hints: [
+            'Mind the gap',
+            'all to get her now',
+            'Remove space between type and of'
+        ]
+    },
 ]

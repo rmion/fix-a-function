@@ -1,19 +1,3 @@
-function equals(number) {
-    return number == String(number);
-}
-
-function strictEquals(number) {
-    return number === String(number);
-}
-
-function isObj(obj) {
-    return typeof obj == "object";
-}
-
-function dataType(data) {
-    return typeof data;
-}
-
 function formalName(f, l) {
     return `${l}, ${f}`;
 }
