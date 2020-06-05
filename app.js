@@ -22,6 +22,7 @@ let app = new Vue({
         timeRemaining: 0,
         timerID: null,
         difficulty: 'easy',
+        language: 'js',
         exercises: listOfExercises,
     },
     computed: {
@@ -131,6 +132,7 @@ let app = new Vue({
                         "Timer": this.timer,
                         "Time Limit": this.timeLimit,
                         "Difficulty": this.difficulty,
+                        "Language": this.language
                 }
                 })
             })
@@ -159,6 +161,7 @@ let app = new Vue({
                         "Timer": this.timer,
                         "Time Limit": this.timeLimit,
                         "Difficulty": this.difficulty,
+                        "Language": this.language
                     }
                 })
             })
@@ -184,6 +187,7 @@ let app = new Vue({
                         "Timer": this.timer,
                         "Time Limit": this.timeLimit,
                         "Difficulty": this.difficulty,
+                        "Language": this.language
                     }
                 })
             })

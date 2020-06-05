@@ -1,5 +1,6 @@
 var listOfExercises = [
     {
+        language: 'js',
         difficulty: 'easy',
         fn:     "\n  function double(n) {\n    return n  n;\n  }",
         answer: "\n  function double(n) {\n    return n + n;\n  }",
@@ -11,6 +12,7 @@ var listOfExercises = [
         ],
     },
     {
+        language: 'js',
         difficulty: 'easy',
         fn:     "\n  function double() {\n    return n + n;\n  }",
         answer: "\n  function double(n) {\n    return n + n;\n  }",
@@ -22,6 +24,7 @@ var listOfExercises = [
         ],
     },
     {
+        language: 'js',
         difficulty: 'normal',
         fn:     "\n  function double(n) {\n    n + n;\n  }",
         answer: "\n  function double(n) {\n    return n + n;\n  }",
@@ -33,6 +36,7 @@ var listOfExercises = [
         ],
     },
     {
+        language: 'js',
         difficulty: 'normal',
         fn:     "\n   double(n) {\n    return n + n;\n  }",
         answer: "\n  function double(n) {\n    return n + n;\n  }",
@@ -44,6 +48,7 @@ var listOfExercises = [
         ],
     },
     {
+        language: 'js',
         difficulty: 'hard',
         fn:     "\n  function double(n) \n    return n + n;\n  }",
         answer: "\n  function double(n) {\n    return n + n;\n  }",
@@ -55,6 +60,7 @@ var listOfExercises = [
         ],
     },
     {
+        language: 'js',
         difficulty: 'normal',
         fn:     "\n  function today() {\n    return Date();\n  }",
         answer: "\n  function today() {\n    return new Date();\n  }",
@@ -66,6 +72,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'normal',
         fn:     "\n  function today() {\n    return new Date;\n  }",
         answer: "\n  function today() {\n    return new Date();\n  }",
@@ -77,6 +84,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'hard',
         fn:     "\n  function today() {\n    return new date();\n  }",
         answer: "\n  function today() {\n    return new Date();\n  }",
@@ -88,6 +96,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'easy',
         fn:     "\n  function 2day() {\n    return new Date();\n  }",
         answer: "\n  function today() {\n    return new Date();\n  }",
@@ -99,6 +108,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'normal',
         fn:     "\n  function today() {\n    returns new Date();\n  }",
         answer: "\n  function today() {\n    return new Date();\n  }",
@@ -110,6 +120,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'easy',
         fn:     "\n  function bigger(ab) {\n    return Math.max(a,b);\n  }",
         answer: "\n  function bigger(a,b) {\n    return Math.max(a,b);\n  }",
@@ -121,6 +132,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'easy',
         fn:     "\n  function bigger(a,b) {\n    return Math.max(ab);\n  }",
         answer: "\n  function bigger(a,b) {\n    return Math.max(a,b);\n  }",
@@ -132,6 +144,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'normal',
         fn:     "\n  function bigger(a,b) {\n    return Math.maximum(a,b);\n  }",
         answer: "\n  function bigger(a,b) {\n    return Math.max(a,b);\n  }",
@@ -143,6 +156,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'hard',
         fn:     "\n  function bigger(a,b) {\n    return math.max(a,b);\n  }",
         answer: "\n  function bigger(a,b) {\n    return Math.max(a,b);\n  }",
@@ -154,6 +168,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'normal',
         fn:     "\n  function bigger(a,b) {\n    Math.max(a,b);\n  }",
         answer: "\n  function bigger(a,b) {\n    return Math.max(a,b);\n  }",
@@ -165,6 +180,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'normal',
         fn:     "\n  function sayHello() {\n    return \"Hello\';\n  }",
         answer: "\n  function sayHello() {\n    return \"Hello\";\n  }",
@@ -176,6 +192,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'easy',
         fn:     "\n  function sayHello() {\n    return Hello;\n  }",
         answer: "\n  function sayHello() {\n    return \"Hello\";\n  }",
@@ -187,6 +204,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'hard',
         fn:     "\n  function sayHe11o() {\n    return Hello;\n  }",
         answer: "\n  function sayHello() {\n    return \"Hello\";\n  }",
@@ -198,6 +216,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'easy',
         fn:     "\n  function sayHello {\n    return \"Hello\";\n  }",
         answer: "\n  function sayHello() {\n    return \"Hello\";\n  }",
@@ -209,6 +228,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'hard',
         fn:     "\n  fnuction sayHello() {\n    return \"Hello\";\n  }",
         answer: "\n  function sayHello() {\n    return \"Hello\";\n  }",
@@ -220,6 +240,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'normal',
         fn:     "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(list(i))\n    }\n  }",
         answer: "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(list[i])\n    }\n  }",
@@ -231,6 +252,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'hard',
         fn:     "\n  function loopy(list) {\n    for (i==0; i<list.length; i++) {\n        console.log(list[i])\n    }\n  }",
         answer: "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(list[i])\n    }\n  }",
@@ -242,6 +264,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'normal',
         fn:     "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(i)\n    }\n  }",
         answer: "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(list[i])\n    }\n  }",
@@ -253,6 +276,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'easy',
         fn:     "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(loopy[i])\n    }\n  }",
         answer: "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(list[i])\n    }\n  }",
@@ -264,6 +288,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'easy',
         fn:     "\n  function loopy(list) {\n    for (i=1; i<list.length; i++) {\n        console.log(list[i])\n    }\n  }",
         answer: "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(list[i])\n    }\n  }",
@@ -275,6 +300,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'easy',
         fn:     "\n  function sum(a,b,c) {\n    return a + b  c;\n  }",
         answer: "\n  function sum(a,b,c) {\n    return a + b + c;\n  }",
@@ -286,6 +312,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'easy',
         fn:     "\n  function sum(a,b,c) {\n    return a + b + C;\n  }",
         answer: "\n  function sum(a,b,c) {\n    return a + b + c;\n  }",
@@ -297,6 +324,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'normal',
         fn:     "\n  function sum(a,b,b) {\n    return a + b + c;\n  }",
         answer: "\n  function sum(a,b,c) {\n    return a + b + c;\n  }",
@@ -308,6 +336,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'hard',
         fn:     "\n  function sum(a,b,c) {\n    retrun a + b + c;\n  }",
         answer: "\n  function sum(a,b,c) {\n    return a + b + c;\n  }",
@@ -319,6 +348,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'hard',
         fn:     "\n  function sum(a,b,c) {\n    return a + b + c;\n  ",
         answer: "\n  function sum(a,b,c) {\n    return a + b + c;\n  }",
@@ -330,6 +360,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'hard',
         fn:     "\n  function each(list) {\n    return list.forEach(i > list[i]);\n  }",
         answer: "\n  function each(list) {\n    return list.forEach(i => list[i]);\n  }",
@@ -341,6 +372,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'easy',
         fn:     "\n  function each(list) {\n    return list.for Each(i => list[i]);\n  }",
         answer: "\n  function each(list) {\n    return list.forEach(i => list[i]);\n  }",
@@ -352,6 +384,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'normal',
         fn:     "\n  function each(list) {\n    return list.foreach(i => list[i]);\n  }",
         answer: "\n  function each(list) {\n    return list.forEach(i => list[i]);\n  }",
@@ -363,6 +396,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'normal',
         fn:     "\n  function each(List) {\n    return list.forEach(i => list[i]);\n  }",
         answer: "\n  function each(list) {\n    return list.forEach(i => list[i]);\n  }",
@@ -374,6 +408,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'hard',
         fn:     "\n  function each(list) {\n    return list.each(i => list[i]);\n  }",
         answer: "\n  function each(list) {\n    return list.forEach(i => list[i]);\n  }",
@@ -385,6 +420,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'hard',
         fn:     "\n  function equals(num) {\n    return num === String(num);\n  }",
         answer: "\n  function equals(num) {\n    return num == String(num);\n  }",
@@ -396,6 +432,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'hard',
         fn:     "\n  function equals(num) {\n    return num == String(num);\n  }",
         answer: "\n  function equals(num) {\n    return num === String(num);\n  }",
@@ -407,6 +444,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'normal',
         fn:     "\n  function equals(num) {\n    return num == 'num';\n  }",
         answer: "\n  function equals(num) {\n    return num === num;\n  }",
@@ -418,6 +456,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'hard',
         fn:     "\n  function equals(num) {\n    return num === Sting(num);\n  }",
         answer: "\n  function equals(num) {\n    return num === String(num);\n  }",
@@ -429,6 +468,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'easy',
         fn:     "\n  function equals(num) {\n    return num = String(num);\n  }",
         answer: "\n  function equals(num) {\n    return num == String(num);\n  }",
@@ -440,6 +480,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'easy',
         fn:     "\n  function dataType(data) {\n    return typeof dada;\n  }",
         answer: "\n  function dataType(data) {\n    return typeof data;\n  }",
@@ -451,6 +492,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'normal',
         fn:     "\n  function dataType(data) {\n    return typeof \'data\';\n  }",
         answer: "\n  function dataType(data) {\n    return typeof data;\n  }",
@@ -462,6 +504,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'hard',
         fn:     "\n  function dataType(data) {\n    return typeof data;\n  }",
         answer: "\n  function dataType(data) {\n    return typeof +data;\n  }",
@@ -473,6 +516,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'hard',
         fn:     "\n  function dataType(data) {\n    return typeof data();\n  }",
         answer: "\n  function dataType(data) {\n    return typeof new data();\n  }",
@@ -484,6 +528,7 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
         difficulty: 'easy',
         fn:     "\n  function dataType(data) {\n    return type of data;\n  }",
         answer: "\n  function dataType(data) {\n    return typeof data;\n  }",
