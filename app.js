@@ -34,6 +34,7 @@ let app = new Vue({
     },
     mounted() {
         this.createRecordInAirTable();
+        this.counter = this.getIndexOfRandomExercise();
         this.updateChallengeFn();
     },
     methods: {

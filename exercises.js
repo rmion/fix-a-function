@@ -539,4 +539,64 @@ var listOfExercises = [
             'Remove space between type and of'
         ]
     },
+    {
+        language: 'js',
+        difficulty: 'easy',
+        fn:     "\n  function formalName(f,l) {\n    return `${f}, ${f}`;\n  }",
+        answer: "\n  function formalName(f,l) {\n    return `${l}, ${f}`;\n  }",
+        test:   "formalName('Kanye','West') → 'West, Kanye'",
+        hints: [
+            'Use all the pieces',
+            'Don\'t double the f\'s',
+            'First interpolated value should be l, not f'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'hard',
+        fn:     "\n  function formalName(f,l) {\n    return `${l}, $(f)`;\n  }",
+        answer: "\n  function formalName(f,l) {\n    return `${l}, ${f}`;\n  }",
+        test:   "formalName('George','Bush') → 'Bush, George'",
+        hints: [
+            'The walls of f',
+            'Parentheses with a handle',
+            'Enclose f in brackets, not parentheses'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'normal',
+        fn:     "\n  function formalName(f,l) {\n    return `${l} ${f}`;\n  }",
+        answer: "\n  function formalName(f,l) {\n    return `${l}, ${f}`;\n  }",
+        test:   "formalName('Bob','Dole') → 'Dole, Bob'",
+        hints: [
+            'Poor grammar',
+            'It separates two things',
+            'Missing comma between l and f'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'hard',
+        fn:     "\n  function formalName(f,l) {\n    return '${l}, ${f}';\n  }",
+        answer: "\n  function formalName(f,l) {\n    return `${l}, ${f}`;\n  }",
+        test:   "formalName('Jack','Ryan') → 'Ryan, Jack'",
+        hints: [
+            'Wrong ticks',
+            'Must use correct quote marks',
+            'Use back ticks ` instead of single-quotes'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'easy',
+        fn:     "\n  function formalName(f,l) {\n    return `{l}, ${f}`;\n  }",
+        answer: "\n  function formalName(f,l) {\n    return `${l}, ${f}`;\n  }",
+        test:   "formalName('Robert','Mion') → 'Mion, Robert'",
+        hints: [
+            'Money money money!',
+            'One is not like the other',
+            'Add a $ to the first interpolation'
+        ]
+    },
 ]
