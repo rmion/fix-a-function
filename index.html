@@ -82,6 +82,7 @@
                             :class="{ solved: isSolved, incorrect: (!isSolved && isWrongAnswer) }">
                             <code id="fn" @click="enableSolveButton"></code>
                         </pre>
+                        <p>{{ filteredExercises[counter].difficulty.toUpperCase() }}</p>
                     </section>
                     <section class="exercise" v-show="didGiveUp">
                         <p>Correct answer</p>

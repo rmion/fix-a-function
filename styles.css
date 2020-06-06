@@ -24,10 +24,16 @@ em {
     font-family: monospace;
     font-size: 1.35rem;
     text-align: initial;
+    position: relative;
 }
 .exercise > p {
     padding: 0.5rem 1.25em;
     margin-bottom: 0;
+}
+.exercise:first-of-type > p:last-of-type {
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 .exercise:first-of-type > p {
     background-color: darkmagenta;
