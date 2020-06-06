@@ -484,7 +484,7 @@ var listOfExercises = [
         difficulty: 'easy',
         fn:     "\n  function dataType(data) {\n    return typeof dada;\n  }",
         answer: "\n  function dataType(data) {\n    return typeof data;\n  }",
-        test:   "equals({}}) → 'object'",
+        test:   "dataType({}) → 'object'",
         hints: [
             'Art history',
             'Father, forgive me',
@@ -496,7 +496,7 @@ var listOfExercises = [
         difficulty: 'normal',
         fn:     "\n  function dataType(data) {\n    return typeof \'data\';\n  }",
         answer: "\n  function dataType(data) {\n    return typeof data;\n  }",
-        test:   "equals({}}) → 'object'",
+        test:   "dataType({}) → 'object'",
         hints: [
             'Stringing you along',
             'Stop returning strings!',
@@ -508,7 +508,7 @@ var listOfExercises = [
         difficulty: 'hard',
         fn:     "\n  function dataType(data) {\n    return typeof data;\n  }",
         answer: "\n  function dataType(data) {\n    return typeof +data;\n  }",
-        test:   "equals({}}) → 'number'",
+        test:   "dataType({}) → 'number'",
         hints: [
             'One symbol to rule them all',
             'Who\'s your plus-one?',
@@ -520,7 +520,7 @@ var listOfExercises = [
         difficulty: 'hard',
         fn:     "\n  function dataType(data) {\n    return typeof data();\n  }",
         answer: "\n  function dataType(data) {\n    return typeof new data();\n  }",
-        test:   "equals(Date) → 'string'",
+        test:   "dataType(Date) → 'string'",
         hints: [
             'Something borrowed, blue, and...',
             'What\'s new?',
@@ -532,7 +532,7 @@ var listOfExercises = [
         difficulty: 'easy',
         fn:     "\n  function dataType(data) {\n    return type of data;\n  }",
         answer: "\n  function dataType(data) {\n    return typeof data;\n  }",
-        test:   "equals({}) → 'object'",
+        test:   "dataType({}) → 'object'",
         hints: [
             'Mind the gap',
             'all to get her now',
