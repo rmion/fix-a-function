@@ -9,6 +9,7 @@ let app = new Vue({
         isWrongAnswer: false,
         isSolved: false,
         didGiveUp: false,
+        hasAttemptedToSolve: false,
         needsHint: false,
         nextHint: 0,
         counter: 0,
@@ -58,6 +59,7 @@ let app = new Vue({
             this.isWrongAnswer = true;
             this.awaitingAnotherTry = true;
             this.subtractFromLives(1);
+            this.updateChallengeFn();
         },
         checkAttemptedFix() {
             this.answerMatchesSolution() ? this.markCorrectAnswer() : this.markIncorrectAnswer();
@@ -76,6 +78,9 @@ let app = new Vue({
         },
         enableSolveButton() {
             this.awaitingAnotherTry = false;
+            if (!this.hasAttemptedToSolve) {
+                this.hasAttemptedToSolve = true;
+            }
         },
         prepareNextExercise() {
             this.isSolved = false;
@@ -92,6 +97,7 @@ let app = new Vue({
                 this.resetTimer()
             }
             this.updateAirTableRecord();
+            this.hasAttemptedToSolve = false;
         },
         giveUp() {
             this.didGiveUp = true;
@@ -194,7 +200,7 @@ let app = new Vue({
             })
             .then(response => response.json())
             .then(data => {
-                console.success("AirTable updated!");
+                console.log("AirTable updated!");
             })
             .catch(err => console.error(err))                
         }

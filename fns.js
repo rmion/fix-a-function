@@ -1,17 +1,17 @@
-function newTail(array,item) {
-    return array.push(item);
+function newTail(list,item) {
+    return list.push(item);
 }
 
-function cutOffTail(array) {
-    return array.pop();
+function cutOffTail(list) {
+    return list.pop();
 }
 
-function cutOffHead(array) {
-    return array.unshift();
+function cutOffHead(list) {
+    return list.unshift();
 }
 
-function newHead(array, item) {
-    return array.shift(item);
+function newHead(list, item) {
+    return list.shift(item);
 }
 
 function mean(list) {
@@ -50,10 +50,6 @@ function predictable(number) {
     return (Math.ceil(Math.random()) * number);
 }
 
-function parrot(number) {
-    return () => number;
-}
-
 function bond() {
     return Object.values({0:0,1:0,2:7}).join("");
 }
@@ -78,12 +74,4 @@ function leaky(list) {
     for (i=0;i<list.length;i++) {
         console.log(window.i)
     }
-}
-
-function getInBack(list, el) {
-    list.push(el);
-}
-
-function lastOut(list) {
-    list.pop();
 }

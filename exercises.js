@@ -451,7 +451,7 @@ var listOfExercises = [
         test:   "equals(5) → true",
         hints: [
             'Both num should be naked',
-            'Compare to 3, not \'num\'',
+            'Compare to 5, not \'num\'',
             'Remove the single-quotes around the second num'
         ]
     },
@@ -837,6 +837,66 @@ var listOfExercises = [
             'Wish upon a star',
             'Single-line comment, not multi-line',
             'Change asterisk to forward slash'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'hard',
+        fn:     "\n  function parrot(number) {\n    return () > number;\n  }",
+        answer: "\n  function parrot(number) {\n    return () => number;\n  }",
+        test:   "parrot(1)() → 1",
+        hints: [
+            'Greater than?',
+            'That\'s not quite an arrow',
+            'Missing equals sign before greater-than sign'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'hard',
+        fn:     "\n  function parrot(number) {\n    return {} => number;\n  }",
+        answer: "\n  function parrot(number) {\n    return () => number;\n  }",
+        test:   "parrot(2)() → 2",
+        hints: [
+            'Wrong container',
+            'Looks like you\'re returning an object?',
+            'Replace curly braces with parentheses'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'hard',
+        fn:     "\n  function parrot(number) {\n    return () <= number;\n  }",
+        answer: "\n  function parrot(number) {\n    return () => number;\n  }",
+        test:   "parrot(3)() → 3",
+        hints: [
+            'Wrong direction',
+            'Left-to-right',
+            'Arrow function points the wrong way'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'hard',
+        fn:     "\n  function parrot(number) {\n    return (number) => number;\n  }",
+        answer: "\n  function parrot(number) {\n    return () => number;\n  }",
+        test:   "parrot(4)() → 4",
+        hints: [
+            'Closure, baby!',
+            'It already has number',
+            'Remove number from second parentheses'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'hard',
+        fn:     "\n  function parrot(number) {\n    return  => number;\n  }",
+        answer: "\n  function parrot(number) {\n    return () => number;\n  }",
+        test:   "parrot(5)() → 5",
+        hints: [
+            'Left of the arrow',
+            'Key ingredient in an arrow function',
+            'Add a pair of parentheses after return'
         ]
     },
 ]
