@@ -206,7 +206,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function sayHe11o() {\n    return Hello;\n  }",
+        fn:     "\n  function sayHe11o() {\n    return \"Hello\";\n  }",
         answer: "\n  function sayHello() {\n    return \"Hello\";\n  }",
         test:   "sayHello() → \"Hello\"",
         hints: [
