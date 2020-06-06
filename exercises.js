@@ -599,4 +599,64 @@ var listOfExercises = [
             'Add a $ to the first interpolation'
         ]
     },
+    {
+        language: 'js',
+        difficulty: 'easy',
+        fn:     "\n  function ternary(bool) {\n    return bowl ? 'this' : 'that';\n  }",
+        answer: "\n  function ternary(bool) {\n    return bool ? 'this' : 'that';\n  }",
+        test:   "ternary(false) → 'that'",
+        hints: [
+            'Don\'t strike out',
+            'Spare me another pun',
+            'Not bowl, bool'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'hard',
+        fn:     "\n  function ternary(bool) {\n    return bool ? 'this' : 'that';\n  }",
+        answer: "\n  function ternary(bool) {\n    return bool ? this : 'that';\n  }",
+        test:   "ternary(true) → Window",
+        hints: [
+            'Magic keyword',
+            'this part shoudn\'t be a string',
+            'Remove single-quotes around this'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'easy',
+        fn:     "\n  function ternary(bool) {\n    return bool ? this : 'that';\n  }",
+        answer: "\n  function ternary(bool) {\n    return bool ? 'this' : 'that';\n  }",
+        test:   "ternary(true) → 'this'",
+        hints: [
+            'this is the hint',
+            'this is the next hint',
+            'Add single-quotes around this'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'normal',
+        fn:     "\n  function ternary(bool) {\n    return bool ? 'this' ; 'that';\n  }",
+        answer: "\n  function ternary(bool) {\n    return bool ? 'this' : 'that';\n  }",
+        test:   "ternary(false) → 'that'",
+        hints: [
+            'Look: hint.',
+            'Dot over dot, not dot over comma',
+            'Wrong colon between this and that'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'normal',
+        fn:     "\n  function ternary(bool) {\n    return bool : 'this' : 'that';\n  }",
+        answer: "\n  function ternary(bool) {\n    return bool ? 'this' : 'that';\n  }",
+        test:   "ternary(true) → 'this'",
+        hints: [
+            'Question...everything',
+            'First part is a question',
+            'First colon should be a question mark'
+        ]
+    },
 ]

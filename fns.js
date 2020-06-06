@@ -1,13 +1,5 @@
-function formalName(f, l) {
-    return `${l}, ${f}`;
-}
-
 function greet(name) {
     return `Hi, ${name}`;
-}
-
-function ternary(bool) {
-    return bool ? "This" : "That";
 }
 
 function mean(list) {
@@ -74,4 +66,16 @@ function leaky(list) {
     for (i=0;i<list.length;i++) {
         console.log(window.i)
     }
+}
+
+function doesNothing() {
+    // Do nothing
+}
+
+function getInBack(list, el) {
+    list.push(el);
+}
+
+function lastOut(list) {
+    list.pop();
 }
