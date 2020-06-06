@@ -21,7 +21,7 @@ let app = new Vue({
         timeLimit: 30,
         timeRemaining: 0,
         timerID: null,
-        difficulty: 'easy',
+        difficulty: 'all',
         language: 'js',
         exercises: listOfExercises,
     },
