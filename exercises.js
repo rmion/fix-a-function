@@ -659,4 +659,184 @@ var listOfExercises = [
             'First colon should be a question mark'
         ]
     },
+    {
+        language: 'js',
+        difficulty: 'easy',
+        fn:     "\n  function makeArrayFrom(a,b,c) {\n    return [a,b,c/;\n  }",
+        answer: "\n  function makeArrayFrom(a,b,c) {\n    return [a,b,c];\n  }",
+        test:   "makeArrayFrom(1,2,3) → [1,2,3]",
+        hints: [
+            'Not now, slash',
+            'Do you c it yet?',
+            'Change slash after c to closing-square-bracket'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'normal',
+        fn:     "\n  function makeArrayFrom(a,b,c) {\n    return (a,b,c);\n  }",
+        answer: "\n  function makeArrayFrom(a,b,c) {\n    return [a,b,c];\n  }",
+        test:   "makeArrayFrom(3,2,1) → [3,2,1]",
+        hints: [
+            'Wrong container',
+            'Return one thing, not three',
+            'Change parentheses to square brackets'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'normal',
+        fn:     "\n  function newArrayFrom(a,b,c) {\n    return [a,b,c];\n  }",
+        answer: "\n  function makeArrayFrom(a,b,c) {\n    return [a,b,c];\n  }",
+        test:   "makeArrayFrom(2,2,2) → [2,2,2]",
+        hints: [
+            'Happens all the time',
+            'Naming things is hard',
+            'Function name is incorrect'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'hard',
+        fn:     "\n  function makeArrayFrom(a,b,c) {\n    return [a;b,c];\n  }",
+        answer: "\n  function makeArrayFrom(a,b,c) {\n    return [a,b,c];\n  }",
+        test:   "makeArrayFrom(1,3,5) → [1,3,5]",
+        hints: [
+            'Grammatical error',
+            'Stopping at a',
+            'Change semi-color after a to comma'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'hard',
+        fn:     "\n  function makeArrayFrom(a,b,c) {\n    return; [a,b,c];\n  }",
+        answer: "\n  function makeArrayFrom(a,b,c) {\n    return [a,b,c];\n  }",
+        test:   "makeArrayFrom(2,4,6) → [2,4,6]",
+        hints: [
+            'Cliffhanger',
+            'Two semi-colons?',
+            'Delete semi-colon after return'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'hard',
+        fn:     "\n  function greet(name) {\n    return 'Hi, ${name}!`;\n  }",
+        answer: "\n  function greet(name) {\n    return `Hi, ${name}!`;\n  }",
+        test:   "greet('John') → 'Hi, John!'",
+        hints: [
+            'Mismatch',
+            'Don\'t quote me on that',
+            'Change first quote to a backtick'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'hard',
+        fn:     "\n  function greet(name) {\n    return `Hi, $(name}!`;\n  }",
+        answer: "\n  function greet(name) {\n    return `Hi, ${name}!`;\n  }",
+        test:   "greet('Charles') → 'Hi, Charles!'",
+        hints: [
+            'Mismatch',
+            'One of them needs the spike',
+            'Change parenthesis before name to curly brace'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'normal',
+        fn:     "\n  function great(name) {\n    return `Hi, ${name}!`;\n  }",
+        answer: "\n  function greet(name) {\n    return `Hi, ${name}!`;\n  }",
+        test:   "greet('Jack') → 'Hi, Jack!'",
+        hints: [
+            'Good. Swell. Fine.',
+            'One letter off',
+            'Incorrect function name'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'easy',
+        fn:     "\n  function greet(name) {\n    return `Hi, ${name}`;\n  }",
+        answer: "\n  function greet(name) {\n    return `Hi, ${name}!`;\n  }",
+        test:   "greet('Robert') → 'Hi, Robert!'",
+        hints: [
+            'Not excited enough',
+            'I can\'t hear you!',
+            'Missing exclamation mark'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'easy',
+        fn:     "\n  function greet() {\n    return `Hi, ${name}!`;\n  }",
+        answer: "\n  function greet(name) {\n    return `Hi, ${name}!`;\n  }",
+        test:   "greet('Kate') → 'Hi, Kate!'",
+        hints: [
+            'Where\'s name coming from?',
+            'Functions need inputs',
+            'Missing parameter, name'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'easy',
+        fn:     "\n  function noteToSelf() {\n    / Some comment\n  }",
+        answer: "\n  function noteToSelf() {\n    // Some comment\n  }",
+        test:   "noteToSelf() → undefined",
+        hints: [
+            'Divide by?',
+            'This is no time for math',
+            'Comments start with two slashes, not one'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'hard',
+        fn:     "\n  function noteToSelf() {\n    \\\\ Some comment\n  }",
+        answer: "\n  function noteToSelf() {\n    // Some comment\n  }",
+        test:   "noteToSelf() → undefined",
+        hints: [
+            'Wrong way',
+            'Up and to the right',
+            'Comments start with two forward slashes, not back slashes'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'normal',
+        fn:     "\n  function noteToSelf() {\n     Some comment\n  }",
+        answer: "\n  function noteToSelf() {\n    // Some comment\n  }",
+        test:   "noteToSelf() → undefined",
+        hints: [
+            'Forgetting something?',
+            'Error: no idea what Some is',
+            'Comments start with two forward slashes'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'hard',
+        fn:     "\n  function notetoSelf() {\n    // Some comment\n  }",
+        answer: "\n  function noteToSelf() {\n    // Some comment\n  }",
+        test:   "noteToSelf() → undefined",
+        hints: [
+            'Middle child',
+            'Camel case',
+            'Function name needs capital T'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'hard',
+        fn:     "\n  function noteToSelf() {\n    */ Some comment\n  }",
+        answer: "\n  function noteToSelf() {\n    // Some comment\n  }",
+        test:   "noteToSelf() → undefined",
+        hints: [
+            'Wish upon a star',
+            'Single-line comment, not multi-line',
+            'Change asterisk to forward slash'
+        ]
+    },
 ]

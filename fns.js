@@ -1,5 +1,17 @@
-function greet(name) {
-    return `Hi, ${name}`;
+function newTail(array,item) {
+    return array.push(item);
+}
+
+function cutOffTail(array) {
+    return array.pop();
+}
+
+function cutOffHead(array) {
+    return array.unshift();
+}
+
+function newHead(array, item) {
+    return array.shift(item);
 }
 
 function mean(list) {
@@ -66,10 +78,6 @@ function leaky(list) {
     for (i=0;i<list.length;i++) {
         console.log(window.i)
     }
-}
-
-function doesNothing() {
-    // Do nothing
 }
 
 function getInBack(list, el) {
