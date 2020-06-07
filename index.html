@@ -13,7 +13,15 @@
 </head>
 <body>
     <div id="app">
-        <p v-show="isRepeatCustomer">Welcome back. <em v-show="priorSessions.length && isTimeGateLifted">Good luck on day {{ priorSessions.length + 1 }}!</em></p>
+        <p v-show="isRepeatCustomer">
+            Welcome back. 
+            <em v-if="priorSessions.length && priorSessions[priorSessions.length - 1]['Attempts'] === 5 && isTimeGateLifted">
+                Good luck on day {{ priorSessions.length + 1 }}!
+            </em>
+            <em v-else-if="priorSessions.length && priorSessions[priorSessions.length - 1]['Attempts'] < 5 && isTimeGateLifted">
+                Pick up where you left off!
+            </em>
+        </p>
         <h1>Fix a function!</h1>
         <main v-if="exercisesAttempted < exerciseCap && livesRemaining > 0 && isTimeGateLifted">
             <div>

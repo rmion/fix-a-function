@@ -43,7 +43,23 @@ let app = new Vue({
     },
     methods: {
         updateTimeGate(list) {
-            this.isTimeGateLifted = Math.floor(new Date().getTime() / (1000 * 60 * 60 * 24)) - Math.floor(new Date(list[list.length - 1].Date).getTime() / (1000 * 60 * 60 * 24)) > 0 ? true : false;
+            let lastVisit = list[list.length - 1];
+            if (lastVisit["Attempts"] < 5) {
+                this.score = lastVisit["Score"],
+                this.livesRemaining = lastVisit["Lives"],
+                this.exercisesSolved = lastVisit["Solved"],
+                this.exercisesAttempted = lastVisit["Attempts"],
+                this.timeLimit = lastVisit["Time Limit"],
+                this.difficulty = lastVisit["Difficulty"],
+                this.language = lastVisit["Language"]
+            } else {
+                this.isTimeGateLifted = (
+                      Math.floor(new Date().getTime() / (1000 * 60 * 60 * 24)) 
+                    - Math.floor(new Date(lastVisit["Date"]).getTime() / (1000 * 60 * 60 * 24)) 
+                    > 0 ? true : false
+                );
+            }
+            return this.isTimeGateLifted && lastVisit["Attempts"] === 5 ? this.recordTodaysSession() : null;
         },
         updateDatabases() {
             this.updateTodaysSession();
@@ -56,11 +72,6 @@ let app = new Vue({
                 this.airTableId = record.id;
                 this.priorSessions = record.sessions;
                 this.updateTimeGate(record.sessions);
-                if (this.isTimeGateLifted) {
-                    this.recordTodaysSession();
-                } else {
-                    return;
-                }
             } else {
                 this.createRecordInAirTable();
             }    
@@ -79,7 +90,7 @@ let app = new Vue({
                         "Timer": this.timer,
                         "Time Limit": this.timeLimit,
                         "Difficulty": this.difficulty,
-                        "Language": this.language
+                        "Language": this.language,
                     }
                 ]
             }))
@@ -99,7 +110,7 @@ let app = new Vue({
                 "Timer": this.timer,
                 "Time Limit": this.timeLimit,
                 "Difficulty": this.difficulty,
-                "Language": this.language
+                "Language": this.language,
             })
             localStorage.setItem('fixafunction', JSON.stringify(record));
         },
@@ -114,7 +125,7 @@ let app = new Vue({
                 "Timer": this.timer,
                 "Time Limit": this.timeLimit,
                 "Difficulty": this.difficulty,
-                "Language": this.language
+                "Language": this.language,
             };
             localStorage.setItem('fixafunction', JSON.stringify(record));
         },
@@ -177,6 +188,7 @@ let app = new Vue({
             }
             this.updateDatabases();
             this.hasAttemptedToSolve = false;
+            this.priorSessions = JSON.parse(localStorage.getItem('fixafunction')).sessions;
         },
         giveUp() {
             this.didGiveUp = true;
