@@ -1,11 +1,12 @@
 let app = new Vue({
     el: "#app",
     data: {
+        exercises: listOfExercises,
         airTableId: null,
-        email: '',
-        submitLabel: 'Email Robert for more!',
+        isRepeatCustomer: false,
+        priorSessions: [],
         isRecordingSubmission: false,
-        awaitingAnotherTry: false,
+        isAwaitingAnotherTry: false,
         isWrongAnswer: false,
         isSolved: false,
         didGiveUp: false,
@@ -18,13 +19,14 @@ let app = new Vue({
         exerciseCap: 5,
         exercisesSolved: 0,
         exercisesAttempted: 0,
-        timer: 'Off',
         timeLimit: 30,
         timeRemaining: 0,
-        timerID: null,
+        timerId: null,
+        timer: 'Off',
         difficulty: 'all',
         language: 'js',
-        exercises: listOfExercises,
+        email: '',
+        submitLabel: 'Email Robert for more!',
     },
     computed: {
         filteredExercises() {
@@ -34,11 +36,79 @@ let app = new Vue({
         }
     },
     mounted() {
-        this.createRecordInAirTable();
+        this.manageVisitorRecords();
         this.counter = this.getIndexOfRandomExercise();
         this.updateChallengeFn();
     },
     methods: {
+        updateDatabases() {
+            this.updateTodaysSession();
+            this.updateAirTableRecord();
+        },
+        manageVisitorRecords() {
+            if (this.visitorHasCookie()) {
+                this.isRepeatCustomer = true;
+                let record = JSON.parse(localStorage.getItem('fixafunction'));
+                this.airTableId = record.id;
+                this.priorSessions = record.sessions;
+                this.recordTodaysSession();
+            } else {
+                this.createRecordInAirTable();
+            }    
+        },
+        createVisitorCookie(id) {
+            this.airTableId = id;
+            localStorage.setItem('fixafunction', JSON.stringify({
+                "id": id,
+                "sessions": [
+                    {
+                        "Date": new Date().toISOString(),
+                        "Score": this.score,
+                        "Lives": this.livesRemaining,
+                        "Solved": this.exercisesSolved,
+                        "Attempts": this.exercisesAttempted,
+                        "Timer": this.timer,
+                        "Time Limit": this.timeLimit,
+                        "Difficulty": this.difficulty,
+                        "Language": this.language
+                    }
+                ]
+            }))
+        },
+        visitorHasCookie() {
+            let record = JSON.parse(localStorage.getItem('fixafunction'));
+            return record ? true : false;
+        },
+        recordTodaysSession() {
+            let record = JSON.parse(localStorage.getItem('fixafunction'));
+            record.sessions.push({
+                "Date": new Date().toISOString(),
+                "Score": this.score,
+                "Lives": this.livesRemaining,
+                "Solved": this.exercisesSolved,
+                "Attempts": this.exercisesAttempted,
+                "Timer": this.timer,
+                "Time Limit": this.timeLimit,
+                "Difficulty": this.difficulty,
+                "Language": this.language
+            })
+            localStorage.setItem('fixafunction', JSON.stringify(record));
+        },
+        updateTodaysSession() {
+            let record = JSON.parse(localStorage.getItem('fixafunction'));
+            record.sessions[record.sessions.length - 1] = {
+                "Date": new Date().toISOString(),
+                "Score": this.score,
+                "Lives": this.livesRemaining,
+                "Solved": this.exercisesSolved,
+                "Attempts": this.exercisesAttempted,
+                "Timer": this.timer,
+                "Time Limit": this.timeLimit,
+                "Difficulty": this.difficulty,
+                "Language": this.language
+            };
+            localStorage.setItem('fixafunction', JSON.stringify(record));
+        },
         updateChallengeFn() {
             document.getElementById('fn').textContent = this.filteredExercises[this.counter].fn;
         },
@@ -57,7 +127,7 @@ let app = new Vue({
         },
         markIncorrectAnswer() {
             this.isWrongAnswer = true;
-            this.awaitingAnotherTry = true;
+            this.isAwaitingAnotherTry = true;
             this.subtractFromLives(1);
             this.updateChallengeFn();
         },
@@ -77,7 +147,7 @@ let app = new Vue({
             this.livesRemaining -= num;
         },
         enableSolveButton() {
-            this.awaitingAnotherTry = false;
+            this.isAwaitingAnotherTry = false;
             if (!this.hasAttemptedToSolve) {
                 this.hasAttemptedToSolve = true;
             }
@@ -87,7 +157,7 @@ let app = new Vue({
             this.isWrongAnswer = false;
             this.didGiveUp = false;
             this.needsHint = false;
-            this.awaitingAnotherTry = false;
+            this.isAwaitingAnotherTry = false;
             this.nextHint = 0;
             this.exercisesAttempted += 1;
             this.removePreviousExercise();
@@ -96,7 +166,7 @@ let app = new Vue({
             if (this.timer === "On") {
                 this.resetTimer()
             }
-            this.updateAirTableRecord();
+            this.updateDatabases();
             this.hasAttemptedToSolve = false;
         },
         giveUp() {
@@ -105,12 +175,12 @@ let app = new Vue({
             this.subtractFromLives(3);
         },
         timeIsUp() {
-            clearInterval(this.timerID);
+            clearInterval(this.timerId);
             this.giveUp();
         },
         resetTimer() {
             this.timeRemaining = this.timeLimit;
-            this.timerID = setInterval(this.decrementTimer, 1000);
+            this.timerId = setInterval(this.decrementTimer, 1000);
         },
         decrementTimer() {
             if (this.timeRemaining < 1) {
@@ -145,7 +215,7 @@ let app = new Vue({
             })
             .then(response => response.json())
             .then(data => {
-                this.airTableId = data.id;
+                this.createVisitorCookie(data.id);
             })
             .catch(err => console.error(err))
         },
