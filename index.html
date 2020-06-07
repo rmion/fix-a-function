@@ -13,9 +13,9 @@
 </head>
 <body>
     <div id="app">
-        <p v-show="isRepeatCustomer">Welcome back. <em v-show="priorSessions.length">Good luck on day {{ priorSessions.length + 1 }}!</em></p>
+        <p v-show="isRepeatCustomer">Welcome back. <em v-show="priorSessions.length && isTimeGateLifted">Good luck on day {{ priorSessions.length + 1 }}!</em></p>
         <h1>Fix a function!</h1>
-        <main v-if="exercisesAttempted < exerciseCap && livesRemaining > 0">
+        <main v-if="exercisesAttempted < exerciseCap && livesRemaining > 0 && isTimeGateLifted">
             <div>
                 <section>
                     <button 
@@ -185,7 +185,8 @@
             </div>
         </main>
         <aside v-else>
-            <h2 class="is-centered">Want more? Ask Robert!</h2>
+            <h2 class="is-centered">Want more? Ask Robert.</h2>
+            <p v-show="!isTimeGateLifted">Play again tomorrow!</p>
             <img src="https://rmion.com/images/ux-designer-robert-mion.jpg" 
                 width="200" height="200" alt="Creator, Robert Mion" />
             <form action="" @submit.prevent="recordEmailAfterGameOver">

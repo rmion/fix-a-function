@@ -4,6 +4,7 @@ let app = new Vue({
         exercises: listOfExercises,
         airTableId: null,
         isRepeatCustomer: false,
+        isTimeGateLifted: true,
         priorSessions: [],
         isRecordingSubmission: false,
         isAwaitingAnotherTry: false,
@@ -41,6 +42,9 @@ let app = new Vue({
         this.updateChallengeFn();
     },
     methods: {
+        updateTimeGate(list) {
+            this.isTimeGateLifted = Math.floor(new Date().getTime() / (1000 * 60 * 60 * 24)) - Math.floor(new Date(list[list.length - 1].Date).getTime() / (1000 * 60 * 60 * 24)) > 0 ? true : false;
+        },
         updateDatabases() {
             this.updateTodaysSession();
             this.updateAirTableRecord();
@@ -51,7 +55,12 @@ let app = new Vue({
                 let record = JSON.parse(localStorage.getItem('fixafunction'));
                 this.airTableId = record.id;
                 this.priorSessions = record.sessions;
-                this.recordTodaysSession();
+                this.updateTimeGate(record.sessions);
+                if (this.isTimeGateLifted) {
+                    this.recordTodaysSession();
+                } else {
+                    return;
+                }
             } else {
                 this.createRecordInAirTable();
             }    
