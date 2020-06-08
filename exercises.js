@@ -38,13 +38,13 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n   double(n) {\n    return n + n;\n  }",
+        fn:     "\n  define double(n) {\n    return n + n;\n  }",
         answer: "\n  function double(n) {\n    return n + n;\n  }",
         test:   "double(4) → 8",
         hints: [
             'What is double?',
             'double isn\'t a function',
-            'Missing function keyword'
+            'Replace define with function keyword'
         ],
     },
     {
@@ -447,7 +447,7 @@ var listOfExercises = [
         language: 'js',
         difficulty: 'normal',
         fn:     "\n  function equals(num) {\n    return num == 'num';\n  }",
-        answer: "\n  function equals(num) {\n    return num === num;\n  }",
+        answer: "\n  function equals(num) {\n    return num == num;\n  }",
         test:   "equals(5) → true",
         hints: [
             'Both num should be naked',
@@ -520,7 +520,7 @@ var listOfExercises = [
         difficulty: 'hard',
         fn:     "\n  function dataType(data) {\n    return typeof data();\n  }",
         answer: "\n  function dataType(data) {\n    return typeof new data();\n  }",
-        test:   "dataType(Date) → 'string'",
+        test:   "dataType(Date) → 'object'",
         hints: [
             'Something borrowed, blue, and...',
             'What\'s new?',

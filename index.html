@@ -14,13 +14,7 @@
 <body>
     <div id="app">
         <p v-show="isRepeatCustomer">
-            Welcome back. 
-            <em v-if="priorSessions.length && priorSessions[priorSessions.length - 1]['Attempts'] === 5 && isTimeGateLifted">
-                Good luck on day {{ priorSessions.length + 1 }}!
-            </em>
-            <em v-else-if="priorSessions.length && priorSessions[priorSessions.length - 1]['Attempts'] < 5 && isTimeGateLifted">
-                Pick up where you left off!
-            </em>
+            Welcome back!
         </p>
         <h1>Fix a function!</h1>
         <main v-if="exercisesAttempted < exerciseCap && livesRemaining > 0 && isTimeGateLifted">
@@ -54,20 +48,16 @@
                         <dd>{{ didGiveUp ? 0 : filteredExercises[counter].hints.length - nextHint }}/3</dd>
                     </div>
                     <div>
-                        <dt>Score</dt>
-                        <dd>
-                            <a class="button" :href=`https://twitter.com/intent/tweet?hashtags=javascript&ref_src=twsrc%5Etfw&text=I%20scored%20${score}%20playing%20%22Fix%20a%20function%22!%20Can%20you%20beat%20that%3F%20Play%20free%20to%20practice%20your%20JavaScript%20skills!&tw_p=tweetbutton&url=http%3A%2F%2Ffixafunction.com&via=putmionyourteam`>
-                                {{score}} <i class="fab fa-twitter fa-sm"></i>
-                            </a>
-                        </dd>
-                    </div>
-                    <div>
                         <dt>Lives</dt>
                         <dd>{{livesRemaining}}</dd>
                     </div>
                     <div>
                         <dt>Round</dt>
-                        <dd>{{exercisesAttempted + 1}}/{{exerciseCap}}</dd>
+                        <dd>{{exercisesAttempted + 1}}/{{exerciseCap + 1}}</dd>
+                    </div>
+                    <div v-if="isRepeatCustomer">
+                        <dt>Day</dt>
+                        <dd>{{ priorSessions.length }}</dd>
                     </div>
                     <div>
                         <dt>Time</dt>
@@ -193,6 +183,11 @@
             </div>
         </main>
         <aside v-else>
+            <h1>Your score was: 
+                <a class="button" :href=`https://twitter.com/intent/tweet?hashtags=javascript&ref_src=twsrc%5Etfw&text=I%20scored%20${score}%20playing%20%22Fix%20a%20function%22!%20Can%20you%20beat%20that%3F%20Play%20free%20to%20practice%20your%20JavaScript%20skills!&tw_p=tweetbutton&url=http%3A%2F%2Ffixafunction.com&via=putmionyourteam`>
+                    {{score}} <i class="fab fa-twitter fa-sm"></i>
+                </a>
+            </h1>
             <h2 class="is-centered">Want more? Ask Robert.</h2>
             <p v-show="!isTimeGateLifted">Play again tomorrow!</p>
             <img src="https://rmion.com/images/ux-designer-robert-mion.jpg" 

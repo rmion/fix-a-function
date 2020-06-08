@@ -44,7 +44,7 @@ let app = new Vue({
     methods: {
         updateTimeGate(list) {
             let lastVisit = list[list.length - 1];
-            if (lastVisit["Attempts"] < 5) {
+            if (lastVisit["Attempts"] < 5 && lastVisit["Lives"] > 0) {
                 this.score = lastVisit["Score"],
                 this.livesRemaining = lastVisit["Lives"],
                 this.exercisesSolved = lastVisit["Solved"],
@@ -175,11 +175,10 @@ let app = new Vue({
         prepareNextExercise() {
             this.isSolved = false;
             this.isWrongAnswer = false;
-            this.didGiveUp = false;
+            this.didGiveUp ? this.didGiveUp = false : this.exercisesAttempted += 1;
             this.needsHint = false;
             this.isAwaitingAnotherTry = false;
             this.nextHint = 0;
-            this.exercisesAttempted += 1;
             this.removePreviousExercise();
             this.counter = this.getIndexOfRandomExercise();
             this.updateChallengeFn();
@@ -193,6 +192,7 @@ let app = new Vue({
         giveUp() {
             this.didGiveUp = true;
             this.needsHint = false;
+            this.exercisesAttempted += 1;
             this.subtractFromLives(3);
         },
         timeIsUp() {
@@ -307,6 +307,12 @@ let app = new Vue({
         },
         difficulty(newVal, oldVal) {
             this.updateChallengeFn()
+        },
+        livesRemaining(newVal, oldVal) {
+            this.updateTodaysSession();
+        },
+        exercisesSolved(newVal, oldVal) {
+            this.updateTodaysSession();
         }
     }
 })
