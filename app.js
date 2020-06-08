@@ -34,6 +34,9 @@ let app = new Vue({
             return  this.difficulty === 'all' ? 
                     this.exercises : 
                     this.exercises.filter(exercise => exercise.difficulty == this.difficulty);
+        },
+        accumulatedScore() {
+            return this.priorSessions.map(i => i["Score"]).reduce((i, acc) => acc + i["Score"]);
         }
     },
     mounted() {
@@ -222,6 +225,7 @@ let app = new Vue({
                 },
                 body: JSON.stringify({
                     "fields": {
+                        "Days": 1,
                         "Date": new Date().toISOString(),
                         "Score": this.score,
                         "Lives": this.livesRemaining,
@@ -251,8 +255,9 @@ let app = new Vue({
                 },
                 body: JSON.stringify({
                     "fields": {
+                        "Days": this.priorSessions.length,
                         "Email": this.email,
-                        "Score": this.score,
+                        "Score": this.accumulatedScore,
                         "Lives": this.livesRemaining,
                         "Solved": this.exercisesSolved,
                         "Attempts": this.exercisesAttempted,
@@ -278,7 +283,8 @@ let app = new Vue({
                 },
                 body: JSON.stringify({
                     "fields": {
-                        "Score": this.score,
+                        "Days": this.priorSessions.length,
+                        "Score": this.accumulatedScore,
                         "Lives": this.livesRemaining,
                         "Solved": this.exercisesSolved,
                         "Attempts": this.exercisesAttempted,

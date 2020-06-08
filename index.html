@@ -183,15 +183,12 @@
             </div>
         </main>
         <aside v-else>
-            <h1>Your score was: 
-                <a class="button" :href=`https://twitter.com/intent/tweet?hashtags=javascript&ref_src=twsrc%5Etfw&text=I%20scored%20${score}%20playing%20%22Fix%20a%20function%22!%20Can%20you%20beat%20that%3F%20Play%20free%20to%20practice%20your%20JavaScript%20skills!&tw_p=tweetbutton&url=http%3A%2F%2Ffixafunction.com&via=putmionyourteam`>
-                    {{score}} <i class="fab fa-twitter fa-sm"></i>
+            <h2>Your {{priorSessions.length}}-day score: 
+                <a class="button" :href=`https://twitter.com/intent/tweet?hashtags=javascript&ref_src=twsrc%5Etfw&text=My%20${priorSessions.length}-day%20score%20is%20${accumulatedScore}%20playing%20%22Fix%20a%20function%22!%20Can%20you%20beat%20that%3F%20Play%20free%20to%20practice%20your%20JavaScript%20skills!&tw_p=tweetbutton&url=http%3A%2F%2Ffixafunction.com&via=putmionyourteam`>
+                    {{accumulatedScore}} <i class="fab fa-twitter fa-sm"></i>
                 </a>
-            </h1>
-            <h2 class="is-centered">Want more? Ask Robert.</h2>
+            </h2>
             <p v-show="!isTimeGateLifted">Play again tomorrow!</p>
-            <img src="https://rmion.com/images/ux-designer-robert-mion.jpg" 
-                width="200" height="200" alt="Creator, Robert Mion" />
             <form action="" @submit.prevent="recordEmailAfterGameOver">
                 <fieldset>
                     <legend>
