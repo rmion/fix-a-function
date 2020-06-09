@@ -152,6 +152,8 @@ let app = new Vue({
         markIncorrectAnswer() {
             this.isWrongAnswer = true;
             this.isAwaitingAnotherTry = true;
+            this.needsHint = true;
+            this.nextHint += 1;
             this.subtractFromLives(1);
             this.updateChallengeFn();
         },

@@ -76,10 +76,8 @@
                             {{ isSolved ? "Great job!" : "Edit just one thing to make..." }}<br />
                             {{filteredExercises[counter].test}}
                         </p>
-                        <pre 
-                            contenteditable="true" 
-                            :class="{ solved: isSolved, incorrect: (!isSolved && isWrongAnswer) }">
-                            <code id="fn" @click="enableSolveButton"></code>
+                        <pre :class="{ solved: isSolved, incorrect: (!isSolved && isWrongAnswer) }">
+                            <code contenteditable="true" id="fn" @click="enableSolveButton"></code>
                         </pre>
                         <p>{{ filteredExercises[counter].difficulty.toUpperCase() }}</p>
                     </section>
@@ -107,11 +105,11 @@
                 </p>    
             </div>
             <div>
-                <h2>Game settings</h2>
+                <h2><span v-if="hasAttemptedToSolve">Locked:</span> Game settings</h2>
                     <form action="">
                         <fieldset>
                             <legend>
-                                Difficulty
+                                <span v-if="hasAttemptedToSolve">Locked:</span> Difficulty
                             </legend>
                             <p>
                                 <input type="radio" id="easy" name="difficulty" value="easy" v-model="difficulty" :disabled="hasAttemptedToSolve" />
@@ -140,7 +138,7 @@
                         </fieldset>
                         <fieldset>
                             <legend>
-                                Timer
+                                <span v-if="hasAttemptedToSolve">Locked:</span> Timer
                             </legend>
                             <p>
                                 <input type="radio" id="off" name="timer" value="Off" v-model="timer" :disabled="hasAttemptedToSolve" />
@@ -157,7 +155,7 @@
                         </fieldset>
                         <fieldset>
                             <legend>
-                                Time limit (in seconds)
+                                <span v-if="hasAttemptedToSolve">Locked:</span> Time limit (in seconds)
                             </legend>
                             <p>
                                 <input type="radio" id="thirty" name="limit" value="30" v-model="timeLimit" :disabled="hasAttemptedToSolve" />
