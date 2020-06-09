@@ -138,6 +138,7 @@ let app = new Vue({
         getHint() {
             this.needsHint = true; 
             this.nextHint += 1;
+            this.updateChallengeFn();
         },
         answerMatchesSolution() {
             return document.getElementById('fn').textContent.trim().replace(/\s/g,'') === this.filteredExercises[this.counter].answer.trim().replace(/\s/g,'');
