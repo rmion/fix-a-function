@@ -899,4 +899,64 @@ var listOfExercises = [
             'Add a pair of parentheses after return'
         ]
     },
+    {
+        language: 'js',
+        difficulty: 'normal',
+        fn:     "\n  function IdPlease(id) {\n    return document.getElementByID(id);\n  }",
+        answer: "\n  function IdPlease(id) {\n    return document.getElementById(id);\n  }",
+        test:   "IdPlease('neo') → HTMLDomNode",
+        hints: [
+            'Big D little d',
+            'First letter capital, second lowercase',
+            'd in Id should be lowercase'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'normal',
+        fn:     "\n  function IdPlease(id) {\n    return document.getElementsById(id);\n  }",
+        answer: "\n  function IdPlease(id) {\n    return document.getElementById(id);\n  }",
+        test:   "IdPlease('cher') → HTMLDomNode",
+        hints: [
+            'More than we were expecting',
+            'We only want one',
+            'Element should be singular'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'hard',
+        fn:     "\n  function IdPlease(id) {\n    return document.getElementById('id');\n  }",
+        answer: "\n  function IdPlease(id) {\n    return document.getElementById(id);\n  }",
+        test:   "IdPlease('prince') → HTMLDomNode",
+        hints: [
+            'Stringing you along',
+            'Literally...id',
+            'Remove single quotes around id'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'hard',
+        fn:     "\n  function IdPlease(id) {\n    return document.getElementFromId(id);\n  }",
+        answer: "\n  function IdPlease(id) {\n    return document.getElementById(id);\n  }",
+        test:   "IdPlease('bono') → HTMLDomNode",
+        hints: [
+            'Opposite of Hello',
+            'Four words. Third word. Two letters.',
+            'Change FromId to ById'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'easy',
+        fn:     "\n  function IdPlease(id) {\n    return window.getElementById(id);\n  }",
+        answer: "\n  function IdPlease(id) {\n    return document.getElementById(id);\n  }",
+        test:   "IdPlease('sting') → HTMLDomNode",
+        hints: [
+            'Look deeper into the window',
+            'Synonymous with page',
+            'Change window to document'
+        ]
+    },
 ]

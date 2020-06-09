@@ -38,10 +38,6 @@ function colorText(DOMNode, color) {
     DOMNode.setAttribute('color', color);
 }
 
-function IdPlease(id) {
-    return document.getElementById(id);
-}
-
 function eventPlanner(DOMNode, e, fn) {
     DOMNode.addEventListener(e, fn);
 }
