@@ -84,7 +84,12 @@ let app = new Vue({
         manageVisitorRecords() {
             if (this.visitorHasCookie()) {
                 let record = JSON.parse(localStorage.getItem('fixafunction'));
-                fetch(`https://api.airtable.com/v0/appwFsMeOIf3lyiIw/Fix%20A%20Function/${record.id}`)
+                fetch(`https://api.airtable.com/v0/appwFsMeOIf3lyiIw/Fix%20A%20Function/${record.id}`, {
+                    method: "GET",
+                    headers: { 
+                        Authorization: "Bearer "+ 'keyP1MqDtZjN0eBc8',
+                        'Content-Type': 'application/json'
+                    }})
                     .then(response => response.json())
                     .then(data => {
                         this.isRepeatCustomer = true;
