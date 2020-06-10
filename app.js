@@ -92,15 +92,17 @@ let app = new Vue({
                     }})
                     .then(response => response.json())
                     .then(data => {
-                        this.isRepeatCustomer = true;
-                        this.airTableId = record.id;
-                        this.priorSessions = record.sessions;
-                        this.updateTimeGate(record.sessions);
+                        if (data.hasOwnProperty('error') && data.error.message === "Record not found") {
+                            this.createRecordInAirTable();
+                        } else {
+                            this.isRepeatCustomer = true;
+                            this.airTableId = record.id;
+                            this.priorSessions = record.sessions;
+                            this.updateTimeGate(record.sessions);    
+                        }
                     })
                     .catch(err => {
-                        if (err.message === "Record not found") {
-                            this.createRecordInAirTable();
-                        }
+                        console.log(err)
                     })
             } else {
                 this.createRecordInAirTable();
@@ -238,6 +240,7 @@ let app = new Vue({
             this.needsHint = false;
             this.exercisesAttempted += 1;
             this.subtractFromLives(3);
+            this.updateDatabases();
         },
         gameOver() {
             clearInterval(this.stopwatchId);
@@ -281,8 +284,9 @@ let app = new Vue({
                         "Time Limit": this.timeLimit,
                         "Difficulty": this.difficulty,
                         "Language": this.language,
-                        "Time Elapsed": this.timeElapsed
-                }
+                        "Time Elapsed": this.timeElapsed,
+                        "Subscribed": "No"
+                    }
                 })
             })
             .then(response => response.json())
@@ -365,6 +369,7 @@ let app = new Vue({
             }
         },
         difficulty(newVal, oldVal) {
+            this.counter = this.getIndexOfRandomExercise();
             this.updateChallengeFn()
         },
         livesRemaining(newVal, oldVal) {
