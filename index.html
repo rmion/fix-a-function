@@ -73,7 +73,7 @@
                 <div>
                     <section class="exercise">
                         <p>
-                            {{ isSolved ? "Great job!" : "Edit just one thing to make..." }}<br />
+                            {{ isSolved ? "Great job!" : "Change one thing so that..." }}<br />
                             {{filteredExercises[counter].test}}
                         </p>
                         <pre :class="{ solved: isSolved, incorrect: (!isSolved && isWrongAnswer) }">

@@ -36,7 +36,7 @@ let app = new Vue({
                     this.exercises.filter(exercise => exercise.difficulty == this.difficulty);
         },
         accumulatedScore() {
-            return this.priorSessions.length ? this.priorSessions.map(i => i["Score"]).reduce((i, acc) => acc + i["Score"]) : this.score;
+            return this.priorSessions.length ? this.priorSessions.map(i => i["Score"]).reduce((i, acc) => acc + i) : this.score;
         }
     },
     mounted() {
