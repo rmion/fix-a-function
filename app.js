@@ -4,6 +4,7 @@ let app = new Vue({
         exercises: listOfExercises,
         airTableId: null,
         isRepeatCustomer: false,
+        hasSubscribed: false,
         isTimeGateLifted: true,
         priorSessions: [],
         isRecordingSubmission: false,
@@ -20,6 +21,8 @@ let app = new Vue({
         exerciseCap: 5,
         exercisesSolved: 0,
         exercisesAttempted: 0,
+        timeElapsed: 0,
+        stopwatchId: null,
         timeLimit: 30,
         timeRemaining: 0,
         timerId: null,
@@ -27,7 +30,7 @@ let app = new Vue({
         difficulty: 'all',
         language: 'js',
         email: '',
-        submitLabel: 'Email Robert for more!',
+        submitLabel: 'Get daily reminders!',
     },
     computed: {
         filteredExercises() {
@@ -37,14 +40,23 @@ let app = new Vue({
         },
         accumulatedScore() {
             return this.priorSessions.length ? this.priorSessions.map(i => i["Score"]).reduce((i, acc) => acc + i) : this.score;
+        },
+        formattedTimeElapsed() {
+            let minutes = Math.floor(this.timeElapsed / 60) > 0 ? Math.floor(this.timeElapsed / 60) : "";
+            let seconds = this.timeElapsed % 60 > 9 ? this.timeElapsed % 60 : "0" + this.timeElapsed % 60;
+            return minutes + ":" + seconds;
         }
     },
     mounted() {
+        this.startSessionStopwatch();
         this.manageVisitorRecords();
         this.counter = this.getIndexOfRandomExercise();
         this.updateChallengeFn();
     },
     methods: {
+        startSessionStopwatch() {
+            this.stopwatchId = setInterval((() => this.timeElapsed += 1), 1000);
+        },
         updateTimeGate(list) {
             let lastVisit = list[list.length - 1];
             if (lastVisit["Attempts"] < 5 && lastVisit["Lives"] > 0) {
@@ -54,7 +66,8 @@ let app = new Vue({
                 this.exercisesAttempted = lastVisit["Attempts"],
                 this.timeLimit = lastVisit["Time Limit"],
                 this.difficulty = lastVisit["Difficulty"],
-                this.language = lastVisit["Language"]
+                this.language = lastVisit["Language"],
+                this.timeElapsed = lastVisit["Time Elapsed"]
             } else {
                 this.isTimeGateLifted = (
                       Math.floor(new Date().getTime() / (1000 * 60 * 60 * 24)) 
@@ -94,6 +107,7 @@ let app = new Vue({
                         "Time Limit": this.timeLimit,
                         "Difficulty": this.difficulty,
                         "Language": this.language,
+                        "Time Elapsed": this.timeElapsed
                     }
                 ]
             }))
@@ -114,6 +128,7 @@ let app = new Vue({
                 "Time Limit": this.timeLimit,
                 "Difficulty": this.difficulty,
                 "Language": this.language,
+                "Time Elapsed": this.timeElapsed
             })
             localStorage.setItem('fixafunction', JSON.stringify(record));
         },
@@ -129,6 +144,7 @@ let app = new Vue({
                 "Time Limit": this.timeLimit,
                 "Difficulty": this.difficulty,
                 "Language": this.language,
+                "Time Elapsed": this.timeElapsed
             };
             localStorage.setItem('fixafunction', JSON.stringify(record));
         },
@@ -151,11 +167,19 @@ let app = new Vue({
         },
         markIncorrectAnswer() {
             this.isWrongAnswer = true;
-            this.isAwaitingAnotherTry = true;
-            this.needsHint = true;
-            this.nextHint += 1;
-            this.subtractFromLives(1);
             this.updateChallengeFn();
+            if (this.nextHint == this.filteredExercises[this.counter].hints.length) {
+                this.needsHint = false;
+                this.didGiveUp = true;
+                this.needsHint = false;
+                this.exercisesAttempted += 1;
+                this.isAwaitingAnotherTry = false;
+                this.subtractFromLives(1);
+            } else {
+                this.needsHint = true;
+                this.nextHint += 1;
+                this.isAwaitingAnotherTry = true; 
+            }
         },
         checkAttemptedFix() {
             this.answerMatchesSolution() ? this.markCorrectAnswer() : this.markIncorrectAnswer();
@@ -201,6 +225,9 @@ let app = new Vue({
             this.exercisesAttempted += 1;
             this.subtractFromLives(3);
         },
+        gameOver() {
+            clearInterval(this.stopwatchId);
+        },
         timeIsUp() {
             clearInterval(this.timerId);
             this.giveUp();
@@ -218,8 +245,10 @@ let app = new Vue({
         },
         endGame() {
             this.livesRemaining = 0;
+            this.gameOver();
         },
         createRecordInAirTable() {
+            this.isRecordingSubmission = true;
             fetch('https://api.airtable.com/v0/appwFsMeOIf3lyiIw/Fix%20A%20Function', {
                 method: "POST",
                 headers: { 
@@ -237,18 +266,20 @@ let app = new Vue({
                         "Timer": this.timer,
                         "Time Limit": this.timeLimit,
                         "Difficulty": this.difficulty,
-                        "Language": this.language
+                        "Language": this.language,
+                        "Time Elapsed": this.timeElapsed
                 }
                 })
             })
             .then(response => response.json())
             .then(data => {
                 this.createVisitorCookie(data.id);
+                this.isRecordingSubmission = false;
             })
             .catch(err => console.error(err))
         },
         recordEmailAfterGameOver() {
-            this.submitLabel = "Sending...";
+            this.submitLabel = "Subscribing...";
             this.isRecordingSubmission = true;
             fetch(`https://api.airtable.com/v0/appwFsMeOIf3lyiIw/Fix%20A%20Function/${this.airTableId}`, {
                 method: "PATCH",
@@ -267,17 +298,21 @@ let app = new Vue({
                         "Timer": this.timer,
                         "Time Limit": this.timeLimit,
                         "Difficulty": this.difficulty,
-                        "Language": this.language
+                        "Language": this.language,
+                        "Time Elapsed": this.timeElapsed,
+                        "Subscribed": "Yes"
                     }
                 })
             })
             .then(response => response.json())
             .then(data => {
-                this.submitLabel = "Success!"
+                this.submitLabel = "You're all set!"
+                this.isRecordingSubmission = false;
             })
             .catch(err => console.error(err))        
         },
         updateAirTableRecord() {
+            this.isRecordingSubmission = true;
             fetch(`https://api.airtable.com/v0/appwFsMeOIf3lyiIw/Fix%20A%20Function/${this.airTableId}`, {
                 method: "PATCH",
                 headers: { 
@@ -294,13 +329,14 @@ let app = new Vue({
                         "Timer": this.timer,
                         "Time Limit": this.timeLimit,
                         "Difficulty": this.difficulty,
-                        "Language": this.language
+                        "Language": this.language,
+                        "Time Elapsed": this.timeElapsed
                     }
                 })
             })
             .then(response => response.json())
             .then(data => {
-                console.log("AirTable updated!");
+                this.isRecordingSubmission = false;
             })
             .catch(err => console.error(err))                
         }

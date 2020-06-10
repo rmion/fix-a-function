@@ -67,13 +67,19 @@
                 </dl>    
             </div>
             <div>
+                <p v-show="exercisesAttempted > 1 && exercisesSolved < 2 && (difficulty == 'hard' || difficulty == 'all')">
+                    Consider lowering the difficulty
+                </p>
+                <p v-if="!needsHint && !isSolved && !didGiveUp && !hasAttemptedToSolve">
+                    Change one thing <em>so that...</em>
+                </p>
+                <p v-if="isSolved">Great job!</p>
                 <p v-show="needsHint && !isSolved">
                     Hint {{nextHint}} of {{filteredExercises[counter].hints.length}}: {{filteredExercises[counter].hints[nextHint - 1]}}
                 </p>
                 <div>
                     <section class="exercise">
                         <p>
-                            {{ isSolved ? "Great job!" : "Change one thing so that..." }}<br />
                             {{filteredExercises[counter].test}}
                         </p>
                         <pre :class="{ solved: isSolved, incorrect: (!isSolved && isWrongAnswer) }">
@@ -100,9 +106,13 @@
                         class="primary"
                         v-show="isSolved || didGiveUp" 
                         @click="prepareNextExercise">
-                        Play again?
+                        Play again!
                     </button>
-                </p>    
+                </p>
+                <p id="status-bar">
+                    <small>Today's play time ({{ formattedTimeElapsed }})</small>
+                    <small>{{ isRecordingSubmission ? "Saving..." : "Progress saved!" }}</small>
+                </p>
             </div>
             <div>
                 <h2><span v-if="hasAttemptedToSolve">Locked:</span> Game settings</h2>
@@ -187,7 +197,7 @@
                 </a>
             </h2>
             <p v-show="!isTimeGateLifted">Play again tomorrow!</p>
-            <form action="" @submit.prevent="recordEmailAfterGameOver" v-show="!isRepeatCustomer">
+            <form action="" @submit.prevent="recordEmailAfterGameOver" v-show="!isRepeatCustomer || !hasSubscribed">
                 <fieldset>
                     <legend>
                         Get daily reminders

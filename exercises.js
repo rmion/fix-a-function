@@ -362,8 +362,8 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function each(list) {\n    return list.forEach(i > list[i]);\n  }",
-        answer: "\n  function each(list) {\n    return list.forEach(i => list[i]);\n  }",
+        fn:     "\n  function each(list) {\n    return list.forEach(i > i);\n  }",
+        answer: "\n  function each(list) {\n    return list.forEach(i => i);\n  }",
         test:   "each(3,2,1) → 3 2 1",
         hints: [
             'Where\'s the arrow?',
@@ -374,8 +374,8 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function each(list) {\n    return list.for Each(i => list[i]);\n  }",
-        answer: "\n  function each(list) {\n    return list.forEach(i => list[i]);\n  }",
+        fn:     "\n  function each(list) {\n    return list.for Each(i => i);\n  }",
+        answer: "\n  function each(list) {\n    return list.forEach(i => i);\n  }",
         test:   "each(1,2,3) → 1 2 3",
         hints: [
             'The final frontier',
@@ -386,8 +386,8 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function each(list) {\n    return list.foreach(i => list[i]);\n  }",
-        answer: "\n  function each(list) {\n    return list.forEach(i => list[i]);\n  }",
+        fn:     "\n  function each(list) {\n    return list.foreach(i => i);\n  }",
+        answer: "\n  function each(list) {\n    return list.forEach(i => i);\n  }",
         test:   "each(2,4,6) → 2 4 6",
         hints: [
             'Camel case',
@@ -398,8 +398,8 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function each(List) {\n    return list.forEach(i => list[i]);\n  }",
-        answer: "\n  function each(list) {\n    return list.forEach(i => list[i]);\n  }",
+        fn:     "\n  function each(List) {\n    return list.forEach(i => i);\n  }",
+        answer: "\n  function each(list) {\n    return list.forEach(i => i);\n  }",
         test:   "each(1,2,3) → 1 2 3",
         hints: [
             'Check the first case',
@@ -410,8 +410,8 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function each(list) {\n    return list.each(i => list[i]);\n  }",
-        answer: "\n  function each(list) {\n    return list.forEach(i => list[i]);\n  }",
+        fn:     "\n  function each(list) {\n    return list.each(i => i);\n  }",
+        answer: "\n  function each(list) {\n    return list.forEach(i => i);\n  }",
         test:   "each(4,4,4) → 4 4 4",
         hints: [
             'Method, man',
