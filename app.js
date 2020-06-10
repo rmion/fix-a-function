@@ -83,11 +83,20 @@ let app = new Vue({
         },
         manageVisitorRecords() {
             if (this.visitorHasCookie()) {
-                this.isRepeatCustomer = true;
                 let record = JSON.parse(localStorage.getItem('fixafunction'));
-                this.airTableId = record.id;
-                this.priorSessions = record.sessions;
-                this.updateTimeGate(record.sessions);
+                fetch(`https://api.airtable.com/v0/appwFsMeOIf3lyiIw/Fix%20A%20Function/${record.id}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        this.isRepeatCustomer = true;
+                        this.airTableId = record.id;
+                        this.priorSessions = record.sessions;
+                        this.updateTimeGate(record.sessions);
+                    })
+                    .catch(err => {
+                        if (err.message === "Record not found") {
+                            this.createRecordInAirTable();
+                        }
+                    })
             } else {
                 this.createRecordInAirTable();
             }    
