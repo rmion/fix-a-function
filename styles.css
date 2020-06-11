@@ -64,17 +64,13 @@ li {
     line-height: 2;
 }
 dl {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 1rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-gap: 0.5rem;
 }
 dl > div {
-    flex: 1;
     padding: 1rem 0;
     background-color: #121212;
-}
-dl > div:not(:last-of-type) {
-    margin-right: 0.5rem;
 }
 dt {
     font-family: Pacifico, cursive;
@@ -152,7 +148,10 @@ summary > h2 {
     main > div > p {
         font-size: 2rem;
         margin-top: 0;
-    }    
+    }
+    main > div:first-of-type h2 {
+        text-align: left;
+    }
     main > div:not(:last-of-type) {
         text-align: center;
     }
@@ -168,15 +167,6 @@ summary > h2 {
     .exercise pre {
         line-height: 1;
     }
-    dl {
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        grid-gap: 0.5rem;
-    }
-    dl > div:not(:last-of-type) {
-        margin-right: 0;
-    }    
     dd {
         font-size: 3rem;
     }
