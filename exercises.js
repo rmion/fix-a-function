@@ -959,4 +959,124 @@ var listOfExercises = [
             'Change window to document'
         ]
     },
+    {
+        language: 'js',
+        difficulty: 'easy',
+        fn:     "\n  function newTail(list,item) {\n    return list.pass(item);\n  }",
+        answer: "\n  function newTail(list,item) {\n    return list.push(item);\n  }",
+        test:   "newTail([1,2],3) → [1,2,3]",
+        hints: [
+            'Bad pass',
+            'Wrong method name',
+            'Change pass to push'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'easy',
+        fn:     "\n  function newTail(list,item) {\n    rerun list.push(item);\n  }",
+        answer: "\n  function newTail(list,item) {\n    return list.push(item);\n  }",
+        test:   "newTail([2,4],6) → [2,4,6]",
+        hints: [
+            '90\'s problems',
+            'Send it back',
+            'Change rerun to return'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'easy',
+        fn:     "\n  function newTail(list,item) {\n    return list.tail(item);\n  }",
+        answer: "\n  function newTail(list,item) {\n    return list.push(item);\n  }",
+        test:   "newTail([3,4],5) → [3,4,5]",
+        hints: [
+            'Use your head',
+            'Wrong method name',
+            'Change tail to push'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'normal',
+        fn:     "\n  function newTail(list,item) {\n    return list.push(item]);\n  }",
+        answer: "\n  function newTail(list,item) {\n    return list.push(item);\n  }",
+        test:   "newTail([3,5],7) → [3,5,7]",
+        hints: [
+            'Hard right wall',
+            'Start at the end',
+            'Remove square bracket after item'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'normal',
+        fn:     "\n  function newTai(list,item) {\n    return list.push(item);\n  }",
+        answer: "\n  function newTail(list,item) {\n    return list.push(item);\n  }",
+        test:   "newTail([3,2],1) → [3,2,1]",
+        hints: [
+            'Use your head',
+            'Naming is important',
+            'Add an l to Tail'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'easy',
+        fn:     "\n  function chopTail(list) {\n    return list.poop();\n  }",
+        answer: "\n  function chopTail(list) {\n    return list.pop();\n  }",
+        test:   "chopTail([1,2,3]) → 3",
+        hints: [
+            'Toilet humor',
+            'Potty mouth',
+            'Change poop to pop'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'easy',
+        fn:     "\n  function chopTail(list) {\n    return list.pop;\n  }",
+        answer: "\n  function chopTail(list) {\n    return list.pop();\n  }",
+        test:   "chopTail([3,2,1]) → 1",
+        hints: [
+            'Don\'t return the function',
+            'Work your way backwards',
+            'Add parentheses after pop'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'easy',
+        fn:     "\n  function chopTail(list) {\n    return list,pop();\n  }",
+        answer: "\n  function chopTail(list) {\n    return list.pop();\n  }",
+        test:   "chopTail([2,4,6]) → 6",
+        hints: [
+            'list and pop?',
+            'Dot...dot...dot',
+            'Change comma after list to period'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'easy',
+        fn:     "\n  function chopTail() {\n    return list.pop();\n  }",
+        answer: "\n  function chopTail(list) {\n    return list.pop();\n  }",
+        test:   "chopTail([6,6,6]) → 6",
+        hints: [
+            'Beware the void',
+            'Nothing in...but something out?',
+            'Missing parameter, list'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'normal',
+        fn:     "\n  function chopTail(list) {\n    return list.pop(1);\n  }",
+        answer: "\n  function chopTail(list) {\n    return list.pop();\n  }",
+        test:   "chopTail([9,1,1]) → 1",
+        hints: [
+            'Does it need the argument?',
+            'Read between the curved lines',
+            'Remove 1 from parentheses'
+        ]
+    },
 ]

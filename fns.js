@@ -1,17 +1,9 @@
-function newTail(list,item) {
-    return list.push(item);
-}
-
-function cutOffTail(list) {
-    return list.pop();
-}
-
-function cutOffHead(list) {
-    return list.unshift();
+function chopHead(list) {
+    return list.shift();
 }
 
 function newHead(list, item) {
-    return list.shift(item);
+    return list.unshift(item);
 }
 
 function mean(list) {
