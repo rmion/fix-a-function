@@ -194,13 +194,13 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function sayHello() {\n    return Hello;\n  }",
+        fn:     "\n  function sayHello() {\n    return Hello\";\n  }",
         answer: "\n  function sayHello() {\n    return \"Hello\";\n  }",
         test:   "sayHello() → \"Hello\"",
         hints: [
             'Someone famous once said...',
             'What\'s Hello?',
-            'Hello is not enclosed in double-quotation marks'
+            'Missing double-quotation mark before Hello'
         ]
     },
     {
@@ -241,14 +241,14 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'normal',
-        fn:     "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(list(i))\n    }\n  }",
+        difficulty: 'hard',
+        fn:     "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(list[i))\n    }\n  }",
         answer: "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(list[i])\n    }\n  }",
         test:   "loopy([1,2,3]) → 1 2 3",
         hints: [
-            'That\'s a function?!',
-            'You\'re calling the wrong thing',
-            'Incorrectly using parentheses, not brackets, around i'
+            'Mismatch detected',
+            'Start from the end and work backwards',
+            'Incorrectly using parentheses, not brackets, to right of i'
         ]
     },
     {
@@ -266,13 +266,13 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(i)\n    }\n  }",
+        fn:     "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log([i])\n    }\n  }",
         answer: "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(list[i])\n    }\n  }",
         test:   "loopy([1,2,3]) → 1 2 3",
         hints: [
-            '1, 2, 3...not 0, 1, 2!',
-            'Use i, don\'t log it',
-            'Log i\'th index in list, not i itself.'
+            '1, 2, 3...not [0][1][2]!',
+            'i is in a cage, all alone',
+            'Missing list array before [i]'
         ]
     },
     {
@@ -397,20 +397,20 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'normal',
-        fn:     "\n  function each(List) {\n    return list.forEach(i => i);\n  }",
+        difficulty: 'hard',
+        fn:     "\n  function each(1ist) {\n    return list.forEach(i => i);\n  }",
         answer: "\n  function each(list) {\n    return list.forEach(i => i);\n  }",
         test:   "each(1,2,3) → 1 2 3",
         hints: [
-            'Check the first case',
-            'All lower',
-            'Parameter list should be lowercase'
+            'Sneaky one',
+            'Check parameter list',
+            'Parameter list should be list, not 1ist'
         ]
     },
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function each(list) {\n    return list.each(i => i);\n  }",
+        fn:     "\n  function each(list) {\n    return list.Each(i => i);\n  }",
         answer: "\n  function each(list) {\n    return list.forEach(i => i);\n  }",
         test:   "each(4,4,4) → 4 4 4",
         hints: [
@@ -446,13 +446,13 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function equals(num) {\n    return num == 'num';\n  }",
+        fn:     "\n  function equals(num) {\n    return num == 'num;\n  }",
         answer: "\n  function equals(num) {\n    return num == num;\n  }",
         test:   "equals(5) → true",
         hints: [
             'Both num should be naked',
-            'Compare to 5, not \'num\'',
-            'Remove the single-quotes around the second num'
+            'Kill the stray apostrophe!',
+            'Remove the single-quote before the second num'
         ]
     },
     {
@@ -494,13 +494,13 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function dataType(data) {\n    return typeof \'data\';\n  }",
+        fn:     "\n  function dataType(data) {\n    return typeof data\';\n  }",
         answer: "\n  function dataType(data) {\n    return typeof data;\n  }",
         test:   "dataType({}) → 'object'",
         hints: [
             'Stringing you along',
             'Stop returning strings!',
-            'Remove single-quotes around data'
+            'Remove single-quote after data'
         ]
     },
     {
@@ -508,11 +508,11 @@ var listOfExercises = [
         difficulty: 'hard',
         fn:     "\n  function dataType(data) {\n    return typeof data;\n  }",
         answer: "\n  function dataType(data) {\n    return typeof +data;\n  }",
-        test:   "dataType({}) → 'number'",
+        test:   "dataType('5') → 'number'",
         hints: [
             'One symbol to rule them all',
             'Who\'s your plus-one?',
-            'Stick a plus sign just left of data'
+            'Add a plus sign just left of data'
         ]
     },
     {
@@ -554,13 +554,13 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function formalName(f,l) {\n    return `${l}, $(f)`;\n  }",
+        fn:     "\n  function formalName(f,l) {\n    return `${l}, $(f}`;\n  }",
         answer: "\n  function formalName(f,l) {\n    return `${l}, ${f}`;\n  }",
         test:   "formalName('George','Bush') → 'Bush, George'",
         hints: [
-            'The walls of f',
-            'Parentheses with a handle',
-            'Enclose f in brackets, not parentheses'
+            'The wall of f',
+            'Mismatch detected',
+            'Replace parenthesis before f with a curly bracket'
         ]
     },
     {
@@ -578,13 +578,13 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function formalName(f,l) {\n    return '${l}, ${f}';\n  }",
+        fn:     "\n  function formalName(f,l) {\n    return '${l}, ${f}`;\n  }",
         answer: "\n  function formalName(f,l) {\n    return `${l}, ${f}`;\n  }",
         test:   "formalName('Jack','Ryan') → 'Ryan, Jack'",
         hints: [
-            'Wrong ticks',
-            'Must use correct quote marks',
-            'Use back ticks ` instead of single-quotes'
+            'Wrong tick',
+            'Must use correct quote mark',
+            'Use two back ticks ` instead of mixture'
         ]
     },
     {
@@ -626,13 +626,13 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function ternary(bool) {\n    return bool ? this : 'that';\n  }",
+        fn:     "\n  function ternary(bool) {\n    return bool ? 'this : 'that';\n  }",
         answer: "\n  function ternary(bool) {\n    return bool ? 'this' : 'that';\n  }",
         test:   "ternary(true) → 'this'",
         hints: [
             'this is the hint',
             'this is the next hint',
-            'Add single-quotes around this'
+            'Add single-quote after this'
         ]
     },
     {
@@ -662,25 +662,25 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function makeArrayFrom(a,b,c) {\n    return [a,b,c/;\n  }",
+        fn:     "\n  function makeArrayFrom(a,b,c) {\n    return [a,b,c};\n  }",
         answer: "\n  function makeArrayFrom(a,b,c) {\n    return [a,b,c];\n  }",
         test:   "makeArrayFrom(1,2,3) → [1,2,3]",
         hints: [
-            'Not now, slash',
+            'Not now, curly',
             'Do you c it yet?',
-            'Change slash after c to closing-square-bracket'
+            'Change curly brace after c to square bracket'
         ]
     },
     {
         language: 'js',
-        difficulty: 'normal',
+        difficulty: 'hard',
         fn:     "\n  function makeArrayFrom(a,b,c) {\n    return (a,b,c);\n  }",
-        answer: "\n  function makeArrayFrom(a,b,c) {\n    return [a,b,c];\n  }",
+        answer: "\n  function makeArrayFrom(a,b,c) {\n    return Array(a,b,c);\n  }",
         test:   "makeArrayFrom(3,2,1) → [3,2,1]",
         hints: [
-            'Wrong container',
-            'Return one thing, not three',
-            'Change parentheses to square brackets'
+            'Use a constructor function',
+            'Want array, getting group',
+            'Insert the keyword, Array, before (a,b,c)'
         ]
     },
     {
@@ -698,18 +698,18 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function makeArrayFrom(a,b,c) {\n    return [a;b,c];\n  }",
+        fn:     "\n  function makeArrayFrom(a,b,c) {\n    return [a.b,c];\n  }",
         answer: "\n  function makeArrayFrom(a,b,c) {\n    return [a,b,c];\n  }",
         test:   "makeArrayFrom(1,3,5) → [1,3,5]",
         hints: [
             'Grammatical error',
             'Stopping at a',
-            'Change semi-color after a to comma'
+            'Change period after a to comma'
         ]
     },
     {
         language: 'js',
-        difficulty: 'hard',
+        difficulty: 'easy',
         fn:     "\n  function makeArrayFrom(a,b,c) {\n    return; [a,b,c];\n  }",
         answer: "\n  function makeArrayFrom(a,b,c) {\n    return [a,b,c];\n  }",
         test:   "makeArrayFrom(2,4,6) → [2,4,6]",
@@ -726,7 +726,7 @@ var listOfExercises = [
         answer: "\n  function greet(name) {\n    return `Hi, ${name}!`;\n  }",
         test:   "greet('John') → 'Hi, John!'",
         hints: [
-            'Mismatch',
+            'Mismatch detected',
             'Don\'t quote me on that',
             'Change first quote to a backtick'
         ]
@@ -750,7 +750,7 @@ var listOfExercises = [
         answer: "\n  function greet(name) {\n    return `Hi, ${name}!`;\n  }",
         test:   "greet('Jack') → 'Hi, Jack!'",
         hints: [
-            'Good. Swell. Fine.',
+            'Good. Swell. Fine!',
             'One letter off',
             'Incorrect function name'
         ]
@@ -904,7 +904,7 @@ var listOfExercises = [
         difficulty: 'normal',
         fn:     "\n  function IdPlease(id) {\n    return document.getElementByID(id);\n  }",
         answer: "\n  function IdPlease(id) {\n    return document.getElementById(id);\n  }",
-        test:   "IdPlease('neo') → HTMLDomNode",
+        test:   "IdPlease('neo') → HTMLElement",
         hints: [
             'Big D little d',
             'First letter capital, second lowercase',
@@ -916,7 +916,7 @@ var listOfExercises = [
         difficulty: 'normal',
         fn:     "\n  function IdPlease(id) {\n    return document.getElementsById(id);\n  }",
         answer: "\n  function IdPlease(id) {\n    return document.getElementById(id);\n  }",
-        test:   "IdPlease('cher') → HTMLDomNode",
+        test:   "IdPlease('cher') → HTMLElement",
         hints: [
             'More than we were expecting',
             'We only want one',
@@ -925,14 +925,14 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'hard',
-        fn:     "\n  function IdPlease(id) {\n    return document.getElementById('id');\n  }",
+        difficulty: 'normal',
+        fn:     "\n  function IdPlease(id) {\n    return document.getElementById('id);\n  }",
         answer: "\n  function IdPlease(id) {\n    return document.getElementById(id);\n  }",
-        test:   "IdPlease('prince') → HTMLDomNode",
+        test:   "IdPlease('prince') → HTMLElement",
         hints: [
             'Stringing you along',
             'Literally...id',
-            'Remove single quotes around id'
+            'Remove single quote before id'
         ]
     },
     {
@@ -940,7 +940,7 @@ var listOfExercises = [
         difficulty: 'hard',
         fn:     "\n  function IdPlease(id) {\n    return document.getElementFromId(id);\n  }",
         answer: "\n  function IdPlease(id) {\n    return document.getElementById(id);\n  }",
-        test:   "IdPlease('bono') → HTMLDomNode",
+        test:   "IdPlease('bono') → HTMLElement",
         hints: [
             'Opposite of Hello',
             'Four words. Third word. Two letters.',
@@ -952,7 +952,7 @@ var listOfExercises = [
         difficulty: 'easy',
         fn:     "\n  function IdPlease(id) {\n    return window.getElementById(id);\n  }",
         answer: "\n  function IdPlease(id) {\n    return document.getElementById(id);\n  }",
-        test:   "IdPlease('sting') → HTMLDomNode",
+        test:   "IdPlease('sting') → HTMLElement",
         hints: [
             'Look deeper into the window',
             'Synonymous with page',
