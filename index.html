@@ -14,87 +14,22 @@
 <body>
     <div id="app">
         <p v-if="isRecordingSubmission" style="position: absolute; top: 0; left: 0;">Saving...</p>
-        <h1><span v-show="isRepeatCustomer">Welcome back to </span>Fix a function!</h1>
+        <h1><span v-show="isRepeatCustomer">Welcome back to </span>'Fix a function!'</h1>
         <main v-if="exercisesAttempted < exerciseCap && livesRemaining > 0 && isTimeGateLifted">
             <div>
-                <section>
-                    <button 
-                        @click="giveUp" 
-                        v-show="!isSolved" 
-                        :disabled="didGiveUp">
-                        Give up
-                    </button>
-                    <button 
-                        @click="updateChallengeFn" 
-                        v-show="!isSolved && !didGiveUp">
-                        Reset
-                    </button>
-                    <button 
-                        v-show="!isSolved && nextHint < filteredExercises[counter].hints.length" 
-                        @click="getHint" 
-                        :disabled="didGiveUp">
-                        Get hint
-                    </button>    
-                </section>
                 <dl>
                     <div>
-                        <dt>Play time</dt>
+                        <dt>Clock</dt>
                         <dd>{{ formattedTimeElapsed }}</dd>
                     </div>
-                    <div>
-                        <dt>Today's score</dt>
+                    <div v-if="priorSessions.length == 1">
+                        <dt>Score</dt>
                         <dd>{{ score }}</dd>
                     </div>
-                    <div v-if="priorSessions.length > 1">
+                    <div v-else>
                         <dt>{{ priorSessions.length }}-Day score</dt>
                         <dd>{{accumulatedScore}}</dd>
                     </div>
-                </dl>
-            </div>
-            <div>
-                <p v-show="exercisesAttempted > 1 && exercisesSolved < 2 && (difficulty == 'hard' || difficulty == 'all')">
-                    Consider lowering the difficulty
-                </p>
-                <p v-if="!needsHint && !isSolved && !didGiveUp && !hasAttemptedToSolve" style="line-height: 1.5;">
-                    Change one thing to <em>match the expected behavior...</em>
-                </p>
-                <p v-if="isSolved">Great job!</p>
-                <p v-show="needsHint && !isSolved">
-                    Hint {{nextHint}} of {{filteredExercises[counter].hints.length}}: {{filteredExercises[counter].hints[nextHint - 1]}}
-                </p>
-                <div>
-                    <section class="exercise">
-                        <pre :class="{ solved: isSolved, incorrect: (!isSolved && isWrongAnswer) }">
-                            <code contenteditable="true" id="fn" @click="enableSolveButton"></code>
-                        </pre>
-                        <p>
-                            {{filteredExercises[counter].test}}
-                        </p>
-                        <p>{{ filteredExercises[counter].difficulty.toUpperCase() }}</p>
-                    </section>
-                    <section class="exercise" v-show="didGiveUp">
-                        <p>Correct answer</p>
-                        <pre>
-                            <code>{{filteredExercises[counter].answer}}</code>
-                        </pre>
-                    </section>    
-                </div>
-                <p>
-                    <button 
-                        class="primary"
-                        v-show="!didGiveUp && !isSolved" 
-                        @click="checkAttemptedFix" 
-                        :disabled="isAwaitingAnotherTry">
-                        {{ isWrongAnswer ? "Nope. Try again!" : "Did I fix it?" }}
-                    </button>
-                    <button 
-                        class="primary"
-                        v-show="isSolved || didGiveUp" 
-                        @click="prepareNextExercise">
-                        Play again!
-                    </button>
-                </p>
-                <dl>
                     <div>
                         <dt>Hints</dt>
                         <dd>{{ nextHint }}/{{filteredExercises[counter].hints.length}}</dd>
@@ -116,11 +51,60 @@
                         <dd>{{ priorSessions.length }}</dd>
                     </div>
                     <div>
-                        <dt>Time</dt>
+                        <dt>Timer</dt>
                         <dd v-if="timer === 'On'">:{{timeRemaining < 10 ? ("0" + timeRemaining) : timeRemaining}}</dd>
                         <dd v-else>--</dd>
                     </div>
                 </dl>
+            </div>
+            <div>
+                <p v-show="exercisesAttempted > 1 && exercisesSolved < 2 && (difficulty == 'hard' || difficulty == 'all')">
+                    Consider lowering the difficulty
+                </p>
+                <p v-if="!isSolved" style="line-height: 1.5;">
+                    Change one thing to <em>match the expected behavior...</em>
+                </p>
+                <p v-if="isSolved">Great job!</p>
+                <p v-show="needsHint && !isSolved">
+                    Hint {{nextHint}} of {{filteredExercises[counter].hints.length}}: {{filteredExercises[counter].hints[nextHint - 1]}}
+                </p>
+                <div>
+                    <section class="exercise">
+                        <pre :class="{ solved: isSolved, incorrect: (!isSolved && isWrongAnswer) }">
+                            <code contenteditable="true" id="fn" @click="enableSolveButton"></code>
+                        </pre>
+                        <p>
+                            {{filteredExercises[counter].test}}
+                        </p>
+                        <p>{{ filteredExercises[counter].difficulty.toUpperCase() }}</p>
+                    </section>
+                    <section class="exercise" v-show="didGiveUp">
+                        <pre>
+                            <code>{{filteredExercises[counter].answer}}</code>
+                        </pre>
+                    </section>    
+                </div>
+                <p>
+                    <button 
+                        class="primary"
+                        v-show="!didGiveUp && !isSolved" 
+                        @click="checkAttemptedFix" 
+                        :disabled="isAwaitingAnotherTry">
+                        {{ isWrongAnswer ? "Nope. Try again!" : "Did I fix it?" }}
+                    </button>
+                    <button 
+                        class="primary"
+                        v-show="isSolved || didGiveUp" 
+                        @click="prepareNextExercise">
+                        Play again!
+                    </button>
+                    <button 
+                        v-show="!isSolved && nextHint < filteredExercises[counter].hints.length" 
+                        @click="getHint" 
+                        :disabled="didGiveUp">
+                        Get hint
+                    </button>
+                </p>
             </div>
             <div>
                 <h2><span v-if="hasAttemptedToSolve">Locked:</span> Game settings</h2>
