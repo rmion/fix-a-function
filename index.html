@@ -13,10 +13,8 @@
 </head>
 <body>
     <div id="app">
-        <p v-show="isRepeatCustomer">
-            Welcome back!
-        </p>
-        <h1>Fix a function!</h1>
+        <p v-if="isRecordingSubmission" style="position: absolute; top: 0; left: 0;">Saving...</p>
+        <h1><span v-show="isRepeatCustomer">Welcome back to </span>Fix a function!</h1>
         <main v-if="exercisesAttempted < exerciseCap && livesRemaining > 0 && isTimeGateLifted">
             <div>
                 <section>
@@ -38,6 +36,64 @@
                         Get hint
                     </button>    
                 </section>
+                <dl>
+                    <div>
+                        <dt>Play time</dt>
+                        <dd>{{ formattedTimeElapsed }}</dd>
+                    </div>
+                    <div>
+                        <dt>Today's score</dt>
+                        <dd>{{ score }}</dd>
+                    </div>
+                    <div v-if="priorSessions.length > 1">
+                        <dt>{{ priorSessions.length }}-Day score</dt>
+                        <dd>{{accumulatedScore}}</dd>
+                    </div>
+                </dl>
+            </div>
+            <div>
+                <p v-show="exercisesAttempted > 1 && exercisesSolved < 2 && (difficulty == 'hard' || difficulty == 'all')">
+                    Consider lowering the difficulty
+                </p>
+                <p v-if="!needsHint && !isSolved && !didGiveUp && !hasAttemptedToSolve" style="line-height: 1.5;">
+                    Change one thing to <em>match the expected behavior...</em>
+                </p>
+                <p v-if="isSolved">Great job!</p>
+                <p v-show="needsHint && !isSolved">
+                    Hint {{nextHint}} of {{filteredExercises[counter].hints.length}}: {{filteredExercises[counter].hints[nextHint - 1]}}
+                </p>
+                <div>
+                    <section class="exercise">
+                        <pre :class="{ solved: isSolved, incorrect: (!isSolved && isWrongAnswer) }">
+                            <code contenteditable="true" id="fn" @click="enableSolveButton"></code>
+                        </pre>
+                        <p>
+                            {{filteredExercises[counter].test}}
+                        </p>
+                        <p>{{ filteredExercises[counter].difficulty.toUpperCase() }}</p>
+                    </section>
+                    <section class="exercise" v-show="didGiveUp">
+                        <p>Correct answer</p>
+                        <pre>
+                            <code>{{filteredExercises[counter].answer}}</code>
+                        </pre>
+                    </section>    
+                </div>
+                <p>
+                    <button 
+                        class="primary"
+                        v-show="!didGiveUp && !isSolved" 
+                        @click="checkAttemptedFix" 
+                        :disabled="isAwaitingAnotherTry">
+                        {{ isWrongAnswer ? "Nope. Try again!" : "Did I fix it?" }}
+                    </button>
+                    <button 
+                        class="primary"
+                        v-show="isSolved || didGiveUp" 
+                        @click="prepareNextExercise">
+                        Play again!
+                    </button>
+                </p>
                 <dl>
                     <div>
                         <dt>Hints</dt>
@@ -64,55 +120,7 @@
                         <dd v-if="timer === 'On'">:{{timeRemaining < 10 ? ("0" + timeRemaining) : timeRemaining}}</dd>
                         <dd v-else>--</dd>
                     </div>
-                </dl>    
-            </div>
-            <div>
-                <p v-show="exercisesAttempted > 1 && exercisesSolved < 2 && (difficulty == 'hard' || difficulty == 'all')">
-                    Consider lowering the difficulty
-                </p>
-                <p v-if="!needsHint && !isSolved && !didGiveUp && !hasAttemptedToSolve">
-                    Change one thing to <em>match the expected behavior...</em>
-                </p>
-                <p v-if="isSolved">Great job!</p>
-                <p v-show="needsHint && !isSolved">
-                    Hint {{nextHint}} of {{filteredExercises[counter].hints.length}}: {{filteredExercises[counter].hints[nextHint - 1]}}
-                </p>
-                <div>
-                    <section class="exercise">
-                        <p>
-                            {{filteredExercises[counter].test}}
-                        </p>
-                        <pre :class="{ solved: isSolved, incorrect: (!isSolved && isWrongAnswer) }">
-                            <code contenteditable="true" id="fn" @click="enableSolveButton"></code>
-                        </pre>
-                        <p>{{ filteredExercises[counter].difficulty.toUpperCase() }}</p>
-                    </section>
-                    <section class="exercise" v-show="didGiveUp">
-                        <p>Correct answer</p>
-                        <pre>
-                            <code>{{filteredExercises[counter].answer}}</code>
-                        </pre>
-                    </section>    
-                </div>
-                <p>
-                    <button 
-                        class="primary"
-                        v-show="!didGiveUp && !isSolved" 
-                        @click="checkAttemptedFix" 
-                        :disabled="isAwaitingAnotherTry">
-                        {{ isWrongAnswer ? "Nope. Try again!" : "Did I fix it?" }}
-                    </button>
-                    <button 
-                        class="primary"
-                        v-show="isSolved || didGiveUp" 
-                        @click="prepareNextExercise">
-                        Play again!
-                    </button>
-                </p>
-                <p id="status-bar">
-                    <small>Today's play time ({{ formattedTimeElapsed }})</small>
-                    <small>{{ isRecordingSubmission ? "Saving..." : "Progress saved!" }}</small>
-                </p>
+                </dl>
             </div>
             <div>
                 <h2><span v-if="hasAttemptedToSolve">Locked:</span> Game settings</h2>
@@ -150,41 +158,31 @@
                             <legend>
                                 <span v-if="hasAttemptedToSolve">Locked:</span> Timer
                             </legend>
-                            <p>
-                                <input type="radio" id="off" name="timer" value="Off" v-model="timer" :disabled="hasAttemptedToSolve" />
-                                <label for="off">
-                                    Off
-                                </label>    
-                            </p>
-                            <p>
-                                <input type="radio" id="on" name="timer" value="On" v-model="timer" :disabled="hasAttemptedToSolve" />
-                                <label for="on">
-                                    On
-                                </label>    
-                            </p>
+                            <input type="radio" id="off" name="timer" value="Off" v-model="timer" :disabled="hasAttemptedToSolve" />
+                            <label for="off">
+                                Off
+                            </label>    
+                            <input type="radio" id="on" name="timer" value="On" v-model="timer" :disabled="hasAttemptedToSolve" />
+                            <label for="on">
+                                On
+                            </label>    
                         </fieldset>
                         <fieldset>
                             <legend>
                                 <span v-if="hasAttemptedToSolve">Locked:</span> Time limit (in seconds)
                             </legend>
-                            <p>
-                                <input type="radio" id="thirty" name="limit" value="30" v-model="timeLimit" :disabled="hasAttemptedToSolve" />
-                                <label for="thirty">
-                                    30
-                                </label>    
-                            </p>
-                            <p>
-                                <input type="radio" id="fifteen" name="limit" value="15" v-model="timeLimit" :disabled="hasAttemptedToSolve" />
-                                <label for="fifteen">
-                                    15
-                                </label>    
-                            </p>
-                            <p>
-                                <input type="radio" id="ten" name="limit" value="10" v-model="timeLimit" :disabled="hasAttemptedToSolve" />
-                                <label for="ten">
-                                    10
-                                </label>    
-                            </p>
+                            <input type="radio" id="thirty" name="limit" value="30" v-model="timeLimit" :disabled="hasAttemptedToSolve" />
+                            <label for="thirty">
+                                30
+                            </label>    
+                            <input type="radio" id="fifteen" name="limit" value="15" v-model="timeLimit" :disabled="hasAttemptedToSolve" />
+                            <label for="fifteen">
+                                15
+                            </label>    
+                            <input type="radio" id="ten" name="limit" value="10" v-model="timeLimit" :disabled="hasAttemptedToSolve" />
+                            <label for="ten">
+                                10
+                            </label>    
                         </fieldset>
                     </form>        
                 </details>    

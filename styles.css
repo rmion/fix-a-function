@@ -12,6 +12,7 @@ img {
 h1 {
     font-family: Pacifico, cursive;
     font-size: 3rem;
+    margin: 0;
 }
 em {
     background-color: darkmagenta;
@@ -138,10 +139,6 @@ summary > h2 {
     display: inline-block;
     margin: 0;
 }
-#status-bar {
-    display: flex;
-    justify-content: space-around;
-}
 @media only screen and (min-width: 1228px) {
     h2 {
         margin: 0;
@@ -174,7 +171,7 @@ summary > h2 {
     dl {
         margin: 0 auto;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         grid-gap: 0.5rem;
     }
     dl > div:not(:last-of-type) {
@@ -189,5 +186,10 @@ summary > h2 {
         margin: 0;
         margin-bottom: 1rem;
         font-size: 1.5rem;
+    }
+    button.primary {
+        display: inline-block;
+        width: auto;
+        margin: auto;
     }
 }
