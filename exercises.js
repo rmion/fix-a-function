@@ -1142,8 +1142,8 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function newHead(list, item) {\n    return list.unshift();\n  }",
-        answer: "\n  function newHead(list, item) {\n    return list.unshift(item);\n  }",
+        fn:     "\n  function newHead(list,item) {\n    return list.unshift();\n  }",
+        answer: "\n  function newHead(list,item) {\n    return list.unshift(item);\n  }",
         test:   "newHead([1,2],3) → 3",
         hints: [
             'Fill the void',
@@ -1154,8 +1154,8 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function newHead(list, item) {\n    return list.unshift(list);\n  }",
-        answer: "\n  function newHead(list, item) {\n    return list.unshift(item);\n  }",
+        fn:     "\n  function newHead(list,item) {\n    return list.unshift(list);\n  }",
+        answer: "\n  function newHead(list,item) {\n    return list.unshift(item);\n  }",
         test:   "newHead([3,2],1) → 1",
         hints: [
             'Add list to list?',
@@ -1166,8 +1166,8 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function newHead(list, item) {\n    return list.shift(item);\n  }",
-        answer: "\n  function newHead(list, item) {\n    return list.unshift(item);\n  }",
+        fn:     "\n  function newHead(list,item) {\n    return list.shift(item);\n  }",
+        answer: "\n  function newHead(list,item) {\n    return list.unshift(item);\n  }",
         test:   "newHead([7,3],7) → 7",
         hints: [
             'Shift, left',
@@ -1178,13 +1178,25 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function newHead(list, item) {\n    return list.push(item);\n  }",
-        answer: "\n  function newHead(list, item) {\n    return list.unshift(item);\n  }",
+        fn:     "\n  function newHead(list,item) {\n    return list.push(item);\n  }",
+        answer: "\n  function newHead(list,item) {\n    return list.unshift(item);\n  }",
         test:   "newHead([4,1],4) → 4",
         hints: [
             'Wrong end',
             'Method names have \'sh\' in common',
             'Change method name to unshift'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'easy',
+        fn:     "\n  function newHead(list,item) {\n    return lift.unshift(item);\n  }",
+        answer: "\n  function newHead(list,item) {\n    return list.unshift(item);\n  }",
+        test:   "newHead([4,1],4) → 4",
+        hints: [
+            'Minor spelling error',
+            'For f\'s sake',
+            'Change lift to list'
         ]
     },
 ]
