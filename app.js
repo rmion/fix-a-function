@@ -184,13 +184,13 @@ let app = new Vue({
         markIncorrectAnswer() {
             this.isWrongAnswer = true;
             this.updateChallengeFn();
+            this.subtractFromLives(1);
             if (this.nextHint == this.filteredExercises[this.counter].hints.length) {
                 this.needsHint = false;
                 this.didGiveUp = true;
                 this.needsHint = false;
                 this.exercisesAttempted += 1;
                 this.isAwaitingAnotherTry = false;
-                this.subtractFromLives(1);
             } else {
                 this.needsHint = true;
                 this.nextHint += 1;
