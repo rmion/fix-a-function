@@ -1,11 +1,3 @@
-function chopHead(list) {
-    return list.shift();
-}
-
-function newHead(list, item) {
-    return list.unshift(item);
-}
-
 function mean(list) {
     return list.reduce((i, acc) => acc + i)/list.length;
 }
