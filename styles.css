@@ -38,7 +38,7 @@ main > div > p {
 }
 .exercise > p:last-of-type {
     background-color: white;
-    color: rgb(197, 196, 196);
+    color: black;
     position: absolute;
     top: 0;
     right: 0;
