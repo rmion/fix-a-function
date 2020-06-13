@@ -1430,8 +1430,8 @@ var listOfExercises = [
     {
         language: 'css',
         difficulty: 'easy',
-        fn:     "\n  p {\n  font-size: 1em;\n  }",
-        answer: "\n  p {\n  font-size: 2em;\n  }",
+        fn:     "\n  p {\n    font-size: 1em;\n  }",
+        answer: "\n  p {\n    font-size: 2em;\n  }",
         test:   "Make all paragraphs two times the size of the current font",
         hints: [
             'Double it!',
@@ -1442,8 +1442,8 @@ var listOfExercises = [
     {
         language: 'css',
         difficulty: 'easy',
-        fn:     "\n  img {\n  max-width: 100vh;\n  }",
-        answer: "\n  img {\n  max-width: 100vw;\n  }",
+        fn:     "\n  img {\n    max-width: 100vh;\n  }",
+        answer: "\n  img {\n    max-width: 100vw;\n  }",
         test:   "All images cannot exceed 100% of the viewport width",
         hints: [
             'Wrong unit',
@@ -1454,8 +1454,8 @@ var listOfExercises = [
     {
         language: 'css',
         difficulty: 'normal',
-        fn:     "\n  h1 > p {\n  color: black;\n  }",
-        answer: "\n  h1 + p {\n  color: black;\n  }",
+        fn:     "\n  h1 > p {\n    color: black;\n  }",
+        answer: "\n  h1 + p {\n    color: black;\n  }",
         test:   "Make all paragraphs placed immediately after a level-1 heading black",
         hints: [
             'Greater than?',
@@ -1466,8 +1466,8 @@ var listOfExercises = [
     {
         language: 'css',
         difficulty: 'easy',
-        fn:     "\n  .unique {\n  color: #987789;\n  }",
-        answer: "\n  #unique {\n  color: #987789;\n  }",
+        fn:     "\n  .unique {\n    color: #987789;\n  }",
+        answer: "\n  #unique {\n    color: #987789;\n  }",
         test:   "Make the element with id 'unique' warm gray",
         hints: [
             'No class',
@@ -1478,8 +1478,8 @@ var listOfExercises = [
     {
         language: 'css',
         difficulty: 'easy',
-        fn:     "\n  h2 {\n  font-weight: normal;\n  }",
-        answer: "\n  h3 {\n  font-weight: normal;\n  }",
+        fn:     "\n  h2 {\n    font-weight: normal;\n  }",
+        answer: "\n  h3 {\n    font-weight: normal;\n  }",
         test:   "Make all level-3 headings normal font weight",
         hints: [
             'Find the number',
@@ -1490,8 +1490,8 @@ var listOfExercises = [
     {
         language: 'css',
         difficulty: 'hard',
-        fn:     "\n  ul  {\n  margin-left: 0;\n  }",
-        answer: "\n  ul li {\n  margin-left: 0;\n  }",
+        fn:     "\n  ul  {\n    margin-left: 0;\n  }",
+        answer: "\n  ul li {\n    margin-left: 0;\n  }",
         test:   "Remove left margin from all list items inside all unordered lists",
         hints: [
             'Currently selecting the parent',
@@ -1502,8 +1502,8 @@ var listOfExercises = [
     {
         language: 'css',
         difficulty: 'easy',
-        fn:     "\n  dt  {\n  margin-left: 0;\n  }",
-        answer: "\n  dd {\n  margin-left: 0;\n  }",
+        fn:     "\n  dt  {\n    margin-left: 0;\n  }",
+        answer: "\n  dd {\n    margin-left: 0;\n  }",
         test:   "Remove left margin from all definition descriptors",
         hints: [
             'Wrong selector',
@@ -1514,8 +1514,8 @@ var listOfExercises = [
     {
         language: 'css',
         difficulty: 'hard',
-        fn:     "\n  a[href^='.pdf']::after {\n  content: '[PDF]';\n  }",
-        answer: "\n  a[href$='.pdf']::after {\n  content: '[PDF]';\n  }",
+        fn:     "\n  a[href^='.pdf']::after {\n    content: '[PDF]';\n  }",
+        answer: "\n  a[href$='.pdf']::after {\n    content: '[PDF]';\n  }",
         test:   "Insert content after every link that ends with .pdf",
         hints: [
             'Look inside the first brackets',
@@ -1526,8 +1526,8 @@ var listOfExercises = [
     {
         language: 'css',
         difficulty: 'hard',
-        fn:     "\n  p + ul {\n  border-top: 2px solid black;\n  }",
-        answer: "\n  p ~ ul {\n  border-top: 2px solid black;\n  }",
+        fn:     "\n  p + ul {\n    border-top: 2px solid black;\n  }",
+        answer: "\n  p ~ ul {\n    border-top: 2px solid black;\n  }",
         test:   "Give each unordered list preceded by a paragraph a thin black border",
         hints: [
             'Wrong selector',
@@ -1538,8 +1538,8 @@ var listOfExercises = [
     {
         language: 'css',
         difficulty: 'normal',
-        fn:     "\n  div p {\n  margin-top: 10px;\n  }",
-        answer: "\n  div,p {\n  margin-top: 10px;\n  }",
+        fn:     "\n  div p {\n    margin-top: 10px;\n  }",
+        answer: "\n  div,p {\n    margin-top: 10px;\n  }",
         test:   "Add 10px margin to the top of all div and paragraph elements",
         hints: [
             'Wrong selector',
@@ -1550,8 +1550,8 @@ var listOfExercises = [
     {
         language: 'css',
         difficulty: 'easy',
-        fn:     "\n  p,intro {\n  margin-top: 10px;\n  }",
-        answer: "\n  p.intro {\n  margin-top: 10px;\n  }",
+        fn:     "\n  p,intro {\n    margin-top: 10px;\n  }",
+        answer: "\n  p.intro {\n    margin-top: 10px;\n  }",
         test:   "Add 10px margin to the top of all paragraph elements with class intro",
         hints: [
             'Select one type of thing, not two',
@@ -1562,8 +1562,8 @@ var listOfExercises = [
     {
         language: 'css',
         difficulty: 'normal',
-        fn:     "\n  h3 {\n  margin-bottom: 10px;\n  }",
-        answer: "\n  h3 {\n  margin-top: 10px;\n  }",
+        fn:     "\n  h3 {\n    margin-bottom: 10px;\n  }",
+        answer: "\n  h3 {\n    margin-top: 10px;\n  }",
         test:   "Add 10px margin to the top of level-3 headings",
         hints: [
             'margin-what?',
@@ -1574,8 +1574,8 @@ var listOfExercises = [
     {
         language: 'css',
         difficulty: 'normal',
-        fn:     "\n  p:last-child {\n  margin-top: 10px;\n  }",
-        answer: "\n  p:first-child {\n  margin-top: 10px;\n  }",
+        fn:     "\n  p:last-child {\n    margin-top: 10px;\n  }",
+        answer: "\n  p:first-child {\n    margin-top: 10px;\n  }",
         test:   "Add 10px margin to the top of every paragraph that is the first child of its parent",
         hints: [
             'Oh sweet child',
@@ -1586,8 +1586,8 @@ var listOfExercises = [
     {
         language: 'css',
         difficulty: 'normal',
-        fn:     "\n  a:active {\n  color: purple;\n  }",
-        answer: "\n  a:visited {\n  color: purple;\n  }",
+        fn:     "\n  a:active {\n    color: purple;\n  }",
+        answer: "\n  a:visited {\n    color: purple;\n  }",
         test:   "Set the color of all visited links to purple",
         hints: [
             'Wrong pseudo-selector',

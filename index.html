@@ -62,7 +62,7 @@
                 <p v-show="exercisesAttempted > 1 && exercisesSolved < 2 && (difficulty == 'hard' || difficulty == 'all')">
                     Consider lowering the difficulty
                 </p>
-                <p v-if="!isSolved && needsHint == 0" style="line-height: 1.5;">
+                <p v-if="!isSolved && needsHint == 0">
                     Change one thing to match the <em>expected behavior</em>
                 </p>
                 <p v-if="isSolved">Great job!</p>
@@ -147,25 +147,25 @@
                             <p>
                                 <input type="radio" id="easy" name="difficulty" value="easy" v-model="difficulty" :disabled="hasAttemptedToSolve" />
                                 <label for="easy">
-                                    Easy: Teach me
+                                    Easy
                                 </label>    
                             </p>
                             <p>
                                 <input type="radio" id="normal" name="difficulty" value="normal" v-model="difficulty" :disabled="hasAttemptedToSolve" />
                                 <label for="normal">
-                                    Normal: Toughen me
+                                    Normal
                                 </label>    
                             </p>
                             <p>
                                 <input type="radio" id="hard" name="difficulty" value="hard" v-model="difficulty" :disabled="hasAttemptedToSolve" />
                                 <label for="hard">
-                                    Hard: Try me
+                                    Hard
                                 </label>
                             </p>
                             <p>
                                 <input type="radio" id="any-level" name="difficulty" value="any" v-model="difficulty" :disabled="hasAttemptedToSolve" />
                                 <label for="any-level">
-                                    Any: Test me
+                                    Any
                                 </label>    
                             </p>
                         </fieldset>

@@ -20,6 +20,11 @@ em {
     font-family: monospace;
     font-style: normal;
 }
+main > div > p {
+    font-size: 1.5rem;
+    margin-top: 0;
+    line-height: 1.5;
+}
 .exercise {
     background-color: black;
     font-family: monospace;
@@ -32,16 +37,15 @@ em {
     margin-bottom: 0;
 }
 .exercise > p:last-of-type {
+    background-color: white;
+    color: rgb(197, 196, 196);
     position: absolute;
     top: 0;
     right: 0;
+    margin: 0;
 }
 .exercise > p {
     background-color: darkmagenta;
-}
-.exercise > p:last-of-type {
-    background-color: white;
-    color: black;
 }
 .exercise:last-of-type > * {
     background-color: seagreen;
@@ -143,10 +147,6 @@ input + label {
         display: grid;
         grid-gap: 1rem;
         grid-template-columns: 1fr 3fr 1fr;
-    }
-    main > div > p {
-        font-size: 2rem;
-        margin-top: 0;
     }
     .exercise {
         margin: auto;
