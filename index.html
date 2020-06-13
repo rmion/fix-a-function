@@ -14,7 +14,7 @@
 <body>
     <div id="app">
         <p v-if="isRecordingSubmission" style="position: absolute; top: 0; left: 0;">Saving...</p>
-        <h1><span v-show="isRepeatCustomer">Welcome back to </span>'Fix a {{gameTypes[language]}}!'</h1>
+        <h1><span v-show="isRepeatCustomer">Welcome back to </span>'Fix a {{gameTypes[filteredExercises[counter].language]}}!'</h1>
         <main v-if="exercisesAttempted < exerciseCap && livesRemaining > 0 && isTimeGateLifted">
             <div>
                 <h2>Heads-up display</h2>
@@ -77,7 +77,7 @@
                         <p>
                             {{filteredExercises[counter].test}}
                         </p>
-                        <p>{{ filteredExercises[counter].difficulty.toUpperCase() }}</p>
+                        <p>{{ filteredExercises[counter].language.toUpperCase() }}: {{ filteredExercises[counter].difficulty.toUpperCase() }}</p>
                     </section>
                     <p>
                         <button 
@@ -115,18 +115,30 @@
                             <legend>
                                 <span v-if="hasAttemptedToSolve">Locked:</span> Language
                             </legend>
-                            <input type="radio" id="js" name="language" value="js" v-model="language" :disabled="hasAttemptedToSolve" />
-                            <label for="js">
-                                JavaScript
-                            </label>    
-                            <input type="radio" id="html" name="language" value="html" v-model="language" :disabled="hasAttemptedToSolve" />
-                            <label for="html">
-                                HTML
-                            </label>    
-                            <input type="radio" id="css" name="language" value="css" v-model="language" :disabled="hasAttemptedToSolve" />
-                            <label for="css">
-                                CSS
-                            </label>    
+                            <p>
+                                <input type="radio" id="js" name="language" value="js" v-model="language" :disabled="hasAttemptedToSolve" />
+                                <label for="js">
+                                    JavaScript
+                                </label>
+                            </p>
+                            <p>
+                                <input type="radio" id="html" name="language" value="html" v-model="language" :disabled="hasAttemptedToSolve" />
+                                <label for="html">
+                                    HTML
+                                </label>        
+                            </p>
+                            <p>
+                                <input type="radio" id="css" name="language" value="css" v-model="language" :disabled="hasAttemptedToSolve" />
+                                <label for="css">
+                                    CSS
+                                </label>        
+                            </p>
+                            <p>
+                                <input type="radio" id="any-lang" name="language" value="any" v-model="language" :disabled="hasAttemptedToSolve" />
+                                <label for="any-lang">
+                                    Any
+                                </label>        
+                            </p>
                         </fieldset>
                         <fieldset>
                             <legend>
@@ -148,12 +160,12 @@
                                 <input type="radio" id="hard" name="difficulty" value="hard" v-model="difficulty" :disabled="hasAttemptedToSolve" />
                                 <label for="hard">
                                     Hard: Try me
-                                </label>    
+                                </label>
                             </p>
                             <p>
-                                <input type="radio" id="all" name="difficulty" value="all" v-model="difficulty" :disabled="hasAttemptedToSolve" />
-                                <label for="all">
-                                    Random: Test me
+                                <input type="radio" id="any-level" name="difficulty" value="any" v-model="difficulty" :disabled="hasAttemptedToSolve" />
+                                <label for="any-level">
+                                    Any: Test me
                                 </label>    
                             </p>
                         </fieldset>

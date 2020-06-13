@@ -4,7 +4,7 @@ let app = new Vue({
         gameTypes: {
             'js': 'function',
             'html': 'tag',
-            'css': 'style'
+            'css': 'style',
         },
         exercises: listOfExercises,
         airTableId: null,
@@ -32,16 +32,22 @@ let app = new Vue({
         timeRemaining: 0,
         timerId: null,
         timer: 'Off',
-        difficulty: 'all',
+        difficulty: 'easy',
         language: 'js',
         email: '',
         submitLabel: 'Get daily reminders!',
     },
     computed: {
         filteredExercises() {
-            return  this.difficulty === 'all' ? 
-                    this.exercises.filter(exercise => exercise.language == this.language) : 
-                    this.exercises.filter(exercise => exercise.difficulty == this.difficulty && exercise.language == this.language);
+            if (this.difficulty === 'any' && this.language === 'any') {
+                return this.exercises;
+            } else if (this.difficulty === 'any' && this.language !== 'any') {
+                return this.exercises.filter(exercise => exercise.language == this.language)
+            } else if (this.difficulty !== 'any' && this.language === 'any') {
+                return this.exercises.filter(exercise => exercise.difficulty == this.difficulty)
+            } else {
+                return this.exercises.filter(exercise => exercise.difficulty == this.difficulty && exercise.language == this.language);
+            }
         },
         accumulatedScore() {
             return this.priorSessions.length ? this.priorSessions.map(i => i["Score"]).reduce((i, acc) => acc + i) : this.score;
