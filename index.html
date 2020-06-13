@@ -14,7 +14,7 @@
 <body>
     <div id="app">
         <p v-if="isRecordingSubmission" style="position: absolute; top: 0; left: 0;">Saving...</p>
-        <h1><span v-show="isRepeatCustomer">Welcome back to </span>'Fix a function!'</h1>
+        <h1><span v-show="isRepeatCustomer">Welcome back to </span>'Fix a {{gameTypes[language]}}!'</h1>
         <main v-if="exercisesAttempted < exerciseCap && livesRemaining > 0 && isTimeGateLifted">
             <div>
                 <h2>Heads-up display</h2>
@@ -111,6 +111,23 @@
             <div>
                 <h2><span v-if="hasAttemptedToSolve">Locked:</span> Game settings</h2>
                     <form action="">
+                        <fieldset>
+                            <legend>
+                                <span v-if="hasAttemptedToSolve">Locked:</span> Language
+                            </legend>
+                            <input type="radio" id="js" name="language" value="js" v-model="language" :disabled="hasAttemptedToSolve" />
+                            <label for="js">
+                                JavaScript
+                            </label>    
+                            <input type="radio" id="html" name="language" value="html" v-model="language" :disabled="hasAttemptedToSolve" />
+                            <label for="html">
+                                HTML
+                            </label>    
+                            <input type="radio" id="css" name="language" value="css" v-model="language" :disabled="hasAttemptedToSolve" />
+                            <label for="css">
+                                CSS
+                            </label>    
+                        </fieldset>
                         <fieldset>
                             <legend>
                                 <span v-if="hasAttemptedToSolve">Locked:</span> Difficulty

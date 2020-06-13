@@ -1,6 +1,11 @@
 let app = new Vue({
     el: "#app",
     data: {
+        gameTypes: {
+            'js': 'function',
+            'html': 'tag',
+            'css': 'style'
+        },
         exercises: listOfExercises,
         airTableId: null,
         isRepeatCustomer: false,
@@ -35,8 +40,8 @@ let app = new Vue({
     computed: {
         filteredExercises() {
             return  this.difficulty === 'all' ? 
-                    this.exercises : 
-                    this.exercises.filter(exercise => exercise.difficulty == this.difficulty);
+                    this.exercises.filter(exercise => exercise.language == this.language) : 
+                    this.exercises.filter(exercise => exercise.difficulty == this.difficulty && exercise.language == this.language);
         },
         accumulatedScore() {
             return this.priorSessions.length ? this.priorSessions.map(i => i["Score"]).reduce((i, acc) => acc + i) : this.score;
@@ -369,6 +374,10 @@ let app = new Vue({
             }
         },
         difficulty(newVal, oldVal) {
+            this.counter = this.getIndexOfRandomExercise();
+            this.updateChallengeFn()
+        },
+        language(newVal, oldVal) {
             this.counter = this.getIndexOfRandomExercise();
             this.updateChallengeFn()
         },

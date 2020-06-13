@@ -374,13 +374,13 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function each(list) {\n    return list.for Each(i => i);\n  }",
+        fn:     "\n  function each(list) {\n    return list.fourEach(i => i);\n  }",
         answer: "\n  function each(list) {\n    return list.forEach(i => i);\n  }",
         test:   "each(1,2,3) → 1 2 3",
         hints: [
-            'The final frontier',
-            'For...Each?',
-            'Incorrect space before Each'
+            'Oh, you',
+            '4...Each?',
+            'Delete u in four'
         ]
     },
     {
@@ -530,13 +530,13 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function dataType(data) {\n    return type of data;\n  }",
+        fn:     "\n  function dataType(data) {\n    return typ of data;\n  }",
         answer: "\n  function dataType(data) {\n    return typeof data;\n  }",
         test:   "dataType({}) → 'object'",
         hints: [
             'Mind the gap',
             'all to get her now',
-            'Remove space between type and of'
+            'Insert e between typ and of'
         ]
     },
     {
@@ -1197,6 +1197,234 @@ var listOfExercises = [
             'Minor spelling error',
             'For f\'s sake',
             'Change lift to list'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'easy',
+        fn:     "\n  <p>Hello, world!<p>",
+        answer: "\n  <p>Hello, world!</p>",
+        test:   "One paragraph element",
+        hints: [
+            'Closing time',
+            'Open, then open again?',
+            'Insert / before second p'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'easy',
+        fn:     "\n  <h1>Hello, world!</p>",
+        answer: "\n  <h1>Hello, world!</h1>",
+        test:   "One level-1 heading element",
+        hints: [
+            'Closing time',
+            'Mismatch detected',
+            'Change closing p tag to h1 tag'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'easy',
+        fn:     "\n  <p>Hello, world!/p>",
+        answer: "\n  <p>Hello, world!</p>",
+        test:   "One paragraph element",
+        hints: [
+            'Less than',
+            'Start from the end',
+            'Insert less-than sign to left of closing p tag'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'easy',
+        fn:     "\n  <p<Hello, world!</p>",
+        answer: "\n  <p>Hello, world!</p>",
+        test:   "One paragraph element",
+        hints: [
+            'Wonky error',
+            'The opening tag never ends!',
+            'Fix opening p tag so it ends with >'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'easy',
+        fn:     "\n  </p>Hello, world!</p>",
+        answer: "\n  <p>Hello, world!</p>",
+        test:   "One paragraph element",
+        hints: [
+            'One slash is enough',
+            'Two closing tags?',
+            'Remove / from open p tag'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'normal',
+        fn:     "\n  <img src='fun.jpg' alt='' >",
+        answer: "\n  <img src='fun.jpg' alt='' />",
+        test:   "Valid image element",
+        hints: [
+            'Self-closing tag',
+            'Start from the end',
+            'Add / just before the closing >'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'hard',
+        fn:     "\n  <img src='horse.jpg' title='Horse' >",
+        answer: "\n  <img src='fun.jpg' alt='Horse' />",
+        test:   "Valid image element with alternative text",
+        hints: [
+            'Second attribute name',
+            'Use the \'alt\'ernative',
+            'Change title attribute to alt'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'normal',
+        fn:     "\n  <p><copy>Copyright 2020</small></p>",
+        answer: "\n  <p><small>Copyright 2020</small></p>",
+        test:   "Paragraph with valid legal copy markup",
+        hints: [
+            'The small things in life',
+            'Copy that',
+            'Change copy to match small'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'normal',
+        fn:     "\n  <ul>\n    <li>List item<il\\>\n  </ul>",
+        answer: "\n  <ul>\n    <li>List item</li>\n  </ul>",
+        test:   "Unordered list with one list item",
+        hints: [
+            'Wrong way, partner',
+            'Flip-flop',
+            'Change il to li'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'normal',
+        fn:     "\n  <ul>\n    <li>List item</li>\n  </ol>",
+        answer: "\n  <ul>\n    <li>List item</li>\n  </ul>",
+        test:   "Unordered list with one list item",
+        hints: [
+            'A E I O or U',
+            'Unexpected ending',
+            'Change ol to ul'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'hard',
+        fn:     "\n  <dl>\n    <dt>Term</dt>\n    <dd>Description</dt>\n  </dl>",
+        answer: "\n  <dl>\n    <dt>Term</dt>\n    <dd>Description</dd>\n  </dl>",
+        test:   "Definition list with one Term-Description pair",
+        hints: [
+            'Inspect the d\'s',
+            'Find the mismatch',
+            'Change third dt to dd'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'hard',
+        fn:     "\n  <dl>\n    <dt/>Term</dt>\n    <dd>Description</dd>\n  </dl>",
+        answer: "\n  <dl>\n    <dt>Term</dt>\n    <dd>Description</dt>\n  </dl>",
+        test:   "Definition list with one Term-Description pair",
+        hints: [
+            'Inspect the d\'s',
+            'Odd-looking opening tag',
+            'Delete / after first dt'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'normal',
+        fn:     "\n  <h1>\n    Heading text here\n  </hl>",
+        answer: "\n  <h1>\n    Heading text here\n  </h1>",
+        test:   "Level-1 heading",
+        hints: [
+            'That\'s not a list',
+            'Start at the end',
+            'Change l in closing tag to 1'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'hard',
+        fn:     "\n  <img src='fun.jpg' alt='decoration' />",
+        answer: "\n  <img src='fun.jpg' alt='' />",
+        test:   "Valid decorative image element",
+        hints: [
+            'This one is about accessibility',
+            'Fix the alt attribute',
+            'Remove decoration from between the quotes'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'normal',
+        fn:     "\n  <a link='http://google.com'>Google</a>",
+        answer: "\n  <a href='http://google.com'>Google</a>",
+        test:   "Hyperlink to Google",
+        hints: [
+            'Missing link',
+            'Wrong attribute name',
+            'Change link to href'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'normal',
+        fn:     "\n  <img src='fun.jpg' with='200' />",
+        answer: "\n  <img src='fun.jpg' width='200' />",
+        test:   "200 pixel wide image",
+        hints: [
+            'Misspelling',
+            'with and hite?',
+            'Add d to change with to width'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'normal',
+        fn:     "\n  <a href='about'>About us</a>",
+        answer: "\n  <a href='#about'>About us</a>",
+        test:   "Link to same-page element",
+        hints: [
+            'Think ID in CSS',
+            'Hashtag',
+            'Add # before about'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'easy',
+        fn:     "\n  <input kind='text' />",
+        answer: "\n  <input type='text' />",
+        test:   "Text input field",
+        hints: [
+            'Need thesaurus',
+            'Another 4-letter word',
+            'Change kind to type'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'hard',
+        fn:     "\n  <label for='name'>Name</label>\n  <input name='name' />",
+        answer: "\n  <label for='name'>Name</label>\n  <input id='name' />",
+        test:   "Label and it\'s associated input",
+        hints: [
+            '3 of 4',
+            'One name is wrong',
+            'Change name attribute to id'
         ]
     },
 ]
