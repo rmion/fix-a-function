@@ -2,9 +2,9 @@ let app = new Vue({
     el: "#app",
     data: {
         gameTypes: {
-            'js': 'function',
-            'html': 'tag',
-            'css': 'style',
+            'js': 'a function',
+            'html': 'some markup',
+            'css': 'some styles',
         },
         exercises: listOfExercises,
         airTableId: null,

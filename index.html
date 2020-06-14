@@ -14,7 +14,7 @@
 <body>
     <div id="app">
         <p v-if="isRecordingSubmission" style="position: absolute; top: 0; left: 0;">Saving...</p>
-        <h1><span v-show="isRepeatCustomer">Welcome back to </span>'Fix a {{gameTypes[filteredExercises[counter].language]}}!'</h1>
+        <h1><span v-show="isRepeatCustomer">Welcome back to </span>'Fix {{gameTypes[filteredExercises[counter].language]}}!'</h1>
         <main v-if="exercisesAttempted < exerciseCap && livesRemaining > 0 && isTimeGateLifted">
             <div>
                 <h2>Heads-up display</h2>
@@ -222,6 +222,11 @@
             </form>
         </aside>
     </div>
+    <footer>
+        <p>
+            <small>Designed and developed by <a href="https://rmion.com">Robert Mion</a>. Debugged by you!</small>
+        </p>    
+    </footer>
     <script src="https://unpkg.com/vue"></script>
     <script src="./app.js"></script>
 </body>
