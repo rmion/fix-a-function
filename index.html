@@ -204,16 +204,39 @@
             </div>
         </main>
         <aside v-else>
-            <h2>Your {{priorSessions.length}}-day score: 
+            <h2 v-show="!isTimeGateLifted">Play again tomorrow!</h2>
+            <div v-show="isTimeGateLifted">
+                <p v-if="score == 0">
+                    <i class="far fa-star fa-2x"></i>
+                    <i class="far fa-star fa-2x"></i>
+                    <i class="far fa-star fa-2x"></i>
+                </p>
+                <p v-if="score > 0 && score < 6">
+                    <i class="fas fa-star fa-2x"></i>
+                    <i class="far fa-star fa-2x"></i>
+                    <i class="far fa-star fa-2x"></i>
+                </p>
+                <p v-else-if="score >= 6 && score < 11">
+                    <i class="fas fa-star fa-2x"></i>
+                    <i class="fas fa-star fa-2x"></i>
+                    <i class="far fa-star fa-2x"></i>
+                </p>
+                <p v-else-if="score >= 11">
+                    <i class="fas fa-star fa-2x"></i>
+                    <i class="fas fa-star fa-2x"></i>
+                    <i class="fas fa-star fa-2x"></i>
+                </p>    
+                <h2>Today's score: {{ score }}/15</h2>
+            </div>
+            <p>Your {{priorSessions.length}}-day score: 
                 <a class="button" :href=`https://twitter.com/intent/tweet?hashtags=javascript&ref_src=twsrc%5Etfw&text=My%20${priorSessions.length}-day%20score%20is%20${accumulatedScore}%20playing%20%22Fix%20a%20function%22!%20Can%20you%20beat%20that%3F%20Play%20free%20to%20practice%20your%20JavaScript%20skills!&tw_p=tweetbutton&url=http%3A%2F%2Ffixafunction.com&via=putmionyourteam`>
                     {{accumulatedScore}} <i class="fab fa-twitter fa-sm"></i>
                 </a>
-            </h2>
-            <p v-show="!isTimeGateLifted">Play again tomorrow!</p>
+            </p>
             <form action="" @submit.prevent="recordEmailAfterGameOver" v-show="!isRepeatCustomer || !hasSubscribed">
                 <fieldset>
                     <legend>
-                        Get daily reminders
+                        Get 5 exercises each morning
                     </legend>
                     <label for="email">What's your email?</label>
                     <input type="email" id="email" v-model="email" required />
@@ -224,7 +247,7 @@
     </div>
     <footer>
         <p>
-            <small>Designed and developed by <a href="https://rmion.com">Robert Mion</a>. Debugged by you!</small>
+            <small><a href="https://rmion.com">Designed and developed by Robert Mion</a>. Debugged by you!</small>
         </p>    
     </footer>
     <script src="https://unpkg.com/vue"></script>

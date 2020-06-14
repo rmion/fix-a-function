@@ -174,6 +174,7 @@ let app = new Vue({
                 "Time Elapsed": this.timeElapsed
             };
             localStorage.setItem('fixafunction', JSON.stringify(record));
+            this.priorSessions = JSON.parse(localStorage.getItem('fixafunction')).sessions;
         },
         updateChallengeFn() {
             document.getElementById('fn').textContent = this.filteredExercises[this.counter].fn;
@@ -191,6 +192,7 @@ let app = new Vue({
             this.isWrongAnswer = false;
             this.score += (this.filteredExercises[this.counter].hints.length - this.nextHint);
             this.exercisesSolved += 1;
+            this.updateDatabases();
         },
         markIncorrectAnswer() {
             this.isWrongAnswer = true;
@@ -207,6 +209,7 @@ let app = new Vue({
                 this.nextHint += 1;
                 this.isAwaitingAnotherTry = true; 
             }
+            this.updateDatabases();
         },
         checkAttemptedFix() {
             this.answerMatchesSolution() ? this.markCorrectAnswer() : this.markIncorrectAnswer();

@@ -139,8 +139,8 @@ input[type="submit"] {
 input + label {
     margin-right: 0.5rem;
 }
-footer, footer > p {
-    margin: 0;
+.fa-star {
+    color: yellow;
 }
 @media only screen and (min-width: 1228px) {
     h2 {
