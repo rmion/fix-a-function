@@ -72,7 +72,7 @@
                 <div>
                     <section class="exercise">
                         <pre :class="{ solved: isSolved, incorrect: (!isSolved && isWrongAnswer) }">
-                            <code contenteditable="true" id="fn" @click="enableSolveButton"></code>
+                            <code contenteditable="true" id="code" @click="enableSolveButton"></code>
                         </pre>
                         <p>
                             {{filteredExercises[counter].test}}

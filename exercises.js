@@ -2,7 +2,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function double(n) {\n    return n  n;\n  }",
+        code:   "\n  function double(n) {\n    return n  n;\n  }",
         answer: "\n  function double(n) {\n    return n + n;\n  }",
         test:   "double(1) → 2",
         hints: [
@@ -14,7 +14,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function double() {\n    return n + n;\n  }",
+        code:   "\n  function double() {\n    return n + n;\n  }",
         answer: "\n  function double(n) {\n    return n + n;\n  }",
         test:   "double(1) → 2",
         hints: [
@@ -26,7 +26,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function double(n) {\n    n + n;\n  }",
+        code:   "\n  function double(n) {\n    n + n;\n  }",
         answer: "\n  function double(n) {\n    return n + n;\n  }",
         test:   "double(3) → 6",
         hints: [
@@ -38,7 +38,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  define double(n) {\n    return n + n;\n  }",
+        code:   "\n  define double(n) {\n    return n + n;\n  }",
         answer: "\n  function double(n) {\n    return n + n;\n  }",
         test:   "double(4) → 8",
         hints: [
@@ -50,7 +50,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function double(n) \n    return n + n;\n  }",
+        code:   "\n  function double(n) \n    return n + n;\n  }",
         answer: "\n  function double(n) {\n    return n + n;\n  }",
         test:   "double(5) → 10",
         hints: [
@@ -62,7 +62,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function today() {\n    return Date();\n  }",
+        code:   "\n  function today() {\n    return Date();\n  }",
         answer: "\n  function today() {\n    return new Date();\n  }",
         test:   "today() → Date object",
         hints: [
@@ -74,7 +74,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function today() {\n    return new Date;\n  }",
+        code:   "\n  function today() {\n    return new Date;\n  }",
         answer: "\n  function today() {\n    return new Date();\n  }",
         test:   "today() → Date object",
         hints: [
@@ -86,7 +86,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function today() {\n    return new date();\n  }",
+        code:   "\n  function today() {\n    return new date();\n  }",
         answer: "\n  function today() {\n    return new Date();\n  }",
         test:   "today() → Date object",
         hints: [
@@ -98,7 +98,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function 2day() {\n    return new Date();\n  }",
+        code:   "\n  function 2day() {\n    return new Date();\n  }",
         answer: "\n  function today() {\n    return new Date();\n  }",
         test:   "today() → Date object",
         hints: [
@@ -110,7 +110,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function today() {\n    returns new Date();\n  }",
+        code:   "\n  function today() {\n    returns new Date();\n  }",
         answer: "\n  function today() {\n    return new Date();\n  }",
         test:   "today() → Date object",
         hints: [
@@ -122,7 +122,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function bigger(ab) {\n    return Math.max(a,b);\n  }",
+        code:   "\n  function bigger(ab) {\n    return Math.max(a,b);\n  }",
         answer: "\n  function bigger(a,b) {\n    return Math.max(a,b);\n  }",
         test:   "bigger(1,2) → 2",
         hints: [
@@ -134,7 +134,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function bigger(a,b) {\n    return Math.max(ab);\n  }",
+        code:   "\n  function bigger(a,b) {\n    return Math.max(ab);\n  }",
         answer: "\n  function bigger(a,b) {\n    return Math.max(a,b);\n  }",
         test:   "bigger(2,4) → 4",
         hints: [
@@ -146,7 +146,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function bigger(a,b) {\n    return Math.maximum(a,b);\n  }",
+        code:   "\n  function bigger(a,b) {\n    return Math.maximum(a,b);\n  }",
         answer: "\n  function bigger(a,b) {\n    return Math.max(a,b);\n  }",
         test:   "bigger(5,3) → 5",
         hints: [
@@ -158,7 +158,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function bigger(a,b) {\n    return math.max(a,b);\n  }",
+        code:   "\n  function bigger(a,b) {\n    return math.max(a,b);\n  }",
         answer: "\n  function bigger(a,b) {\n    return Math.max(a,b);\n  }",
         test:   "bigger(5,8) → 8",
         hints: [
@@ -170,7 +170,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function bigger(a,b) {\n    Math.max(a,b);\n  }",
+        code:   "\n  function bigger(a,b) {\n    Math.max(a,b);\n  }",
         answer: "\n  function bigger(a,b) {\n    return Math.max(a,b);\n  }",
         test:   "bigger(2,12) → 12",
         hints: [
@@ -182,7 +182,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function sayHello() {\n    return \"Hello\';\n  }",
+        code:   "\n  function sayHello() {\n    return \"Hello\';\n  }",
         answer: "\n  function sayHello() {\n    return \"Hello\";\n  }",
         test:   "sayHello() → \"Hello\"",
         hints: [
@@ -194,7 +194,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function sayHello() {\n    return Hello\";\n  }",
+        code:   "\n  function sayHello() {\n    return Hello\";\n  }",
         answer: "\n  function sayHello() {\n    return \"Hello\";\n  }",
         test:   "sayHello() → \"Hello\"",
         hints: [
@@ -206,7 +206,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function sayHe11o() {\n    return \"Hello\";\n  }",
+        code:   "\n  function sayHe11o() {\n    return \"Hello\";\n  }",
         answer: "\n  function sayHello() {\n    return \"Hello\";\n  }",
         test:   "sayHello() → \"Hello\"",
         hints: [
@@ -218,7 +218,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function sayHello {\n    return \"Hello\";\n  }",
+        code:   "\n  function sayHello {\n    return \"Hello\";\n  }",
         answer: "\n  function sayHello() {\n    return \"Hello\";\n  }",
         test:   "sayHello() → \"Hello\"",
         hints: [
@@ -230,7 +230,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  fnuction sayHello() {\n    return \"Hello\";\n  }",
+        code:   "\n  fnuction sayHello() {\n    return \"Hello\";\n  }",
         answer: "\n  function sayHello() {\n    return \"Hello\";\n  }",
         test:   "sayHello() → \"Hello\"",
         hints: [
@@ -242,7 +242,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(list[i))\n    }\n  }",
+        code:   "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(list[i))\n    }\n  }",
         answer: "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(list[i])\n    }\n  }",
         test:   "loopy([1,2,3]) → 1 2 3",
         hints: [
@@ -254,7 +254,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function loopy(list) {\n    for (i==0; i<list.length; i++) {\n        console.log(list[i])\n    }\n  }",
+        code:   "\n  function loopy(list) {\n    for (i==0; i<list.length; i++) {\n        console.log(list[i])\n    }\n  }",
         answer: "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(list[i])\n    }\n  }",
         test:   "loopy([1,2,3]) → 1 2 3",
         hints: [
@@ -266,7 +266,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log([i])\n    }\n  }",
+        code:   "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log([i])\n    }\n  }",
         answer: "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(list[i])\n    }\n  }",
         test:   "loopy([1,2,3]) → 1 2 3",
         hints: [
@@ -278,7 +278,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(loopy[i])\n    }\n  }",
+        code:   "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(loopy[i])\n    }\n  }",
         answer: "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(list[i])\n    }\n  }",
         test:   "loopy([1,2,3]) → 1 2 3",
         hints: [
@@ -290,7 +290,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function loopy(list) {\n    for (i=1; i<list.length; i++) {\n        console.log(list[i])\n    }\n  }",
+        code:   "\n  function loopy(list) {\n    for (i=1; i<list.length; i++) {\n        console.log(list[i])\n    }\n  }",
         answer: "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(list[i])\n    }\n  }",
         test:   "loopy([1,2,3]) → 1 2 3",
         hints: [
@@ -302,7 +302,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function sum(a,b,c) {\n    return a + b  c;\n  }",
+        code:   "\n  function sum(a,b,c) {\n    return a + b  c;\n  }",
         answer: "\n  function sum(a,b,c) {\n    return a + b + c;\n  }",
         test:   "sum(1,1,1) → 3",
         hints: [
@@ -314,7 +314,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function sum(a,b,c) {\n    return a + b + C;\n  }",
+        code:   "\n  function sum(a,b,c) {\n    return a + b + C;\n  }",
         answer: "\n  function sum(a,b,c) {\n    return a + b + c;\n  }",
         test:   "sum(2,2,2) → 6",
         hints: [
@@ -326,7 +326,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function sum(a,b,b) {\n    return a + b + c;\n  }",
+        code:   "\n  function sum(a,b,b) {\n    return a + b + c;\n  }",
         answer: "\n  function sum(a,b,c) {\n    return a + b + c;\n  }",
         test:   "sum(1,2,3) → 6",
         hints: [
@@ -338,7 +338,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function sum(a,b,c) {\n    retrun a + b + c;\n  }",
+        code:   "\n  function sum(a,b,c) {\n    retrun a + b + c;\n  }",
         answer: "\n  function sum(a,b,c) {\n    return a + b + c;\n  }",
         test:   "sum(3,1,1) → 5",
         hints: [
@@ -350,7 +350,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function sum(a,b,c) {\n    return a + b + c;\n  ",
+        code:   "\n  function sum(a,b,c) {\n    return a + b + c;\n  ",
         answer: "\n  function sum(a,b,c) {\n    return a + b + c;\n  }",
         test:   "sum(3,2,1) → 6",
         hints: [
@@ -362,7 +362,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function each(list) {\n    return list.forEach(i > i);\n  }",
+        code:   "\n  function each(list) {\n    return list.forEach(i > i);\n  }",
         answer: "\n  function each(list) {\n    return list.forEach(i => i);\n  }",
         test:   "each(3,2,1) → 3 2 1",
         hints: [
@@ -374,7 +374,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function each(list) {\n    return list.fourEach(i => i);\n  }",
+        code:   "\n  function each(list) {\n    return list.fourEach(i => i);\n  }",
         answer: "\n  function each(list) {\n    return list.forEach(i => i);\n  }",
         test:   "each(1,2,3) → 1 2 3",
         hints: [
@@ -386,7 +386,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function each(list) {\n    return list.foreach(i => i);\n  }",
+        code:   "\n  function each(list) {\n    return list.foreach(i => i);\n  }",
         answer: "\n  function each(list) {\n    return list.forEach(i => i);\n  }",
         test:   "each(2,4,6) → 2 4 6",
         hints: [
@@ -398,7 +398,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function each(1ist) {\n    return list.forEach(i => i);\n  }",
+        code:   "\n  function each(1ist) {\n    return list.forEach(i => i);\n  }",
         answer: "\n  function each(list) {\n    return list.forEach(i => i);\n  }",
         test:   "each(1,2,3) → 1 2 3",
         hints: [
@@ -410,7 +410,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function each(list) {\n    return list.Each(i => i);\n  }",
+        code:   "\n  function each(list) {\n    return list.Each(i => i);\n  }",
         answer: "\n  function each(list) {\n    return list.forEach(i => i);\n  }",
         test:   "each(4,4,4) → 4 4 4",
         hints: [
@@ -422,7 +422,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function equals(num) {\n    return num === String(num);\n  }",
+        code:   "\n  function equals(num) {\n    return num === String(num);\n  }",
         answer: "\n  function equals(num) {\n    return num == String(num);\n  }",
         test:   "equals(3) → true",
         hints: [
@@ -434,7 +434,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function equals(num) {\n    return num == String(num);\n  }",
+        code:   "\n  function equals(num) {\n    return num == String(num);\n  }",
         answer: "\n  function equals(num) {\n    return num === String(num);\n  }",
         test:   "equals(4) → false",
         hints: [
@@ -446,7 +446,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function equals(num) {\n    return num == 'num;\n  }",
+        code:   "\n  function equals(num) {\n    return num == 'num;\n  }",
         answer: "\n  function equals(num) {\n    return num == num;\n  }",
         test:   "equals(5) → true",
         hints: [
@@ -458,7 +458,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function equals(num) {\n    return num === Sting(num);\n  }",
+        code:   "\n  function equals(num) {\n    return num === Sting(num);\n  }",
         answer: "\n  function equals(num) {\n    return num === String(num);\n  }",
         test:   "equals(6) → true",
         hints: [
@@ -470,7 +470,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function equals(num) {\n    return num = String(num);\n  }",
+        code:   "\n  function equals(num) {\n    return num = String(num);\n  }",
         answer: "\n  function equals(num) {\n    return num == String(num);\n  }",
         test:   "equals(7) → true",
         hints: [
@@ -482,7 +482,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function dataType(data) {\n    return typeof dada;\n  }",
+        code:   "\n  function dataType(data) {\n    return typeof dada;\n  }",
         answer: "\n  function dataType(data) {\n    return typeof data;\n  }",
         test:   "dataType({}) → 'object'",
         hints: [
@@ -494,7 +494,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function dataType(data) {\n    return typeof data\';\n  }",
+        code:   "\n  function dataType(data) {\n    return typeof data\';\n  }",
         answer: "\n  function dataType(data) {\n    return typeof data;\n  }",
         test:   "dataType({}) → 'object'",
         hints: [
@@ -506,7 +506,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function dataType(data) {\n    return typeof data;\n  }",
+        code:   "\n  function dataType(data) {\n    return typeof data;\n  }",
         answer: "\n  function dataType(data) {\n    return typeof +data;\n  }",
         test:   "dataType('5') → 'number'",
         hints: [
@@ -518,7 +518,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function dataType(data) {\n    return typeof data();\n  }",
+        code:   "\n  function dataType(data) {\n    return typeof data();\n  }",
         answer: "\n  function dataType(data) {\n    return typeof new data();\n  }",
         test:   "dataType(Date) → 'object'",
         hints: [
@@ -530,7 +530,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function dataType(data) {\n    return typ of data;\n  }",
+        code:   "\n  function dataType(data) {\n    return typ of data;\n  }",
         answer: "\n  function dataType(data) {\n    return typeof data;\n  }",
         test:   "dataType({}) → 'object'",
         hints: [
@@ -542,7 +542,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function formalName(f,l) {\n    return `${f}, ${f}`;\n  }",
+        code:   "\n  function formalName(f,l) {\n    return `${f}, ${f}`;\n  }",
         answer: "\n  function formalName(f,l) {\n    return `${l}, ${f}`;\n  }",
         test:   "formalName('Kanye','West') → 'West, Kanye'",
         hints: [
@@ -554,7 +554,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function formalName(f,l) {\n    return `${l}, $(f}`;\n  }",
+        code:   "\n  function formalName(f,l) {\n    return `${l}, $(f}`;\n  }",
         answer: "\n  function formalName(f,l) {\n    return `${l}, ${f}`;\n  }",
         test:   "formalName('George','Bush') → 'Bush, George'",
         hints: [
@@ -566,7 +566,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function formalName(f,l) {\n    return `${l} ${f}`;\n  }",
+        code:   "\n  function formalName(f,l) {\n    return `${l} ${f}`;\n  }",
         answer: "\n  function formalName(f,l) {\n    return `${l}, ${f}`;\n  }",
         test:   "formalName('Bob','Dole') → 'Dole, Bob'",
         hints: [
@@ -578,7 +578,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function formalName(f,l) {\n    return '${l}, ${f}`;\n  }",
+        code:   "\n  function formalName(f,l) {\n    return '${l}, ${f}`;\n  }",
         answer: "\n  function formalName(f,l) {\n    return `${l}, ${f}`;\n  }",
         test:   "formalName('Jack','Ryan') → 'Ryan, Jack'",
         hints: [
@@ -590,7 +590,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function formalName(f,l) {\n    return `{l}, ${f}`;\n  }",
+        code:   "\n  function formalName(f,l) {\n    return `{l}, ${f}`;\n  }",
         answer: "\n  function formalName(f,l) {\n    return `${l}, ${f}`;\n  }",
         test:   "formalName('Robert','Mion') → 'Mion, Robert'",
         hints: [
@@ -602,7 +602,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function ternary(bool) {\n    return bowl ? 'this' : 'that';\n  }",
+        code:   "\n  function ternary(bool) {\n    return bowl ? 'this' : 'that';\n  }",
         answer: "\n  function ternary(bool) {\n    return bool ? 'this' : 'that';\n  }",
         test:   "ternary(false) → 'that'",
         hints: [
@@ -614,7 +614,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function ternary(bool) {\n    return bool ? 'this' : 'that';\n  }",
+        code:   "\n  function ternary(bool) {\n    return bool ? 'this' : 'that';\n  }",
         answer: "\n  function ternary(bool) {\n    return bool ? this : 'that';\n  }",
         test:   "ternary(true) → Window",
         hints: [
@@ -626,7 +626,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function ternary(bool) {\n    return bool ? 'this : 'that';\n  }",
+        code:   "\n  function ternary(bool) {\n    return bool ? 'this : 'that';\n  }",
         answer: "\n  function ternary(bool) {\n    return bool ? 'this' : 'that';\n  }",
         test:   "ternary(true) → 'this'",
         hints: [
@@ -638,7 +638,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function ternary(bool) {\n    return bool ? 'this' ; 'that';\n  }",
+        code:   "\n  function ternary(bool) {\n    return bool ? 'this' ; 'that';\n  }",
         answer: "\n  function ternary(bool) {\n    return bool ? 'this' : 'that';\n  }",
         test:   "ternary(false) → 'that'",
         hints: [
@@ -650,7 +650,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function ternary(bool) {\n    return bool : 'this' : 'that';\n  }",
+        code:   "\n  function ternary(bool) {\n    return bool : 'this' : 'that';\n  }",
         answer: "\n  function ternary(bool) {\n    return bool ? 'this' : 'that';\n  }",
         test:   "ternary(true) → 'this'",
         hints: [
@@ -662,7 +662,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function makeArrayFrom(a,b,c) {\n    return [a,b,c};\n  }",
+        code:   "\n  function makeArrayFrom(a,b,c) {\n    return [a,b,c};\n  }",
         answer: "\n  function makeArrayFrom(a,b,c) {\n    return [a,b,c];\n  }",
         test:   "makeArrayFrom(1,2,3) → [1,2,3]",
         hints: [
@@ -674,7 +674,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function makeArrayFrom(a,b,c) {\n    return (a,b,c);\n  }",
+        code:   "\n  function makeArrayFrom(a,b,c) {\n    return (a,b,c);\n  }",
         answer: "\n  function makeArrayFrom(a,b,c) {\n    return Array(a,b,c);\n  }",
         test:   "makeArrayFrom(3,2,1) → [3,2,1]",
         hints: [
@@ -686,7 +686,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function newArrayFrom(a,b,c) {\n    return [a,b,c];\n  }",
+        code:   "\n  function newArrayFrom(a,b,c) {\n    return [a,b,c];\n  }",
         answer: "\n  function makeArrayFrom(a,b,c) {\n    return [a,b,c];\n  }",
         test:   "makeArrayFrom(2,2,2) → [2,2,2]",
         hints: [
@@ -698,7 +698,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function makeArrayFrom(a,b,c) {\n    return [a.b,c];\n  }",
+        code:   "\n  function makeArrayFrom(a,b,c) {\n    return [a.b,c];\n  }",
         answer: "\n  function makeArrayFrom(a,b,c) {\n    return [a,b,c];\n  }",
         test:   "makeArrayFrom(1,3,5) → [1,3,5]",
         hints: [
@@ -710,7 +710,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function makeArrayFrom(a,b,c) {\n    return; [a,b,c];\n  }",
+        code:   "\n  function makeArrayFrom(a,b,c) {\n    return; [a,b,c];\n  }",
         answer: "\n  function makeArrayFrom(a,b,c) {\n    return [a,b,c];\n  }",
         test:   "makeArrayFrom(2,4,6) → [2,4,6]",
         hints: [
@@ -722,7 +722,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function greet(name) {\n    return 'Hi, ${name}!`;\n  }",
+        code:   "\n  function greet(name) {\n    return 'Hi, ${name}!`;\n  }",
         answer: "\n  function greet(name) {\n    return `Hi, ${name}!`;\n  }",
         test:   "greet('John') → 'Hi, John!'",
         hints: [
@@ -734,7 +734,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function greet(name) {\n    return `Hi, $(name}!`;\n  }",
+        code:   "\n  function greet(name) {\n    return `Hi, $(name}!`;\n  }",
         answer: "\n  function greet(name) {\n    return `Hi, ${name}!`;\n  }",
         test:   "greet('Charles') → 'Hi, Charles!'",
         hints: [
@@ -746,7 +746,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function great(name) {\n    return `Hi, ${name}!`;\n  }",
+        code:   "\n  function great(name) {\n    return `Hi, ${name}!`;\n  }",
         answer: "\n  function greet(name) {\n    return `Hi, ${name}!`;\n  }",
         test:   "greet('Jack') → 'Hi, Jack!'",
         hints: [
@@ -758,7 +758,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function greet(name) {\n    return `Hi, ${name}`;\n  }",
+        code:   "\n  function greet(name) {\n    return `Hi, ${name}`;\n  }",
         answer: "\n  function greet(name) {\n    return `Hi, ${name}!`;\n  }",
         test:   "greet('Robert') → 'Hi, Robert!'",
         hints: [
@@ -770,7 +770,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function greet() {\n    return `Hi, ${name}!`;\n  }",
+        code:   "\n  function greet() {\n    return `Hi, ${name}!`;\n  }",
         answer: "\n  function greet(name) {\n    return `Hi, ${name}!`;\n  }",
         test:   "greet('Kate') → 'Hi, Kate!'",
         hints: [
@@ -782,7 +782,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function noteToSelf() {\n    / Some comment\n  }",
+        code:   "\n  function noteToSelf() {\n    / Some comment\n  }",
         answer: "\n  function noteToSelf() {\n    // Some comment\n  }",
         test:   "noteToSelf() → undefined",
         hints: [
@@ -794,7 +794,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function noteToSelf() {\n    \\\\ Some comment\n  }",
+        code:   "\n  function noteToSelf() {\n    \\\\ Some comment\n  }",
         answer: "\n  function noteToSelf() {\n    // Some comment\n  }",
         test:   "noteToSelf() → undefined",
         hints: [
@@ -806,7 +806,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function noteToSelf() {\n     Some comment\n  }",
+        code:   "\n  function noteToSelf() {\n     Some comment\n  }",
         answer: "\n  function noteToSelf() {\n    // Some comment\n  }",
         test:   "noteToSelf() → undefined",
         hints: [
@@ -818,7 +818,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function notetoSelf() {\n    // Some comment\n  }",
+        code:   "\n  function notetoSelf() {\n    // Some comment\n  }",
         answer: "\n  function noteToSelf() {\n    // Some comment\n  }",
         test:   "noteToSelf() → undefined",
         hints: [
@@ -830,7 +830,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function noteToSelf() {\n    */ Some comment\n  }",
+        code:   "\n  function noteToSelf() {\n    */ Some comment\n  }",
         answer: "\n  function noteToSelf() {\n    // Some comment\n  }",
         test:   "noteToSelf() → undefined",
         hints: [
@@ -842,7 +842,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function parrot(number) {\n    return () > number;\n  }",
+        code:   "\n  function parrot(number) {\n    return () > number;\n  }",
         answer: "\n  function parrot(number) {\n    return () => number;\n  }",
         test:   "parrot(1)() → 1",
         hints: [
@@ -854,7 +854,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function parrot(number) {\n    return {} => number;\n  }",
+        code:   "\n  function parrot(number) {\n    return {} => number;\n  }",
         answer: "\n  function parrot(number) {\n    return () => number;\n  }",
         test:   "parrot(2)() → 2",
         hints: [
@@ -866,7 +866,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function parrot(number) {\n    return () <= number;\n  }",
+        code:   "\n  function parrot(number) {\n    return () <= number;\n  }",
         answer: "\n  function parrot(number) {\n    return () => number;\n  }",
         test:   "parrot(3)() → 3",
         hints: [
@@ -878,7 +878,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function parrot(number) {\n    return (number) => number;\n  }",
+        code:   "\n  function parrot(number) {\n    return (number) => number;\n  }",
         answer: "\n  function parrot(number) {\n    return () => number;\n  }",
         test:   "parrot(4)() → 4",
         hints: [
@@ -890,7 +890,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function parrot(number) {\n    return  => number;\n  }",
+        code:   "\n  function parrot(number) {\n    return  => number;\n  }",
         answer: "\n  function parrot(number) {\n    return () => number;\n  }",
         test:   "parrot(5)() → 5",
         hints: [
@@ -902,7 +902,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function IdPlease(id) {\n    return document.getElementByID(id);\n  }",
+        code:   "\n  function IdPlease(id) {\n    return document.getElementByID(id);\n  }",
         answer: "\n  function IdPlease(id) {\n    return document.getElementById(id);\n  }",
         test:   "IdPlease('neo') → HTMLElement",
         hints: [
@@ -914,7 +914,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function IdPlease(id) {\n    return document.getElementsById(id);\n  }",
+        code:   "\n  function IdPlease(id) {\n    return document.getElementsById(id);\n  }",
         answer: "\n  function IdPlease(id) {\n    return document.getElementById(id);\n  }",
         test:   "IdPlease('cher') → HTMLElement",
         hints: [
@@ -926,7 +926,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function IdPlease(id) {\n    return document.getElementById('id);\n  }",
+        code:   "\n  function IdPlease(id) {\n    return document.getElementById('id);\n  }",
         answer: "\n  function IdPlease(id) {\n    return document.getElementById(id);\n  }",
         test:   "IdPlease('prince') → HTMLElement",
         hints: [
@@ -938,7 +938,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function IdPlease(id) {\n    return document.getElementFromId(id);\n  }",
+        code:   "\n  function IdPlease(id) {\n    return document.getElementFromId(id);\n  }",
         answer: "\n  function IdPlease(id) {\n    return document.getElementById(id);\n  }",
         test:   "IdPlease('bono') → HTMLElement",
         hints: [
@@ -950,7 +950,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function IdPlease(id) {\n    return window.getElementById(id);\n  }",
+        code:   "\n  function IdPlease(id) {\n    return window.getElementById(id);\n  }",
         answer: "\n  function IdPlease(id) {\n    return document.getElementById(id);\n  }",
         test:   "IdPlease('sting') → HTMLElement",
         hints: [
@@ -962,7 +962,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function newTail(list,item) {\n    return list.pass(item);\n  }",
+        code:   "\n  function newTail(list,item) {\n    return list.pass(item);\n  }",
         answer: "\n  function newTail(list,item) {\n    return list.push(item);\n  }",
         test:   "newTail([1,2],3) → [1,2,3]",
         hints: [
@@ -974,7 +974,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function newTail(list,item) {\n    rerun list.push(item);\n  }",
+        code:   "\n  function newTail(list,item) {\n    rerun list.push(item);\n  }",
         answer: "\n  function newTail(list,item) {\n    return list.push(item);\n  }",
         test:   "newTail([2,4],6) → [2,4,6]",
         hints: [
@@ -986,7 +986,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function newTail(list,item) {\n    return list.tail(item);\n  }",
+        code:   "\n  function newTail(list,item) {\n    return list.tail(item);\n  }",
         answer: "\n  function newTail(list,item) {\n    return list.push(item);\n  }",
         test:   "newTail([3,4],5) → [3,4,5]",
         hints: [
@@ -998,7 +998,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function newTail(list,item) {\n    return list.push(item]);\n  }",
+        code:   "\n  function newTail(list,item) {\n    return list.push(item]);\n  }",
         answer: "\n  function newTail(list,item) {\n    return list.push(item);\n  }",
         test:   "newTail([3,5],7) → [3,5,7]",
         hints: [
@@ -1010,7 +1010,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function newTai(list,item) {\n    return list.push(item);\n  }",
+        code:   "\n  function newTai(list,item) {\n    return list.push(item);\n  }",
         answer: "\n  function newTail(list,item) {\n    return list.push(item);\n  }",
         test:   "newTail([3,2],1) → [3,2,1]",
         hints: [
@@ -1022,7 +1022,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function chopTail(list) {\n    return list.poop();\n  }",
+        code:   "\n  function chopTail(list) {\n    return list.poop();\n  }",
         answer: "\n  function chopTail(list) {\n    return list.pop();\n  }",
         test:   "chopTail([1,2,3]) → 3",
         hints: [
@@ -1034,7 +1034,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function chopTail(list) {\n    return list.pop;\n  }",
+        code:   "\n  function chopTail(list) {\n    return list.pop;\n  }",
         answer: "\n  function chopTail(list) {\n    return list.pop();\n  }",
         test:   "chopTail([3,2,1]) → 1",
         hints: [
@@ -1046,7 +1046,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function chopTail(list) {\n    return list,pop();\n  }",
+        code:   "\n  function chopTail(list) {\n    return list,pop();\n  }",
         answer: "\n  function chopTail(list) {\n    return list.pop();\n  }",
         test:   "chopTail([2,4,6]) → 6",
         hints: [
@@ -1058,7 +1058,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function chopTail() {\n    return list.pop();\n  }",
+        code:   "\n  function chopTail() {\n    return list.pop();\n  }",
         answer: "\n  function chopTail(list) {\n    return list.pop();\n  }",
         test:   "chopTail([6,6,6]) → 6",
         hints: [
@@ -1070,7 +1070,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function chopTail(list) {\n    return list.pop(1);\n  }",
+        code:   "\n  function chopTail(list) {\n    return list.pop(1);\n  }",
         answer: "\n  function chopTail(list) {\n    return list.pop();\n  }",
         test:   "chopTail([9,1,1]) → 1",
         hints: [
@@ -1082,7 +1082,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function chopHead(list) {\n    return list.shift(1);\n  }",
+        code:   "\n  function chopHead(list) {\n    return list.shift(1);\n  }",
         answer: "\n  function chopHead(list) {\n    return list.shift();\n  }",
         test:   "chopHead([1,2,3]) → 1",
         hints: [
@@ -1094,7 +1094,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function chopHead(list) {\n    return list.shit();\n  }",
+        code:   "\n  function chopHead(list) {\n    return list.shit();\n  }",
         answer: "\n  function chopHead(list) {\n    return list.shift();\n  }",
         test:   "chopHead([2,2,2]) → 2",
         hints: [
@@ -1106,7 +1106,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function chopHead(list) {\n    return list.pop();\n  }",
+        code:   "\n  function chopHead(list) {\n    return list.pop();\n  }",
         answer: "\n  function chopHead(list) {\n    return list.shift();\n  }",
         test:   "chopHead([2,3,4]) → 2",
         hints: [
@@ -1118,7 +1118,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function chopHead(list) {\n    return list.unshift();\n  }",
+        code:   "\n  function chopHead(list) {\n    return list.unshift();\n  }",
         answer: "\n  function chopHead(list) {\n    return list.shift();\n  }",
         test:   "chopHead([3,2,1]) → 3",
         hints: [
@@ -1130,7 +1130,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function chopHead(list) {\n    return list.shift;\n  }",
+        code:   "\n  function chopHead(list) {\n    return list.shift;\n  }",
         answer: "\n  function chopHead(list) {\n    return list.shift();\n  }",
         test:   "chopHead([9,1,1]) → 9",
         hints: [
@@ -1142,7 +1142,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function newHead(list,item) {\n    return list.unshift();\n  }",
+        code:   "\n  function newHead(list,item) {\n    return list.unshift();\n  }",
         answer: "\n  function newHead(list,item) {\n    return list.unshift(item);\n  }",
         test:   "newHead([1,2],3) → 3",
         hints: [
@@ -1154,7 +1154,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function newHead(list,item) {\n    return list.unshift(list);\n  }",
+        code:   "\n  function newHead(list,item) {\n    return list.unshift(list);\n  }",
         answer: "\n  function newHead(list,item) {\n    return list.unshift(item);\n  }",
         test:   "newHead([3,2],1) → 1",
         hints: [
@@ -1166,7 +1166,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'normal',
-        fn:     "\n  function newHead(list,item) {\n    return list.shift(item);\n  }",
+        code:   "\n  function newHead(list,item) {\n    return list.shift(item);\n  }",
         answer: "\n  function newHead(list,item) {\n    return list.unshift(item);\n  }",
         test:   "newHead([7,3],7) → 7",
         hints: [
@@ -1178,7 +1178,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'hard',
-        fn:     "\n  function newHead(list,item) {\n    return list.push(item);\n  }",
+        code:   "\n  function newHead(list,item) {\n    return list.push(item);\n  }",
         answer: "\n  function newHead(list,item) {\n    return list.unshift(item);\n  }",
         test:   "newHead([4,1],4) → 4",
         hints: [
@@ -1190,7 +1190,7 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        fn:     "\n  function newHead(list,item) {\n    return lift.unshift(item);\n  }",
+        code:   "\n  function newHead(list,item) {\n    return lift.unshift(item);\n  }",
         answer: "\n  function newHead(list,item) {\n    return list.unshift(item);\n  }",
         test:   "newHead([4,1],4) → 4",
         hints: [
@@ -1202,7 +1202,7 @@ var listOfExercises = [
     {
         language: 'html',
         difficulty: 'easy',
-        fn:     "\n  <p>Hello, world!<p>",
+        code:   "\n  <p>Hello, world!<p>",
         answer: "\n  <p>Hello, world!</p>",
         test:   "One paragraph element",
         hints: [
@@ -1214,7 +1214,7 @@ var listOfExercises = [
     {
         language: 'html',
         difficulty: 'easy',
-        fn:     "\n  <h1>Hello, world!</p>",
+        code:   "\n  <h1>Hello, world!</p>",
         answer: "\n  <h1>Hello, world!</h1>",
         test:   "One level-1 heading element",
         hints: [
@@ -1226,7 +1226,7 @@ var listOfExercises = [
     {
         language: 'html',
         difficulty: 'easy',
-        fn:     "\n  <p>Hello, world!/p>",
+        code:   "\n  <p>Hello, world!/p>",
         answer: "\n  <p>Hello, world!</p>",
         test:   "One paragraph element",
         hints: [
@@ -1238,7 +1238,7 @@ var listOfExercises = [
     {
         language: 'html',
         difficulty: 'easy',
-        fn:     "\n  <p<Hello, world!</p>",
+        code:   "\n  <p<Hello, world!</p>",
         answer: "\n  <p>Hello, world!</p>",
         test:   "One paragraph element",
         hints: [
@@ -1250,7 +1250,7 @@ var listOfExercises = [
     {
         language: 'html',
         difficulty: 'easy',
-        fn:     "\n  </p>Hello, world!</p>",
+        code:   "\n  </p>Hello, world!</p>",
         answer: "\n  <p>Hello, world!</p>",
         test:   "One paragraph element",
         hints: [
@@ -1262,7 +1262,7 @@ var listOfExercises = [
     {
         language: 'html',
         difficulty: 'normal',
-        fn:     "\n  <img src='fun.jpg' alt='' >",
+        code:   "\n  <img src='fun.jpg' alt='' >",
         answer: "\n  <img src='fun.jpg' alt='' />",
         test:   "Valid image element",
         hints: [
@@ -1274,7 +1274,7 @@ var listOfExercises = [
     {
         language: 'html',
         difficulty: 'hard',
-        fn:     "\n  <img src='horse.jpg' title='Horse' >",
+        code:   "\n  <img src='horse.jpg' title='Horse' >",
         answer: "\n  <img src='fun.jpg' alt='Horse' />",
         test:   "Valid image element with alternative text",
         hints: [
@@ -1286,7 +1286,7 @@ var listOfExercises = [
     {
         language: 'html',
         difficulty: 'normal',
-        fn:     "\n  <p><copy>Copyright 2020</small></p>",
+        code:   "\n  <p><copy>Copyright 2020</small></p>",
         answer: "\n  <p><small>Copyright 2020</small></p>",
         test:   "Paragraph with valid legal copy markup",
         hints: [
@@ -1298,7 +1298,7 @@ var listOfExercises = [
     {
         language: 'html',
         difficulty: 'normal',
-        fn:     "\n  <ul>\n    <li>List item<il\\>\n  </ul>",
+        code:   "\n  <ul>\n    <li>List item<il\\>\n  </ul>",
         answer: "\n  <ul>\n    <li>List item</li>\n  </ul>",
         test:   "Unordered list with one list item",
         hints: [
@@ -1310,7 +1310,7 @@ var listOfExercises = [
     {
         language: 'html',
         difficulty: 'normal',
-        fn:     "\n  <ul>\n    <li>List item</li>\n  </ol>",
+        code:   "\n  <ul>\n    <li>List item</li>\n  </ol>",
         answer: "\n  <ul>\n    <li>List item</li>\n  </ul>",
         test:   "Unordered list with one list item",
         hints: [
@@ -1322,7 +1322,7 @@ var listOfExercises = [
     {
         language: 'html',
         difficulty: 'hard',
-        fn:     "\n  <dl>\n    <dt>Term</dt>\n    <dd>Description</dt>\n  </dl>",
+        code:   "\n  <dl>\n    <dt>Term</dt>\n    <dd>Description</dt>\n  </dl>",
         answer: "\n  <dl>\n    <dt>Term</dt>\n    <dd>Description</dd>\n  </dl>",
         test:   "Definition list with one Term-Description pair",
         hints: [
@@ -1334,7 +1334,7 @@ var listOfExercises = [
     {
         language: 'html',
         difficulty: 'hard',
-        fn:     "\n  <dl>\n    <dt/>Term</dt>\n    <dd>Description</dd>\n  </dl>",
+        code:   "\n  <dl>\n    <dt/>Term</dt>\n    <dd>Description</dd>\n  </dl>",
         answer: "\n  <dl>\n    <dt>Term</dt>\n    <dd>Description</dt>\n  </dl>",
         test:   "Definition list with one Term-Description pair",
         hints: [
@@ -1346,7 +1346,7 @@ var listOfExercises = [
     {
         language: 'html',
         difficulty: 'normal',
-        fn:     "\n  <h1>\n    Heading text here\n  </hl>",
+        code:   "\n  <h1>\n    Heading text here\n  </hl>",
         answer: "\n  <h1>\n    Heading text here\n  </h1>",
         test:   "Level-1 heading",
         hints: [
@@ -1358,7 +1358,7 @@ var listOfExercises = [
     {
         language: 'html',
         difficulty: 'hard',
-        fn:     "\n  <img src='fun.jpg' alt='decoration' />",
+        code:   "\n  <img src='fun.jpg' alt='decoration' />",
         answer: "\n  <img src='fun.jpg' alt='' />",
         test:   "Valid decorative image element",
         hints: [
@@ -1370,7 +1370,7 @@ var listOfExercises = [
     {
         language: 'html',
         difficulty: 'normal',
-        fn:     "\n  <a link='http://google.com'>Google</a>",
+        code:   "\n  <a link='http://google.com'>Google</a>",
         answer: "\n  <a href='http://google.com'>Google</a>",
         test:   "Hyperlink to Google",
         hints: [
@@ -1382,7 +1382,7 @@ var listOfExercises = [
     {
         language: 'html',
         difficulty: 'normal',
-        fn:     "\n  <img src='fun.jpg' with='200' />",
+        code:   "\n  <img src='fun.jpg' with='200' />",
         answer: "\n  <img src='fun.jpg' width='200' />",
         test:   "200 pixel wide image",
         hints: [
@@ -1394,7 +1394,7 @@ var listOfExercises = [
     {
         language: 'html',
         difficulty: 'normal',
-        fn:     "\n  <a href='about'>About us</a>",
+        code:   "\n  <a href='about'>About us</a>",
         answer: "\n  <a href='#about'>About us</a>",
         test:   "Link to same-page element",
         hints: [
@@ -1406,7 +1406,7 @@ var listOfExercises = [
     {
         language: 'html',
         difficulty: 'easy',
-        fn:     "\n  <input kind='text' />",
+        code:   "\n  <input kind='text' />",
         answer: "\n  <input type='text' />",
         test:   "Text input field",
         hints: [
@@ -1418,7 +1418,7 @@ var listOfExercises = [
     {
         language: 'html',
         difficulty: 'hard',
-        fn:     "\n  <label for='name'>Name</label>\n  <input name='name' />",
+        code:   "\n  <label for='name'>Name</label>\n  <input name='name' />",
         answer: "\n  <label for='name'>Name</label>\n  <input id='name' />",
         test:   "Label and it\'s associated input",
         hints: [
@@ -1428,9 +1428,21 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'html',
+        difficulty: 'normal',
+        code:   "\n  <button id='primary'>Refresh</button>",
+        answer: "\n  <button class='primary'>Refresh</button>",
+        test:   "One of several primary buttons",
+        hints: [
+            'Hmm...one of several?',
+            'An id is unique',
+            'Change id attribute to class'
+        ]
+    },
+    {
         language: 'css',
         difficulty: 'easy',
-        fn:     "\n  p {\n    font-size: 1em;\n  }",
+        code:   "\n  p {\n    font-size: 1em;\n  }",
         answer: "\n  p {\n    font-size: 2em;\n  }",
         test:   "Make all paragraphs two times the size of the current font",
         hints: [
@@ -1442,7 +1454,7 @@ var listOfExercises = [
     {
         language: 'css',
         difficulty: 'easy',
-        fn:     "\n  img {\n    max-width: 100vh;\n  }",
+        code:   "\n  img {\n    max-width: 100vh;\n  }",
         answer: "\n  img {\n    max-width: 100vw;\n  }",
         test:   "All images cannot exceed 100% of the viewport width",
         hints: [
@@ -1454,7 +1466,7 @@ var listOfExercises = [
     {
         language: 'css',
         difficulty: 'normal',
-        fn:     "\n  h1 > p {\n    color: black;\n  }",
+        code:   "\n  h1 > p {\n    color: black;\n  }",
         answer: "\n  h1 + p {\n    color: black;\n  }",
         test:   "Make all paragraphs placed immediately after a level-1 heading black",
         hints: [
@@ -1466,7 +1478,7 @@ var listOfExercises = [
     {
         language: 'css',
         difficulty: 'easy',
-        fn:     "\n  .unique {\n    color: #987789;\n  }",
+        code:   "\n  .unique {\n    color: #987789;\n  }",
         answer: "\n  #unique {\n    color: #987789;\n  }",
         test:   "Make the element with id 'unique' warm gray",
         hints: [
@@ -1478,7 +1490,7 @@ var listOfExercises = [
     {
         language: 'css',
         difficulty: 'easy',
-        fn:     "\n  h2 {\n    font-weight: normal;\n  }",
+        code:   "\n  h2 {\n    font-weight: normal;\n  }",
         answer: "\n  h3 {\n    font-weight: normal;\n  }",
         test:   "Make all level-3 headings normal font weight",
         hints: [
@@ -1490,7 +1502,7 @@ var listOfExercises = [
     {
         language: 'css',
         difficulty: 'hard',
-        fn:     "\n  ul  {\n    margin-left: 0;\n  }",
+        code:   "\n  ul  {\n    margin-left: 0;\n  }",
         answer: "\n  ul li {\n    margin-left: 0;\n  }",
         test:   "Remove left margin from all list items inside all unordered lists",
         hints: [
@@ -1502,7 +1514,7 @@ var listOfExercises = [
     {
         language: 'css',
         difficulty: 'easy',
-        fn:     "\n  dt  {\n    margin-left: 0;\n  }",
+        code:   "\n  dt  {\n    margin-left: 0;\n  }",
         answer: "\n  dd {\n    margin-left: 0;\n  }",
         test:   "Remove left margin from all definition descriptors",
         hints: [
@@ -1514,7 +1526,7 @@ var listOfExercises = [
     {
         language: 'css',
         difficulty: 'hard',
-        fn:     "\n  a[href^='.pdf']::after {\n    content: '[PDF]';\n  }",
+        code:   "\n  a[href^='.pdf']::after {\n    content: '[PDF]';\n  }",
         answer: "\n  a[href$='.pdf']::after {\n    content: '[PDF]';\n  }",
         test:   "Insert content after every link that ends with .pdf",
         hints: [
@@ -1526,7 +1538,7 @@ var listOfExercises = [
     {
         language: 'css',
         difficulty: 'hard',
-        fn:     "\n  p + ul {\n    border-top: 2px solid black;\n  }",
+        code:   "\n  p + ul {\n    border-top: 2px solid black;\n  }",
         answer: "\n  p ~ ul {\n    border-top: 2px solid black;\n  }",
         test:   "Give each unordered list preceded by a paragraph a thin black border",
         hints: [
@@ -1538,7 +1550,7 @@ var listOfExercises = [
     {
         language: 'css',
         difficulty: 'normal',
-        fn:     "\n  div p {\n    margin-top: 10px;\n  }",
+        code:   "\n  div p {\n    margin-top: 10px;\n  }",
         answer: "\n  div,p {\n    margin-top: 10px;\n  }",
         test:   "Add 10px margin to the top of all div and paragraph elements",
         hints: [
@@ -1550,7 +1562,7 @@ var listOfExercises = [
     {
         language: 'css',
         difficulty: 'easy',
-        fn:     "\n  p,intro {\n    margin-top: 10px;\n  }",
+        code:   "\n  p,intro {\n    margin-top: 10px;\n  }",
         answer: "\n  p.intro {\n    margin-top: 10px;\n  }",
         test:   "Add 10px margin to the top of all paragraph elements with class intro",
         hints: [
@@ -1562,7 +1574,7 @@ var listOfExercises = [
     {
         language: 'css',
         difficulty: 'normal',
-        fn:     "\n  h3 {\n    margin-bottom: 10px;\n  }",
+        code:   "\n  h3 {\n    margin-bottom: 10px;\n  }",
         answer: "\n  h3 {\n    margin-top: 10px;\n  }",
         test:   "Add 10px margin to the top of level-3 headings",
         hints: [
@@ -1574,7 +1586,7 @@ var listOfExercises = [
     {
         language: 'css',
         difficulty: 'normal',
-        fn:     "\n  p:last-child {\n    margin-top: 10px;\n  }",
+        code:   "\n  p:last-child {\n    margin-top: 10px;\n  }",
         answer: "\n  p:first-child {\n    margin-top: 10px;\n  }",
         test:   "Add 10px margin to the top of every paragraph that is the first child of its parent",
         hints: [
@@ -1586,7 +1598,7 @@ var listOfExercises = [
     {
         language: 'css',
         difficulty: 'normal',
-        fn:     "\n  a:active {\n    color: purple;\n  }",
+        code:   "\n  a:active {\n    color: purple;\n  }",
         answer: "\n  a:visited {\n    color: purple;\n  }",
         test:   "Set the color of all visited links to purple",
         hints: [

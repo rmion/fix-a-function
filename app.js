@@ -62,7 +62,7 @@ let app = new Vue({
         this.startSessionStopwatch();
         this.manageVisitorRecords();
         this.counter = this.getIndexOfRandomExercise();
-        this.updateChallengeFn();
+        this.updateChallengeCode();
     },
     methods: {
         startSessionStopwatch() {
@@ -176,16 +176,16 @@ let app = new Vue({
             localStorage.setItem('fixafunction', JSON.stringify(record));
             this.priorSessions = JSON.parse(localStorage.getItem('fixafunction')).sessions;
         },
-        updateChallengeFn() {
-            document.getElementById('fn').textContent = this.filteredExercises[this.counter].fn;
+        updateChallengeCode() {
+            document.getElementById('code').textContent = this.filteredExercises[this.counter].code;
         },
         getHint() {
             this.needsHint = true; 
             this.nextHint += 1;
-            this.updateChallengeFn();
+            this.updateChallengeCode();
         },
         answerMatchesSolution() {
-            return document.getElementById('fn').textContent.trim().replace(/\s/g,'') === this.filteredExercises[this.counter].answer.trim().replace(/\s/g,'');
+            return document.getElementById('code').textContent.trim().replace(/\s/g,'') === this.filteredExercises[this.counter].answer.trim().replace(/\s/g,'');
         },
         markCorrectAnswer() {
             this.isSolved = true;
@@ -196,7 +196,7 @@ let app = new Vue({
         },
         markIncorrectAnswer() {
             this.isWrongAnswer = true;
-            this.updateChallengeFn();
+            this.updateChallengeCode();
             this.subtractFromLives(1);
             if (this.nextHint == this.filteredExercises[this.counter].hints.length) {
                 this.needsHint = false;
@@ -241,7 +241,7 @@ let app = new Vue({
             this.nextHint = 0;
             this.removePreviousExercise();
             this.counter = this.getIndexOfRandomExercise();
-            this.updateChallengeFn();
+            this.updateChallengeCode();
             if (this.timer === "On") {
                 this.resetTimer()
             }
@@ -384,11 +384,11 @@ let app = new Vue({
         },
         difficulty(newVal, oldVal) {
             this.counter = this.getIndexOfRandomExercise();
-            this.updateChallengeFn()
+            this.updateChallengeCode()
         },
         language(newVal, oldVal) {
             this.counter = this.getIndexOfRandomExercise();
-            this.updateChallengeFn()
+            this.updateChallengeCode()
         },
         livesRemaining(newVal, oldVal) {
             this.updateTodaysSession();
