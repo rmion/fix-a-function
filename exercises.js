@@ -1200,6 +1200,54 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
+        difficulty: 'easy',
+        code:   "\n  function manMade(sex) {\n    return {\n      gender= sex\n    }\n  }",
+        answer: "\n  function manMade(sex) {\n    return {\n      gender= sex\n    }\n  }",
+        test:   "manMade('male') → Object",
+        hints: [
+            'Wrong assignment',
+            'No place for equality',
+            'Change equal sign to colon'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'easy',
+        code:   "\n  function coercion(bool) {\n    return bool;\n  }",
+        answer: "\n  function coercion(bool) {\n    return +bool;\n  }",
+        test:   "coercion(true) → 1",
+        hints: [
+            'Unary, baby!',
+            'Need number, not boolean',
+            'Insert plus sign before bool'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'easy',
+        code:   "\n  function coercion(name) {\n    return name;\n  }",
+        answer: "\n  function coercion(name) {\n    return !name;\n  }",
+        test:   "coercion('Robert') → false",
+        hints: [
+            'Bang bang!',
+            'Convert to truthy/falsey',
+            'Insert exclamation mark before name'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'hard',
+        code:   "\n  function blockScope(num) {\n    for (var i = 0; i < num; i++) {\n      setTimeout(() => console.log(i), 1);\n    }\n  }",
+        answer: "\n  function blockScope(num) {\n    for (let i = 0; i < num; i++) {\n      setTimeout(() => console.log(i), 1);\n    }\n  }",
+        test:   "blockScope(3) → 0 1 2",
+        hints: [
+            'Right now it logs 3 3 3',
+            'Wrong variable scoping',
+            'Change var to let'
+        ]
+    },
+    {
         language: 'html',
         difficulty: 'easy',
         code:   "\n  <p>Hello, world!<p>",
@@ -1440,6 +1488,54 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'html',
+        difficulty: 'easy',
+        code:   "\n  <head>\n    <title>Fix a function!</title>\n  </body>",
+        answer: "\n  <head>\n    <title>Fix a function!</title>\n  </head>",
+        test:   "Add a title to the document",
+        hints: [
+            'Start and stop',
+            'Use your head',
+            'Change closing tag to head'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'easy',
+        code:   "\n  <br/>",
+        answer: "\n  <hr/>",
+        test:   "Add a thematic break between paragraph-level elements.",
+        hints: [
+            'A.k.a. horizontal rule',
+            'Make it an acronym',
+            'Change br to hr'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'easy',
+        code:   "\n  <span lang='en'>\n    Hello, world!\n  </swan>",
+        answer: "\n  <span lang='en'>\n    Hello, world!\n  </span>",
+        test:   "Add a generic inline container for phrasing content",
+        hints: [
+            'Swan song',
+            'Matching pairs required',
+            'Change closing tag to span'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'easy',
+        code:   "\n  <p>\n    E=MC<sup>2</sub>\n  </p>",
+        answer: "\n  <p>\n    E=MC<sup>2</sup>\n  </p>",
+        test:   "Specify inline text which is to be displayed as superscript",
+        hints: [
+            'Sub, dogg?',
+            'Retire the sub',
+            'Change closing sub to sup'
+        ]
+    },
+    {
         language: 'css',
         difficulty: 'easy',
         code:   "\n  p {\n    font-size: 1em;\n  }",
@@ -1605,6 +1701,102 @@ var listOfExercises = [
             'Wrong pseudo-selector',
             'Refer to the test',
             'Change active to visited'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'easy',
+        code:   "\n  a {\n    color: 0000ff;\n  }",
+        answer: "\n  a {\n    color: #0000ff;\n  }",
+        test:   "Set the color of all links to blue",
+        hints: [
+            'Think twitter',
+            'Hashtag',
+            'Add a hashtag before the first 0'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'normal',
+        code:   "\n  a {\n    color: rbga(0,0,255,1);\n  }",
+        answer: "\n  a {\n    color: rgba(0,0,255,1);\n  }",
+        test:   "Set the color of all links to opaque blue",
+        hints: [
+            'Between the bookends',
+            'Out of order',
+            'Swap b ang g so its rgba'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'normal',
+        code:   "\n  a {\n    color: hsl(120, 100, 50%);\n  }",
+        answer: "\n  a {\n    color: hsl(120, 100%, 50%);\n  }",
+        test:   "Set the color of all links to green",
+        hints: [
+            'Incorrectly unitless',
+            '100 what?',
+            'Insert percent symbol after 100'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'easy',
+        code:   "\n  a {\n    color: rad;\n  }",
+        answer: "\n  a {\n    color: red;\n  }",
+        test:   "Set the color of all links to red",
+        hints: [
+            'Killer, broh',
+            'radrum?',
+            'Change rad to red'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'easy',
+        code:   "\n  .lego {\n    display: black;\n  }",
+        answer: "\n  .lego {\n    display: block;\n  }",
+        test:   "Each element with class lego should start on a new line and take up the whole width",
+        hints: [
+            'That\'s a color, silly',
+            'Different vowel',
+            'Change black to block'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'normal',
+        code:   "\n  .two-dimensional {\n    display: flex;\n  }",
+        answer: "\n  .two-dimensional {\n    display: grid;\n  }",
+        test:   "Each element with class two-dimensional should be a block-level grid container",
+        hints: [
+            'Think perpendicular lines',
+            'Think graph paper',
+            'Change flex to grid'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'normal',
+        code:   "\n  .heavier {\n    font-wait: bold;\n  }",
+        answer: "\n  .heavier {\n    font-weight: bold;\n  }",
+        test:   "Each element with class heavier should have bold text",
+        hints: [
+            'Wait right there!',
+            'Word play. Get it?',
+            'Change wait to weight'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'easy',
+        code:   "\n  .push-down {\n    margin-up: 10px;\n  }",
+        answer: "\n  .push-down {\n    margin-top: 10px;\n  }",
+        test:   "Each element with class push-down should have 10px margin above it",
+        hints: [
+            'What\'s up?',
+            'Up top!',
+            'Change up to top'
         ]
     },
 ]
