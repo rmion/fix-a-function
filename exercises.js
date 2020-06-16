@@ -1203,7 +1203,7 @@ var listOfExercises = [
         language: 'js',
         difficulty: 'easy',
         code:   "\n  function manMade(sex) {\n    return {\n      gender= sex\n    }\n  }",
-        answer: "\n  function manMade(sex) {\n    return {\n      gender= sex\n    }\n  }",
+        answer: "\n  function manMade(sex) {\n    return {\n      gender: sex\n    }\n  }",
         test:   "manMade('male') → Object",
         hints: [
             'Wrong assignment',
