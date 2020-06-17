@@ -1799,4 +1799,124 @@ var listOfExercises = [
             'Change up to top'
         ]
     },
+    {
+        language: 'css',
+        difficulty: 'normal',
+        code:   "\n  li < a {\n    text-decoration: none;\n  }",
+        answer: "\n  li > a {\n    text-decoration: none;\n  }",
+        test:   "Each link whose parent is a list item should have no underline",
+        hints: [
+            'Use its reflection',
+            'Which one is \'greater\'?',
+            'Change less-than sign to greater-than'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'hard',
+        code:   "\n  a[href$='.pdf'].after {\n    content: \"[PDF]\"\n  }",
+        answer: "\n  a[href$='.pdf']:after {\n    content: \"[PDF]\"\n  }",
+        test:   "Insert the text [PDF] after each link that opens a PDF",
+        hints: [
+            'One dot two dot',
+            'Before after',
+            'Change the dot before after to a colon'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'normal',
+        code:   "\n  p:first-of-kind {\n    border-left: 2px solid black;\n  }",
+        answer: "\n  p:first-of-type {\n    border-left: 2px solid black;\n  }",
+        test:   "Add a left-hand border to every paragraph that is the first one of its parent",
+        hints: [
+            'You\'re too kind',
+            'Not the right type',
+            'Change kind to type'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'normal',
+        code:   "\n  input:valid {\n    border: 2px solid red;\n  }",
+        answer: "\n  input:invalid {\n    border: 2px solid red;\n  }",
+        test:   "Add a border to every input that is not valid",
+        hints: [
+            'Do you validate?',
+            'Invalid entry is what we want!',
+            'Change valid to invalid'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'easy',
+        code:   "\n  img.see-through {\n    opacity: 0.5%;\n  }",
+        answer: "\n  img.see-through {\n    opacity: 0.5;\n  }",
+        test:   "Make all images with class see-through 50% transparent",
+        hints: [
+            'Are you 100% sure?',
+            'Decimals and percentages don\'t mesh',
+            'Delete the percentage sign'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'hard',
+        code:   "\n  * {\n    box-sizing: content-box;\n  }",
+        answer: "\n  * {\n    box-sizing: border-box;\n  }",
+        test:   "The width and height properties of all elements should include content, padding and border",
+        hints: [
+            'Live on the edge',
+            'Each region is surrounded by this',
+            'Change content to border'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'normal',
+        code:   "\n  * {\n    box-size: border-box;\n  }",
+        answer: "\n  * {\n    box-sizing: border-box;\n  }",
+        test:   "The width and height properties of all elements should include content, padding and border",
+        hints: [
+            'Seeing is believing',
+            'Modify the property name',
+            'Change size to sizing'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'normal',
+        code:   "\n  @ {\n    box-sizing: border-box;\n  }",
+        answer: "\n  * {\n    box-sizing: border-box;\n  }",
+        test:   "The width and height properties of all elements should include content, padding and border",
+        hints: [
+            'Wildcard!',
+            'Don\'t \'at\' me, broh',
+            'Change @ to *'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'normal',
+        code:   "\n  .placeholder {\n    background-image: href('fpo.jpg');\n  }",
+        answer: "\n  .placeholder {\n    background-image: url('fpo.jpg');\n  }",
+        test:   "Set the background image for elements with class placeholder as fpo.jpg",
+        hints: [
+            'Four letter word',
+            'That keyword is for links, not CSS',
+            'Change href to url'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'hard',
+        code:   "\n  .all-in-view {\n    background-size: cover;\n  }",
+        answer: "\n  .all-in-view {\n    background-size: contain;\n  }",
+        test:   "Resize the background image to make sure the image is fully visible",
+        hints: [
+            'Cover your eyes',
+            'Contain yourself',
+            'Change cover to contain'
+        ]
+    },
 ]
