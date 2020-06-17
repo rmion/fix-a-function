@@ -1248,6 +1248,78 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
+        difficulty: 'normal',
+        code:   "\n  function prefix(num) {\n    return ++num++;\n  }",
+        answer: "\n  function prefix(num) {\n    return ++num;\n  }",
+        test:   "prefix(3) → 4",
+        hints: [
+            'Asymmetry',
+            'Front-loaded',
+            'Delete both pluses after num'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'normal',
+        code:   "\n  function postfix(num) {\n    return ++num++;\n  }",
+        answer: "\n  function postfix(num) {\n    return num++;\n  }",
+        test:   "postfix(5) → 5",
+        hints: [
+            'Asymmetry',
+            'Back-loaded',
+            'Delete both pluses before num'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'hard',
+        code:   "\n  function rest(args) {\n    return typeof args;\n  }",
+        answer: "\n  function rest(...args) {\n    return typeof args;\n  }",
+        test:   "rest(1,2,3) → 'object'",
+        hints: [
+            '...',
+            'Spread out. Rest up.',
+            'Insert three dots before args parameter'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'hard',
+        code:   "\n  function tooSoon(max) {\n    for (let i=0;i<max;i++) {\n      if (i === 3) break;\n      console.log(i);\n    }\n  }",
+        answer: "\n  function tooSoon(max) {\n    for (let i=0;i<max;i++) {\n      if (i === 3) continue;\n      console.log(i);\n    }\n  }",
+        test:   "tooSoon(5) → 1 2 4",
+        hints: [
+            'Don\'t exit, skip',
+            'Synonym: keep going',
+            'Change break to continue'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'hard',
+        code:   "\n  function iife(num) {\n    return (() => num));\n  }",
+        answer: "\n  function iife(num) {\n    return (() => num)();\n  }",
+        test:   "iife(5) → 'number'",
+        hints: [
+            'Feeling iffy?',
+            'Missing parenthesis, but where?',
+            'Insert opening parenthesis before last closing parenthesis'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'hard',
+        code:   "\n  function spread(name) {\n    return [name];\n  }",
+        answer: "\n  function spread(name) {\n    return [...name];\n  }",
+        test:   "spread('Robert') → ['R','o','b','e','r','t']",
+        hints: [
+            '...',
+            'Roger that. Spread out.',
+            'Insert three dots before second occurrence of name'
+        ]
+    },
+    {
         language: 'html',
         difficulty: 'easy',
         code:   "\n  <p>Hello, world!<p>",
