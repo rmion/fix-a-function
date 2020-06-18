@@ -42,10 +42,6 @@ function economics($) {
     return Array(...$);
 }
 
-function factorial(x) {
-    return x <= 0 ? 1 : x * factorial(x - 1)
-}
-
 function coercion() {
     return Boolean("0" == true);
 }

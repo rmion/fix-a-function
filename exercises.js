@@ -1320,6 +1320,66 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
+        difficulty: 'hard',
+        code:   "\n  function factorial(x) {\n    return x <= 0 ? 1 : x * factorial(x + 1);\n  }",
+        answer: "\n  function factorial(x) {\n    return x <= 0 ? 1 : x * factorial(x - 1);\n  }",
+        test:   "factorial(5) → 120",
+        hints: [
+            'Memory leak detected',
+            'Smaller each time, not larger',
+            'Change plus sign to minus sign'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'hard',
+        code:   "\n  function factorial(x) {\n    return x <= 0 ? 0 : x * factorial(x - 1);\n  }",
+        answer: "\n  function factorial(x) {\n    return x <= 0 ? 1 : x * factorial(x - 1);\n  }",
+        test:   "factorial(4) → 24",
+        hints: [
+            'Check the condition',
+            'Always gonna be 0',
+            'Change 0 after question mark to 1'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'hard',
+        code:   "\n  function factorial(x) {\n    return x <= 0 ? 1 : x + factorial(x - 1);\n  }",
+        answer: "\n  function factorial(x) {\n    return x <= 0 ? 1 : x * factorial(x - 1);\n  }",
+        test:   "factorial(6) → 720",
+        hints: [
+            'Wrong operator',
+            'Incorrect addition',
+            'Change plus sign to multiply'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'hard',
+        code:   "\n  function factorial(x) {\n    return x <= 0 ? 1 : x * function(x - 1);\n  }",
+        answer: "\n  function factorial(x) {\n    return x <= 0 ? 1 : x * factorial(x - 1);\n  }",
+        test:   "factorial(3) → 6",
+        hints: [
+            'Check the label',
+            'Wrong name',
+            'Change second function to factorial'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'hard',
+        code:   "\n  function factorial(x) {\n    return x < 0 ? 1 : x * factorial(x - 1);\n  }",
+        answer: "\n  function factorial(x) {\n    return x <= 0 ? 1 : x * factorial(x - 1);\n  }",
+        test:   "factorial(3) → 6",
+        hints: [
+            'The smallest detail',
+            'Check the condition',
+            'Change less-than sign to less-than-or-equal-to sign'
+        ]
+    },
+    {
         language: 'html',
         difficulty: 'easy',
         code:   "\n  <p>Hello, world!<p>",
