@@ -180,6 +180,7 @@ let app = new Vue({
             document.getElementById('code').textContent = this.filteredExercises[this.counter].code;
         },
         getHint() {
+            this.hasAttemptedToSolve = true;
             this.needsHint = true; 
             this.nextHint += 1;
             this.updateChallengeCode();
@@ -212,6 +213,7 @@ let app = new Vue({
             this.updateDatabases();
         },
         checkAttemptedFix() {
+            this.hasAttemptedToSolve = true;
             this.answerMatchesSolution() ? this.markCorrectAnswer() : this.markIncorrectAnswer();
         },
         removePreviousExercise() {
