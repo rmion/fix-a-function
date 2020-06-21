@@ -1764,6 +1764,138 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'html',
+        difficulty: 'easy',
+        code:   "\n  <ol>\n    <li>milk</li>\n    <li>cheese</li>\n  </ul>",
+        answer: "\n  <ul>\n    <li>milk</li>\n    <li>cheese</li>\n  </ul>",
+        test:   "Bullet-point style list of groceries",
+        hints: [
+            'What kind of list?',
+            'Just groceries, not instructions',
+            'Change ol to ul'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'easy',
+        code:   "\n  <ol>\n    <li>Do this first</li>\n    <li>And this second</li>\n  </ohl>",
+        answer: "\n  <ol>\n    <li>Do this first</li>\n    <li>And this second</li>\n  </ol>",
+        test:   "Numbered list of instructions",
+        hints: [
+            'What kind of list?',
+            'Instructions must be followed in order',
+            'Change ohl to ol'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'easy',
+        code:   "\n  <input type='text' >",
+        answer: "\n  <input type='text' />",
+        test:   "Text input field",
+        hints: [
+            'These are self-closing',
+            'Fill the space at the end',
+            'Insert / just before close of tag'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'easy',
+        code:   "\n  <imput type='text' />",
+        answer: "\n  <input type='text' />",
+        test:   "Text input field",
+        hints: [
+            'That\'s not a valid tag, silly',
+            'Spelling error',
+            'Change m to n in input'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'hard',
+        code:   "\n  <form submit='/process.php'>\n    <input type='text'/>\n  </form>",
+        answer: "\n  <form action='/process.php'>\n    <input type='text'/>\n  </form>",
+        test:   "Form element that submits data",
+        hints: [
+            'Think Hollywood',
+            'Lights...camera...!',
+            'Change submit to action'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'hard',
+        code:   "\n  <form action='/process.php'>\n    <input type='text'/>\n    <button type='button'>Submit</button>\n  </form>",
+        answer: "\n  <form action='/process.php'>\n    <input type='text'/>\n    <button type='submit'>Submit</button>\n  </form>",
+        test:   "Form element with button that submits data",
+        hints: [
+            'Wrong type',
+            'Match the button label with it\'s type',
+            'Change button\'s type attribute from button to submit'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'normal',
+        code:   "\n  <input type='email' retired />",
+        answer: "\n  <input type='email' required />",
+        test:   "Required form field of type email",
+        hints: [
+            'Seems odd for a form field to be retired',
+            'What rhymes with retired?',
+            'Change retired to required'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'hard',
+        code:   "\n  <label for='red'>\n    <input type='radio' id='red' title='color'>Red\n  </label>",
+        answer: "\n  <label for='red'>\n    <input type='radio' id='red' name='color'>Red\n  </label>",
+        test:   "Radio button that's part of related color group",
+        hints: [
+            'Fourth of four attribute names',
+            'Incorrect attribute title',
+            'Change title to name'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'hard',
+        code:   "\n  <label for='yes'>\n    <input type='radio' id='yes' name='on-or-off'>Yes\n  </label>",
+        answer: "\n  <label for='yes'>\n    <input type='checkbox' id='yes' name='on-or-off'>Yes\n  </label>",
+        test:   "Checkbox that's part of related choose group",
+        hints: [
+            'Wrong type',
+            'Can select many',
+            'Change radio type to checkbox'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'hard',
+        code:   "\n  <input type='radio' id='happy' name='mood' clicked />",
+        answer: "\n  <input type='radio' id='happy' name='mood' checked />",
+        test:   "Radio button that is checked by default",
+        hints: [
+            '...lick...heck...',
+            'Start from the end',
+            'Change clicked to checked'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'easy',
+        code:   "\n  <|doctype html>\n  <html>\n    <h1>This page is valid!</h1>\n  </html>",
+        answer: "\n  <!doctype html>\n  <html>\n    <h1>This page is valid!</h1>\n  </html>",
+        test:   "Valid HTML5 document",
+        hints: [
+            'Plumber called: lose the pipe',
+            'Second character',
+            'Change pipe | to exclamation mark !'
+        ]
+    },
+    {
         language: 'css',
         difficulty: 'easy',
         code:   "\n  p {\n    font-size: 1em;\n  }",
