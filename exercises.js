@@ -1441,7 +1441,7 @@ var listOfExercises = [
     },
     {
         language: 'html',
-        difficulty: 'normal',
+        difficulty: 'hard',
         code:   "\n  <img src='fun.jpg' alt='' >",
         answer: "\n  <img src='fun.jpg' alt='' />",
         test:   "Valid image element",
@@ -1574,8 +1574,8 @@ var listOfExercises = [
     {
         language: 'html',
         difficulty: 'normal',
-        code:   "\n  <a href='about'>About us</a>",
-        answer: "\n  <a href='#about'>About us</a>",
+        code:   "\n  <a href='about'>About us</a>\n  ...\n  <h2 id='about'>About us</h2>",
+        answer: "\n  <a href='#about'>About us</a>\n  ...\n  <h2 id='about'>About us</h2>",
         test:   "Link to same-page element",
         hints: [
             'Think ID in CSS',
@@ -1665,6 +1665,102 @@ var listOfExercises = [
             'Sub, dogg?',
             'Retire the sub',
             'Change closing sub to sup'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'easy',
+        code:   "\n  <h1>Hello<h1>",
+        answer: "\n  <h1>Hello</h1>",
+        test:   "Level-1 heading element with text, Hello",
+        hints: [
+            'Slash',
+            'Start from the right',
+            'Insert / before second h1 to properly close tag'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'easy',
+        code:   "\n  <h2>Section title</h1>",
+        answer: "\n  <h2>Section title</h2>",
+        test:   "Level-2 heading element",
+        hints: [
+            'Mismatch detected',
+            'Open and closed case',
+            'Change h1 to h2'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'easy',
+        code:   "\n  <para>Informative text</p>",
+        answer: "\n  <p>Informative text</p>",
+        test:   "Paragraph element with text",
+        hints: [
+            'Mismatch detected',
+            'Wrong tag name',
+            'Change para to p'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'easy',
+        code:   "\n  <|--\n    <p>Won't appear</p>\n  -->",
+        answer: "\n  <!--\n    <p>Won't appear</p>\n  -->",
+        test:   "Commented code",
+        hints: [
+            'Misplaced pipe',
+            'Upside-down i',
+            'Change pipe | character to exclamation mark !'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'normal',
+        code:   "\n  <div>\n    <h1>Page title</h1>\n    <p>Informative text</p>\n  </main>",
+        answer: "\n  <main>\n    <h1>Page title</h1>\n    <p>Informative text</p>\n  </main>",
+        test:   "An h1 and p inside a semantic structuring element: main",
+        hints: [
+            'No generic tags allowed',
+            'Mismatch detected',
+            'Change div to main'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'normal',
+        code:   "\n  <img href='cat.jpg' alt='cat' />",
+        answer: "\n  <img src='cat.jpg' alt='cat' />",
+        test:   "A photo of a cat",
+        hints: [
+            'That attribute is for links, silly',
+            'Broken image detected',
+            'Change href to src'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'normal',
+        code:   "\n  <a href='#about'>About us</a>\n  ...\n  <h2 title='about'>About us</h2>",
+        answer: "\n  <a href='#about'>About us</a>\n  ...\n  <h2 id='about'>About us</h2>",
+        test:   "Link to same-page element",
+        hints: [
+            'Incorrect attribute',
+            'Unique...',
+            'Change name from title to id'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'hard',
+        code:   "\n  <p>\n    <a target='blank' href='https://rmion.com'>Portfolio</a>\n  </p>",
+        answer: "\n  <p>\n    <a target='_blank' href='https://rmion.com'>Portfolio</a>\n  </p>",
+        test:   "Link to same-page element",
+        hints: [
+            'blank check',
+            'We\'re flatlining!',
+            'Insert an underscore before blank'
         ]
     },
     {

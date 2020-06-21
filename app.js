@@ -109,7 +109,9 @@ let app = new Vue({
                             this.isRepeatCustomer = true;
                             this.airTableId = record.id;
                             this.priorSessions = record.sessions;
-                            this.updateTimeGate(record.sessions);    
+                            this.updateTimeGate(record.sessions);
+                            this.difficulty = data.fields["Difficulty"];
+                            this.language = data.fields["Language"];
                         }
                     })
                     .catch(err => {

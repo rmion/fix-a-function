@@ -204,7 +204,6 @@
             </div>
         </main>
         <aside v-else>
-            <h2 v-show="!isTimeGateLifted">Play again tomorrow!</h2>
             <div v-show="isTimeGateLifted">
                 <p v-if="score == 0">
                     <i class="far fa-star fa-2x"></i>
@@ -228,6 +227,7 @@
                 </p>    
                 <h2>Today's score: {{ score }}/15</h2>
             </div>
+            <h2>Play again tomorrow!</h2>
             <p>Your {{priorSessions.length}}-day score: 
                 <a class="button" :href=`https://twitter.com/intent/tweet?hashtags=javascript&ref_src=twsrc%5Etfw&text=My%20${priorSessions.length}-day%20score%20is%20${accumulatedScore}%20playing%20%22Fix%20a%20function%22!%20Can%20you%20beat%20that%3F%20Play%20free%20to%20practice%20your%20JavaScript%20skills!&tw_p=tweetbutton&url=http%3A%2F%2Ffixafunction.com&via=putmionyourteam`>
                     {{accumulatedScore}} <i class="fab fa-twitter fa-sm"></i>
