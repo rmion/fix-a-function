@@ -1896,6 +1896,54 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'html',
+        difficulty: 'hard',
+        code:   "\n  <link href='https://fonts.googleapis.com/css2?family-Roboto' rel='stylesheet'>",
+        answer: "\n  <link href='https://fonts.googleapis.com/css2?family=Roboto' rel='stylesheet'>",
+        test:   "Import Google Font family Roboto",
+        hints: [
+            'Ditch the dash',
+            'Need symbol with stacked horizontal bars',
+            'Change dash after family to equal sign'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'hard',
+        code:   "\n  <link href='https://fonts.googleapis.com/css2/family=Roboto' rel='stylesheet'>",
+        answer: "\n  <link href='https://fonts.googleapis.com/css2?family=Roboto' rel='stylesheet'>",
+        test:   "Import Google Font family Roboto",
+        hints: [
+            'Question everything',
+            'family isn\'t a folder. It\'s a query',
+            'Change / after css2 two ?'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'normal',
+        code:   "\n  <meta href='https://fonts.googleapis.com/css2?family=Roboto' rel='stylesheet'>",
+        answer: "\n  <link href='https://fonts.googleapis.com/css2?family=Roboto' rel='stylesheet'>",
+        test:   "Import Google Font family Roboto",
+        hints: [
+            'Missing link',
+            'That\'s so meta',
+            'Change meta to link'
+        ]
+    },
+    {
+        language: 'html',
+        difficulty: 'normal',
+        code:   "\n  <link src='https://fonts.googleapis.com/css2?family=Roboto' rel='stylesheet'>",
+        answer: "\n  <link href='https://fonts.googleapis.com/css2?family=Roboto' rel='stylesheet'>",
+        test:   "Import Google Font family Roboto",
+        hints: [
+            'Not at image, but a link',
+            'Hypertext Reference, not Source',
+            'Change src to href'
+        ]
+    },
+    {
         language: 'css',
         difficulty: 'easy',
         code:   "\n  p {\n    font-size: 1em;\n  }",
@@ -2277,6 +2325,126 @@ var listOfExercises = [
             'Cover your eyes',
             'Contain yourself',
             'Change cover to contain'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'easy',
+        code:   "\n  h2 {\n    colour: #333;\n  }",
+        answer: "\n  h2 {\n    color: #333;\n  }",
+        test:   "Make all level-2 headings dark gray",
+        hints: [
+            'CSS uses United States spelling',
+            'Extra vowel',
+            'Remove u in colour'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'normal',
+        code:   "\n  p {\n    text-size: 1em;\n  }",
+        answer: "\n  p {\n    text-size: 1em;\n  }",
+        test:   "Make all paragraphs the same size as the current font",
+        hints: [
+            'What?-size',
+            'Another four-letter word for text',
+            'Change text to font'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'easy',
+        code:   "\n  body {\n    font-family: sans serif;\n  }",
+        answer: "\n  body {\n    font-family: sans-serif;\n  }",
+        test:   "Make all text on the page sans serif",
+        hints: [
+            'Short horizontal bar',
+            'Hop, skip and a dash',
+            'Add dash between sans and serif'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'easy',
+        code:   "\n  body {\n    font family: sans-serif;\n  }",
+        answer: "\n  body {\n    font-family: sans-serif;\n  }",
+        test:   "Make all text on the page sans serif",
+        hints: [
+            'Short horizontal bar',
+            'Hop, skip and a dash',
+            'Add dash between font and family'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'easy',
+        code:   "\n  body {\n    font-family: Verdana sans-serif;\n  }",
+        answer: "\n  body {\n    font-family: Verdana, sans-serif;\n  }",
+        test:   "Make all text on the page Verdana. Fallback to sans serif.",
+        hints: [
+            'A space ain\'t enough',
+            'What separates two parts of a sentence?',
+            'Add comma after Verdana'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'easy',
+        code:   "\n  body {\n    font-family: Open Sans', sans-serif;\n  }",
+        answer: "\n  body {\n    font-family: 'Open Sans', sans-serif;\n  }",
+        test:   "Make all text on the page Open Sans. Fallback to sans serif.",
+        hints: [
+            'Mismatch detected',
+            'Must group multiple words',
+            'Add single quote before Open Sans'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'normal',
+        code:   "\n  .thin-red-border {\n    border: 1px red liquid;\n  }",
+        answer: "\n  .thin-red-border {\n    border: 1px red solid;\n  }",
+        test:   "Add a 1px red line around elements with class thin-red-border",
+        hints: [
+            'Use your chemistry',
+            'Think water',
+            'Change liquid to solid'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'hard',
+        code:   "\n  .thick-red-border {\n    border-color: red;\n    border-weight: 5px;\n    border-style: solid;\n  }",
+        answer: "\n  .thick-red-border {\n    border-color: red;\n    border-width: 5px;\n    border-style: solid;\n  }",
+        test:   "Add a 5px red line around elements with class thick-red-border",
+        hints: [
+            'Watch your calories',
+            'Think height\'s counterpart',
+            'Change weight to width'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'hard',
+        code:   "\n  .rounded {\n    corner-radius: 10px;\n  }",
+        answer: "\n  .rounded {\n    border-radius: 10px;\n  }",
+        test:   "Round the corners of elements with class rounded",
+        hints: [
+            'Wrong radius',
+            'What do all countries have?',
+            'Change corner to border'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'easy',
+        code:   "\n  .circular {\n    border-radius: 50;\n  }",
+        answer: "\n  .circular {\n    border-radius: 50%;\n  }",
+        test:   "Make elements with class circular look like circles",
+        hints: [
+            'Unitless: bad',
+            'Odds of getting heads in a coin toss',
+            'Add percent sign after 50'
         ]
     },
 ]
