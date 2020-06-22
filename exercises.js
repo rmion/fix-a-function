@@ -1756,7 +1756,7 @@ var listOfExercises = [
         difficulty: 'hard',
         code:   "\n  <p>\n    <a target='blank' href='https://rmion.com'>Portfolio</a>\n  </p>",
         answer: "\n  <p>\n    <a target='_blank' href='https://rmion.com'>Portfolio</a>\n  </p>",
-        test:   "Link to same-page element",
+        test:   "Link opens in new tab",
         hints: [
             'blank check',
             'We\'re flatlining!',
