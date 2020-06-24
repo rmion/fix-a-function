@@ -85,7 +85,7 @@
                             v-show="!didGiveUp && !isSolved" 
                             @click="checkAttemptedFix" 
                             :disabled="isAwaitingAnotherTry">
-                            {{ isWrongAnswer ? "Nope. Try again!" : "Did I fix it?" }}
+                            {{ isWrongAnswer ? `Nope. Tries left: ${filteredExercises[counter].hints.length - nextHint + 1}` : "Did I fix it?" }}
                         </button>
                         <button 
                             class="primary"
