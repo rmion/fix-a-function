@@ -2447,4 +2447,64 @@ var listOfExercises = [
             'Add percent sign after 50'
         ]
     },
+    {
+        language: 'css',
+        difficulty: 'easy',
+        code:   "\n  .red-bg {\n    background color: red;\n  }",
+        answer: "\n  .red-bg {\n    background-color: red;\n  }",
+        test:   "Give elements with class red-bg a red background",
+        hints: [
+            'One too many spaces',
+            'Add a dash of something',
+            'Insert dash between background and color'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'easy',
+        code:   "\n  .fluffy {\n    pudding: 10px;\n  }",
+        answer: "\n  .fluffy {\n    padding: 10px;\n  }",
+        test:   "Give elements with class fluffy extra space around the content",
+        hints: [
+            'CSS shouldn\'t be this delicious',
+            'Wrong vowel',
+            'Change pudding to padding'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'easy',
+        code:   "\n  .marginal {\n    margin: 20px, 40px;\n  }",
+        answer: "\n  .marginal {\n    margin: 20px 40px;\n  }",
+        test:   "Give elements with class marginal 20px margin top and bottom, 40px margin left and right",
+        hints: [
+            'Space is enough',
+            'One too many punctuation marks',
+            'Delete comma after 20px'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'easy',
+        code:   "\n  .clockwise {\n    margin: 5px 15px 25px 35px;\n  }",
+        answer: "\n  .clockwise {\n    margin: 5px 15px 5px 35px;\n  }",
+        test:   "Give elements with class clockwise 5px bottom margin",
+        hints: [
+            'How to remember: TROUBLE',
+            'Top-Right-Bottom-Left',
+            'Change 25px to 5px'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'easy',
+        code:   "\n  [type='test'] {\n    border: 1px solid #333;\n  }",
+        answer: "\n  [type='text'] {\n    border: 1px solid #333;\n  }",
+        test:   "Set the border for all text input fields",
+        hints: [
+            'This is only a test',
+            'Not a valid attribute value',
+            'Change test to text'
+        ]
+    },
 ]
