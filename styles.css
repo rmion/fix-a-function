@@ -20,7 +20,7 @@ em {
     font-family: monospace;
     font-style: normal;
 }
-main > div > p {
+main h2 {
     font-size: 1.5rem;
     margin-top: 0;
     line-height: 1.5;
@@ -143,9 +143,6 @@ input + label {
     color: yellow;
 }
 @media only screen and (min-width: 1228px) {
-    h2 {
-        margin: 0;
-    }
     main {
         display: grid;
         grid-gap: 1rem;

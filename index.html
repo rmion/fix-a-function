@@ -16,7 +16,7 @@
         <p v-if="isRecordingSubmission" style="position: absolute; top: 0; left: 0;">Saving...</p>
         <h1><span v-show="isRepeatCustomer">Welcome back to </span>'Fix {{gameTypes[filteredExercises[counter].language]}}!'</h1>
         <main v-if="exercisesAttempted < exerciseCap && livesRemaining > 0 && isTimeGateLifted">
-            <div>
+            <article>
                 <h2>Heads-up display</h2>
                 <dl>
                     <div>
@@ -57,151 +57,148 @@
                         <dd v-else>--</dd>
                     </div>
                 </dl>
-            </div>
-            <div>
-                <p v-show="exercisesAttempted > 1 && exercisesSolved < 2 && (difficulty == 'hard' || difficulty == 'all')">
+            </article>
+            <article>
+                <h2 v-show="exercisesAttempted > 1 && exercisesSolved < 2 && (difficulty == 'hard' || difficulty == 'all')">
                     Consider lowering the difficulty
-                </p>
-                <p v-if="!isSolved && needsHint == 0">
-                    Change one thing to match the <em>expected behavior</em>
-                </p>
-                <p v-if="isSolved">Great job!</p>
-                <p v-show="needsHint && !isSolved">
-                    Hint {{nextHint}} of {{filteredExercises[counter].hints.length}}: {{filteredExercises[counter].hints[nextHint - 1]}}
-                </p>
-                <div>
-                    <section class="exercise">
-                        <pre :class="{ solved: isSolved, incorrect: (!isSolved && isWrongAnswer) }">
-                            <code contenteditable="true" id="code" @click="enableSolveButton"></code>
-                        </pre>
-                        <p>
-                            {{filteredExercises[counter].test}}
-                        </p>
-                        <p>{{ filteredExercises[counter].language.toUpperCase() }}: {{ filteredExercises[counter].difficulty.toUpperCase() }}</p>
-                    </section>
+                </h2>
+                <h2 v-if="!isSolved">
+                    Change one thing to match the <em>expected result</em>
+                </h2>
+                <h2 v-if="isSolved">Great job!</h2>
+                <section class="exercise">
+                    <pre :class="{ solved: isSolved, incorrect: (!isSolved && isWrongAnswer) }">
+                        <code contenteditable="true" id="code" @click="enableSolveButton"></code>
+                    </pre>
                     <p>
-                        <button 
-                            class="primary"
-                            v-show="!didGiveUp && !isSolved" 
-                            @click="checkAttemptedFix" 
-                            :disabled="isAwaitingAnotherTry">
-                            {{ isWrongAnswer ? `Nope. Tries left: ${filteredExercises[counter].hints.length - nextHint + 1}` : "Did I fix it?" }}
-                        </button>
-                        <button 
-                            class="primary"
-                            v-show="isSolved || didGiveUp" 
-                            @click="prepareNextExercise">
-                            Play again!
-                        </button>
-                        <button 
-                            v-show="!isSolved && nextHint < filteredExercises[counter].hints.length" 
-                            @click="getHint" 
-                            :disabled="didGiveUp">
-                            Get hint
-                        </button>
-                    </p>    
-                    <section class="exercise" v-show="didGiveUp">
-                        <pre>
-                            <code>{{filteredExercises[counter].answer}}</code>
-                        </pre>
-                        <p>ANSWER</p>
-                    </section>    
-                </div>
-            </div>
-            <div>
+                        {{filteredExercises[counter].test}}
+                    </p>
+                    <p>{{ filteredExercises[counter].language.toUpperCase() }}: {{ filteredExercises[counter].difficulty.toUpperCase() }}</p>
+                </section>
+                <h2 v-show="needsHint && !isSolved">
+                    Hint {{nextHint}} of {{filteredExercises[counter].hints.length}}: {{filteredExercises[counter].hints[nextHint - 1]}}
+                </h2>    
+                <p>
+                    <button 
+                        class="primary"
+                        v-show="!didGiveUp && !isSolved" 
+                        @click="checkAttemptedFix" 
+                        :disabled="isAwaitingAnotherTry">
+                        {{ isWrongAnswer ? `Nope. Tries left: ${filteredExercises[counter].hints.length - nextHint + 1}` : "Did I fix it?" }}
+                    </button>
+                    <button 
+                        class="primary"
+                        v-show="isSolved || didGiveUp" 
+                        @click="prepareNextExercise">
+                        Play again!
+                    </button>
+                    <button 
+                        v-show="!isSolved && nextHint < filteredExercises[counter].hints.length" 
+                        @click="getHint" 
+                        :disabled="didGiveUp">
+                        Get hint
+                    </button>
+                </p>    
+                <section class="exercise" v-show="didGiveUp">
+                    <pre>
+                        <code>{{filteredExercises[counter].answer}}</code>
+                    </pre>
+                    <p>ANSWER</p>
+                </section>    
+            </article>
+            <aside>
                 <h2><span v-if="hasAttemptedToSolve">Locked:</span> Game settings</h2>
-                    <form action="">
-                        <fieldset>
-                            <legend>
-                                <span v-if="hasAttemptedToSolve">Locked:</span> Language
-                            </legend>
-                            <p>
-                                <input type="radio" id="js" name="language" value="js" v-model="language" :disabled="hasAttemptedToSolve" />
-                                <label for="js">
-                                    JavaScript
-                                </label>
-                            </p>
-                            <p>
-                                <input type="radio" id="html" name="language" value="html" v-model="language" :disabled="hasAttemptedToSolve" />
-                                <label for="html">
-                                    HTML
-                                </label>        
-                            </p>
-                            <p>
-                                <input type="radio" id="css" name="language" value="css" v-model="language" :disabled="hasAttemptedToSolve" />
-                                <label for="css">
-                                    CSS
-                                </label>        
-                            </p>
-                            <p>
-                                <input type="radio" id="any-lang" name="language" value="any" v-model="language" :disabled="hasAttemptedToSolve" />
-                                <label for="any-lang">
-                                    Any
-                                </label>        
-                            </p>
-                        </fieldset>
-                        <fieldset>
-                            <legend>
-                                <span v-if="hasAttemptedToSolve">Locked:</span> Difficulty
-                            </legend>
-                            <p>
-                                <input type="radio" id="easy" name="difficulty" value="easy" v-model="difficulty" :disabled="hasAttemptedToSolve" />
-                                <label for="easy">
-                                    Easy
-                                </label>    
-                            </p>
-                            <p>
-                                <input type="radio" id="normal" name="difficulty" value="normal" v-model="difficulty" :disabled="hasAttemptedToSolve" />
-                                <label for="normal">
-                                    Normal
-                                </label>    
-                            </p>
-                            <p>
-                                <input type="radio" id="hard" name="difficulty" value="hard" v-model="difficulty" :disabled="hasAttemptedToSolve" />
-                                <label for="hard">
-                                    Hard
-                                </label>
-                            </p>
-                            <p>
-                                <input type="radio" id="any-level" name="difficulty" value="any" v-model="difficulty" :disabled="hasAttemptedToSolve" />
-                                <label for="any-level">
-                                    Any
-                                </label>    
-                            </p>
-                        </fieldset>
-                        <fieldset>
-                            <legend>
-                                <span v-if="hasAttemptedToSolve">Locked:</span> Timer
-                            </legend>
-                            <input type="radio" id="off" name="timer" value="Off" v-model="timer" :disabled="hasAttemptedToSolve" />
-                            <label for="off">
-                                Off
+                <form action="">
+                    <fieldset>
+                        <legend>
+                            <span v-if="hasAttemptedToSolve">Locked:</span> Language
+                        </legend>
+                        <p>
+                            <input type="radio" id="js" name="language" value="js" v-model="language" :disabled="hasAttemptedToSolve" />
+                            <label for="js">
+                                JavaScript
+                            </label>
+                        </p>
+                        <p>
+                            <input type="radio" id="html" name="language" value="html" v-model="language" :disabled="hasAttemptedToSolve" />
+                            <label for="html">
+                                HTML
+                            </label>        
+                        </p>
+                        <p>
+                            <input type="radio" id="css" name="language" value="css" v-model="language" :disabled="hasAttemptedToSolve" />
+                            <label for="css">
+                                CSS
+                            </label>        
+                        </p>
+                        <p>
+                            <input type="radio" id="any-lang" name="language" value="any" v-model="language" :disabled="hasAttemptedToSolve" />
+                            <label for="any-lang">
+                                Any
+                            </label>        
+                        </p>
+                    </fieldset>
+                    <fieldset>
+                        <legend>
+                            <span v-if="hasAttemptedToSolve">Locked:</span> Difficulty
+                        </legend>
+                        <p>
+                            <input type="radio" id="easy" name="difficulty" value="easy" v-model="difficulty" :disabled="hasAttemptedToSolve" />
+                            <label for="easy">
+                                Easy
                             </label>    
-                            <input type="radio" id="on" name="timer" value="On" v-model="timer" :disabled="hasAttemptedToSolve" />
-                            <label for="on">
-                                On
+                        </p>
+                        <p>
+                            <input type="radio" id="normal" name="difficulty" value="normal" v-model="difficulty" :disabled="hasAttemptedToSolve" />
+                            <label for="normal">
+                                Normal
                             </label>    
-                        </fieldset>
-                        <fieldset>
-                            <legend>
-                                <span v-if="hasAttemptedToSolve">Locked:</span> Time limit (in seconds)
-                            </legend>
-                            <input type="radio" id="thirty" name="limit" value="30" v-model="timeLimit" :disabled="hasAttemptedToSolve" />
-                            <label for="thirty">
-                                30
+                        </p>
+                        <p>
+                            <input type="radio" id="hard" name="difficulty" value="hard" v-model="difficulty" :disabled="hasAttemptedToSolve" />
+                            <label for="hard">
+                                Hard
+                            </label>
+                        </p>
+                        <p>
+                            <input type="radio" id="any-level" name="difficulty" value="any" v-model="difficulty" :disabled="hasAttemptedToSolve" />
+                            <label for="any-level">
+                                Any
                             </label>    
-                            <input type="radio" id="fifteen" name="limit" value="15" v-model="timeLimit" :disabled="hasAttemptedToSolve" />
-                            <label for="fifteen">
-                                15
-                            </label>    
-                            <input type="radio" id="ten" name="limit" value="10" v-model="timeLimit" :disabled="hasAttemptedToSolve" />
-                            <label for="ten">
-                                10
-                            </label>    
-                        </fieldset>
-                    </form>        
-                </details>    
-            </div>
+                        </p>
+                    </fieldset>
+                    <fieldset>
+                        <legend>
+                            <span v-if="hasAttemptedToSolve">Locked:</span> Timer
+                        </legend>
+                        <input type="radio" id="off" name="timer" value="Off" v-model="timer" :disabled="hasAttemptedToSolve" />
+                        <label for="off">
+                            Off
+                        </label>    
+                        <input type="radio" id="on" name="timer" value="On" v-model="timer" :disabled="hasAttemptedToSolve" />
+                        <label for="on">
+                            On
+                        </label>    
+                    </fieldset>
+                    <fieldset>
+                        <legend>
+                            <span v-if="hasAttemptedToSolve">Locked:</span> Time limit (in seconds)
+                        </legend>
+                        <input type="radio" id="thirty" name="limit" value="30" v-model="timeLimit" :disabled="hasAttemptedToSolve" />
+                        <label for="thirty">
+                            30
+                        </label>    
+                        <input type="radio" id="fifteen" name="limit" value="15" v-model="timeLimit" :disabled="hasAttemptedToSolve" />
+                        <label for="fifteen">
+                            15
+                        </label>    
+                        <input type="radio" id="ten" name="limit" value="10" v-model="timeLimit" :disabled="hasAttemptedToSolve" />
+                        <label for="ten">
+                            10
+                        </label>    
+                    </fieldset>
+                </form>        
+            </aside>
         </main>
         <aside v-else>
             <div v-show="isTimeGateLifted">
