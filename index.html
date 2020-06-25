@@ -65,7 +65,6 @@
                 <h2 v-if="!isSolved">
                     Change one thing to match the <em>expected result</em>
                 </h2>
-                <h2 v-if="isSolved">Great job!</h2>
                 <section class="exercise">
                     <pre :class="{ solved: isSolved, incorrect: (!isSolved && isWrongAnswer) }">
                         <code contenteditable="true" id="code" @click="enableSolveButton"></code>
@@ -75,16 +74,18 @@
                     </p>
                     <p>{{ filteredExercises[counter].language.toUpperCase() }}: {{ filteredExercises[counter].difficulty.toUpperCase() }}</p>
                 </section>
+                <h2 v-if="isSolved">Great job!</h2>
+                <h2 v-else>Guesses remaining: {{filteredExercises[counter].hints.length - nextHint + 1}}</h2>
                 <h2 v-show="needsHint && !isSolved">
                     Hint {{nextHint}} of {{filteredExercises[counter].hints.length}}: {{filteredExercises[counter].hints[nextHint - 1]}}
-                </h2>    
+                </h2>
                 <p>
                     <button 
                         class="primary"
                         v-show="!didGiveUp && !isSolved" 
                         @click="checkAttemptedFix" 
                         :disabled="isAwaitingAnotherTry">
-                        {{ isWrongAnswer ? `Nope. Tries left: ${filteredExercises[counter].hints.length - nextHint + 1}` : "Did I fix it?" }}
+                        Did I fix it?
                     </button>
                     <button 
                         class="primary"
