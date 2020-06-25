@@ -13,7 +13,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'easy',
+        difficulty: 'normal',
         code:   "\n  function double() {\n    return n + n;\n  }",
         answer: "\n  function double(n) {\n    return n + n;\n  }",
         test:   "double(1) → 2",
@@ -25,7 +25,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'normal',
+        difficulty: 'hard',
         code:   "\n  function double(n) {\n    n + n;\n  }",
         answer: "\n  function double(n) {\n    return n + n;\n  }",
         test:   "double(3) → 6",
@@ -61,7 +61,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'normal',
+        difficulty: 'hard',
         code:   "\n  function today() {\n    return Date();\n  }",
         answer: "\n  function today() {\n    return new Date();\n  }",
         test:   "today() → Date object",
@@ -85,7 +85,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'hard',
+        difficulty: 'easy',
         code:   "\n  function today() {\n    return new date();\n  }",
         answer: "\n  function today() {\n    return new Date();\n  }",
         test:   "today() → Date object",
@@ -109,7 +109,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'normal',
+        difficulty: 'easy',
         code:   "\n  function today() {\n    returns new Date();\n  }",
         answer: "\n  function today() {\n    return new Date();\n  }",
         test:   "today() → Date object",
@@ -145,7 +145,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'normal',
+        difficulty: 'hard',
         code:   "\n  function bigger(a,b) {\n    return Math.maximum(a,b);\n  }",
         answer: "\n  function bigger(a,b) {\n    return Math.max(a,b);\n  }",
         test:   "bigger(5,3) → 5",
@@ -157,7 +157,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'hard',
+        difficulty: 'easy',
         code:   "\n  function bigger(a,b) {\n    return math.max(a,b);\n  }",
         answer: "\n  function bigger(a,b) {\n    return Math.max(a,b);\n  }",
         test:   "bigger(5,8) → 8",
@@ -169,7 +169,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'normal',
+        difficulty: 'hard',
         code:   "\n  function bigger(a,b) {\n    Math.max(a,b);\n  }",
         answer: "\n  function bigger(a,b) {\n    return Math.max(a,b);\n  }",
         test:   "bigger(2,12) → 12",
@@ -181,7 +181,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'normal',
+        difficulty: 'easy',
         code:   "\n  function sayHello() {\n    return \"Hello\';\n  }",
         answer: "\n  function sayHello() {\n    return \"Hello\";\n  }",
         test:   "sayHello() → \"Hello\"",
@@ -205,7 +205,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'hard',
+        difficulty: 'normal',
         code:   "\n  function sayHe11o() {\n    return \"Hello\";\n  }",
         answer: "\n  function sayHello() {\n    return \"Hello\";\n  }",
         test:   "sayHello() → \"Hello\"",
@@ -217,7 +217,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'easy',
+        difficulty: 'normal',
         code:   "\n  function sayHello {\n    return \"Hello\";\n  }",
         answer: "\n  function sayHello() {\n    return \"Hello\";\n  }",
         test:   "sayHello() → \"Hello\"",
@@ -229,7 +229,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'hard',
+        difficulty: 'easy',
         code:   "\n  fnuction sayHello() {\n    return \"Hello\";\n  }",
         answer: "\n  function sayHello() {\n    return \"Hello\";\n  }",
         test:   "sayHello() → \"Hello\"",
@@ -241,7 +241,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'hard',
+        difficulty: 'normal',
         code:   "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(list[i))\n    }\n  }",
         answer: "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(list[i])\n    }\n  }",
         test:   "loopy([1,2,3]) → 1 2 3",
@@ -253,7 +253,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'hard',
+        difficulty: 'normal',
         code:   "\n  function loopy(list) {\n    for (i==0; i<list.length; i++) {\n        console.log(list[i])\n    }\n  }",
         answer: "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(list[i])\n    }\n  }",
         test:   "loopy([1,2,3]) → 1 2 3",
@@ -265,7 +265,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'normal',
+        difficulty: 'hard',
         code:   "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log([i])\n    }\n  }",
         answer: "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(list[i])\n    }\n  }",
         test:   "loopy([1,2,3]) → 1 2 3",
@@ -277,7 +277,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'easy',
+        difficulty: 'normal',
         code:   "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(loopy[i])\n    }\n  }",
         answer: "\n  function loopy(list) {\n    for (i=0; i<list.length; i++) {\n        console.log(list[i])\n    }\n  }",
         test:   "loopy([1,2,3]) → 1 2 3",
@@ -337,7 +337,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'hard',
+        difficulty: 'easy',
         code:   "\n  function sum(a,b,c) {\n    retrun a + b + c;\n  }",
         answer: "\n  function sum(a,b,c) {\n    return a + b + c;\n  }",
         test:   "sum(3,1,1) → 5",
@@ -349,7 +349,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'hard',
+        difficulty: 'normal',
         code:   "\n  function sum(a,b,c) {\n    return a + b + c;\n  ",
         answer: "\n  function sum(a,b,c) {\n    return a + b + c;\n  }",
         test:   "sum(3,2,1) → 6",
@@ -361,7 +361,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'hard',
+        difficulty: 'normal',
         code:   "\n  function each(list) {\n    return list.forEach(i > i);\n  }",
         answer: "\n  function each(list) {\n    return list.forEach(i => i);\n  }",
         test:   "each(3,2,1) → 3 2 1",
@@ -385,7 +385,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'normal',
+        difficulty: 'easy',
         code:   "\n  function each(list) {\n    return list.foreach(i => i);\n  }",
         answer: "\n  function each(list) {\n    return list.forEach(i => i);\n  }",
         test:   "each(2,4,6) → 2 4 6",
@@ -397,7 +397,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'hard',
+        difficulty: 'normal',
         code:   "\n  function each(1ist) {\n    return list.forEach(i => i);\n  }",
         answer: "\n  function each(list) {\n    return list.forEach(i => i);\n  }",
         test:   "each(1,2,3) → 1 2 3",
@@ -421,7 +421,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'hard',
+        difficulty: 'normal',
         code:   "\n  function equals(num) {\n    return num === String(num);\n  }",
         answer: "\n  function equals(num) {\n    return num == String(num);\n  }",
         test:   "equals(3) → true",
@@ -433,7 +433,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'hard',
+        difficulty: 'normal',
         code:   "\n  function equals(num) {\n    return num == String(num);\n  }",
         answer: "\n  function equals(num) {\n    return num === String(num);\n  }",
         test:   "equals(4) → false",
@@ -445,7 +445,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'normal',
+        difficulty: 'easy',
         code:   "\n  function equals(num) {\n    return num == 'num;\n  }",
         answer: "\n  function equals(num) {\n    return num == num;\n  }",
         test:   "equals(5) → true",
@@ -457,7 +457,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'hard',
+        difficulty: 'easy',
         code:   "\n  function equals(num) {\n    return num === Sting(num);\n  }",
         answer: "\n  function equals(num) {\n    return num === String(num);\n  }",
         test:   "equals(6) → true",
@@ -493,7 +493,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'normal',
+        difficulty: 'easy',
         code:   "\n  function dataType(data) {\n    return typeof data\';\n  }",
         answer: "\n  function dataType(data) {\n    return typeof data;\n  }",
         test:   "dataType({}) → 'object'",
@@ -505,7 +505,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'hard',
+        difficulty: 'normal',
         code:   "\n  function dataType(data) {\n    return typeof data;\n  }",
         answer: "\n  function dataType(data) {\n    return typeof +data;\n  }",
         test:   "dataType('5') → 'number'",
@@ -553,7 +553,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'hard',
+        difficulty: 'normal',
         code:   "\n  function formalName(f,l) {\n    return `${l}, $(f}`;\n  }",
         answer: "\n  function formalName(f,l) {\n    return `${l}, ${f}`;\n  }",
         test:   "formalName('George','Bush') → 'Bush, George'",
@@ -565,7 +565,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'normal',
+        difficulty: 'easy',
         code:   "\n  function formalName(f,l) {\n    return `${l} ${f}`;\n  }",
         answer: "\n  function formalName(f,l) {\n    return `${l}, ${f}`;\n  }",
         test:   "formalName('Bob','Dole') → 'Dole, Bob'",
@@ -577,7 +577,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'hard',
+        difficulty: 'normal',
         code:   "\n  function formalName(f,l) {\n    return '${l}, ${f}`;\n  }",
         answer: "\n  function formalName(f,l) {\n    return `${l}, ${f}`;\n  }",
         test:   "formalName('Jack','Ryan') → 'Ryan, Jack'",
@@ -589,7 +589,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'easy',
+        difficulty: 'normal',
         code:   "\n  function formalName(f,l) {\n    return `{l}, ${f}`;\n  }",
         answer: "\n  function formalName(f,l) {\n    return `${l}, ${f}`;\n  }",
         test:   "formalName('Robert','Mion') → 'Mion, Robert'",
@@ -649,7 +649,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'normal',
+        difficulty: 'easy',
         code:   "\n  function ternary(bool) {\n    return bool : 'this' : 'that';\n  }",
         answer: "\n  function ternary(bool) {\n    return bool ? 'this' : 'that';\n  }",
         test:   "ternary(true) → 'this'",
@@ -697,7 +697,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'hard',
+        difficulty: 'easy',
         code:   "\n  function makeArrayFrom(a,b,c) {\n    return [a.b,c];\n  }",
         answer: "\n  function makeArrayFrom(a,b,c) {\n    return [a,b,c];\n  }",
         test:   "makeArrayFrom(1,3,5) → [1,3,5]",
@@ -714,14 +714,14 @@ var listOfExercises = [
         answer: "\n  function makeArrayFrom(a,b,c) {\n    return [a,b,c];\n  }",
         test:   "makeArrayFrom(2,4,6) → [2,4,6]",
         hints: [
-            'Cliffhanger',
+            'Remove the hurdle',
             'Two semi-colons?',
             'Delete semi-colon after return'
         ]
     },
     {
         language: 'js',
-        difficulty: 'hard',
+        difficulty: 'normal',
         code:   "\n  function greet(name) {\n    return 'Hi, ${name}!`;\n  }",
         answer: "\n  function greet(name) {\n    return `Hi, ${name}!`;\n  }",
         test:   "greet('John') → 'Hi, John!'",
@@ -733,7 +733,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'hard',
+        difficulty: 'normal',
         code:   "\n  function greet(name) {\n    return `Hi, $(name}!`;\n  }",
         answer: "\n  function greet(name) {\n    return `Hi, ${name}!`;\n  }",
         test:   "greet('Charles') → 'Hi, Charles!'",
@@ -745,7 +745,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'normal',
+        difficulty: 'easy',
         code:   "\n  function great(name) {\n    return `Hi, ${name}!`;\n  }",
         answer: "\n  function greet(name) {\n    return `Hi, ${name}!`;\n  }",
         test:   "greet('Jack') → 'Hi, Jack!'",
@@ -769,7 +769,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'easy',
+        difficulty: 'hard',
         code:   "\n  function greet() {\n    return `Hi, ${name}!`;\n  }",
         answer: "\n  function greet(name) {\n    return `Hi, ${name}!`;\n  }",
         test:   "greet('Kate') → 'Hi, Kate!'",
@@ -817,7 +817,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'hard',
+        difficulty: 'normal',
         code:   "\n  function notetoSelf() {\n    // Some comment\n  }",
         answer: "\n  function noteToSelf() {\n    // Some comment\n  }",
         test:   "noteToSelf() → undefined",
@@ -829,7 +829,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'hard',
+        difficulty: 'easy',
         code:   "\n  function noteToSelf() {\n    */ Some comment\n  }",
         answer: "\n  function noteToSelf() {\n    // Some comment\n  }",
         test:   "noteToSelf() → undefined",
@@ -841,7 +841,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'hard',
+        difficulty: 'normal',
         code:   "\n  function parrot(number) {\n    return () > number;\n  }",
         answer: "\n  function parrot(number) {\n    return () => number;\n  }",
         test:   "parrot(1)() → 1",
@@ -925,7 +925,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'normal',
+        difficulty: 'easy',
         code:   "\n  function IdPlease(id) {\n    return document.getElementById('id);\n  }",
         answer: "\n  function IdPlease(id) {\n    return document.getElementById(id);\n  }",
         test:   "IdPlease('prince') → HTMLElement",
@@ -949,7 +949,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'easy',
+        difficulty: 'hard',
         code:   "\n  function IdPlease(id) {\n    return window.getElementById(id);\n  }",
         answer: "\n  function IdPlease(id) {\n    return document.getElementById(id);\n  }",
         test:   "IdPlease('sting') → HTMLElement",
@@ -961,7 +961,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'normal',
+        difficulty: 'hard',
         code:   "\n  function newTail(list,item) {\n    return list.pass(item);\n  }",
         answer: "\n  function newTail(list,item) {\n    return list.push(item);\n  }",
         test:   "newTail([1,2],3) → [1,2,3]",
@@ -974,18 +974,18 @@ var listOfExercises = [
     {
         language: 'js',
         difficulty: 'easy',
-        code:   "\n  function newTail(list,item) {\n    rerun list.push(item);\n  }",
+        code:   "\n  function newTail(list,item) {\n    retun list.push(item);\n  }",
         answer: "\n  function newTail(list,item) {\n    return list.push(item);\n  }",
         test:   "newTail([2,4],6) → [2,4,6]",
         hints: [
-            '90\'s problems',
+            'That\'s not a word, silly',
             'Send it back',
-            'Change rerun to return'
+            'Change retun to return'
         ]
     },
     {
         language: 'js',
-        difficulty: 'normal',
+        difficulty: 'hard',
         code:   "\n  function newTail(list,item) {\n    return list.tail(item);\n  }",
         answer: "\n  function newTail(list,item) {\n    return list.push(item);\n  }",
         test:   "newTail([3,4],5) → [3,4,5]",
@@ -997,7 +997,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'normal',
+        difficulty: 'easy',
         code:   "\n  function newTail(list,item) {\n    return list.push(item]);\n  }",
         answer: "\n  function newTail(list,item) {\n    return list.push(item);\n  }",
         test:   "newTail([3,5],7) → [3,5,7]",
@@ -1009,7 +1009,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'normal',
+        difficulty: 'easy',
         code:   "\n  function newTai(list,item) {\n    return list.push(item);\n  }",
         answer: "\n  function newTail(list,item) {\n    return list.push(item);\n  }",
         test:   "newTail([3,2],1) → [3,2,1]",
@@ -1033,7 +1033,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'easy',
+        difficulty: 'normal',
         code:   "\n  function chopTail(list) {\n    return list.pop;\n  }",
         answer: "\n  function chopTail(list) {\n    return list.pop();\n  }",
         test:   "chopTail([3,2,1]) → 1",
@@ -1057,7 +1057,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'easy',
+        difficulty: 'hard',
         code:   "\n  function chopTail() {\n    return list.pop();\n  }",
         answer: "\n  function chopTail(list) {\n    return list.pop();\n  }",
         test:   "chopTail([6,6,6]) → 6",
@@ -1069,7 +1069,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'normal',
+        difficulty: 'easy',
         code:   "\n  function chopTail(list) {\n    return list.pop(1);\n  }",
         answer: "\n  function chopTail(list) {\n    return list.pop();\n  }",
         test:   "chopTail([9,1,1]) → 1",
@@ -1081,7 +1081,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'normal',
+        difficulty: 'easy',
         code:   "\n  function chopHead(list) {\n    return list.shift(1);\n  }",
         answer: "\n  function chopHead(list) {\n    return list.shift();\n  }",
         test:   "chopHead([1,2,3]) → 1",
@@ -1129,7 +1129,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'normal',
+        difficulty: 'hard',
         code:   "\n  function chopHead(list) {\n    return list.shift;\n  }",
         answer: "\n  function chopHead(list) {\n    return list.shift();\n  }",
         test:   "chopHead([9,1,1]) → 9",
@@ -1141,7 +1141,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'easy',
+        difficulty: 'hard',
         code:   "\n  function newHead(list,item) {\n    return list.unshift();\n  }",
         answer: "\n  function newHead(list,item) {\n    return list.unshift(item);\n  }",
         test:   "newHead([1,2],3) → 3",
@@ -1153,7 +1153,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'easy',
+        difficulty: 'hard',
         code:   "\n  function newHead(list,item) {\n    return list.unshift(list);\n  }",
         answer: "\n  function newHead(list,item) {\n    return list.unshift(item);\n  }",
         test:   "newHead([3,2],1) → 1",
@@ -1213,7 +1213,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'easy',
+        difficulty: 'normal',
         code:   "\n  function coercion(bool) {\n    return bool;\n  }",
         answer: "\n  function coercion(bool) {\n    return +bool;\n  }",
         test:   "coercion(true) → 1",
@@ -1225,7 +1225,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'easy',
+        difficulty: 'normal',
         code:   "\n  function coercion(name) {\n    return name;\n  }",
         answer: "\n  function coercion(name) {\n    return !name;\n  }",
         test:   "coercion('Robert') → false",
@@ -1357,7 +1357,7 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'hard',
+        difficulty: 'normal',
         code:   "\n  function factorial(x) {\n    return x <= 0 ? 1 : x * function(x - 1);\n  }",
         answer: "\n  function factorial(x) {\n    return x <= 0 ? 1 : x * factorial(x - 1);\n  }",
         test:   "factorial(3) → 6",
