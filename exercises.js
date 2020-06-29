@@ -1380,6 +1380,42 @@ var listOfExercises = [
         ]
     },
     {
+        language: 'js',
+        difficulty: 'hard',
+        code:   "\n  function doubleNegative(value) {\n    return !value;\n  }",
+        answer: "\n  function doubleNegative(value) {\n    return !!value;\n  }",
+        test:   "doubleNegative('Robert') → true",
+        hints: [
+            'True or false',
+            'Negate the negation',
+            'Insert one more exclamation mark before value'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'easy',
+        code:   "\n  function charAt(str, index) {\n    return str index];\n  }",
+        answer: "\n  function charAt(str, index) {\n    return str[index];\n  }",
+        test:   "charAt('Bus',1) → 'u'",
+        hints: [
+            'Fill the gap',
+            'Be the match-maker',
+            'Insert open square bracket between str and index'
+        ]
+    },
+    {
+        language: 'js',
+        difficulty: 'hard',
+        code:   "\n  function charAt(str, index) {\n    return str[];\n  }",
+        answer: "\n  function charAt(str, index) {\n    return str[index];\n  }",
+        test:   "charAt('Car',1) → 'a'",
+        hints: [
+            'Fill the cage',
+            'One of two inputs not used',
+            'Add parameter index between the square brackets'
+        ]
+    },
+    {
         language: 'html',
         difficulty: 'easy',
         code:   "\n  <p>Hello, world!<p>",
@@ -2505,6 +2541,30 @@ var listOfExercises = [
             'This is only a test',
             'Not a valid attribute value',
             'Change test to text'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'normal',
+        code:   "\n  a {\n    color: #000;\n  }",
+        answer: "\n  a {\n    color: #00F;\n  }",
+        test:   "All links should be blue",
+        hints: [
+            'Seek a Failing grade',
+            'R G B',
+            'Change third 0 to capital F'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'normal',
+        code:   "\n  li {\n    color: #BADASS;\n  }",
+        answer: "\n  li {\n    color: #BADA55;\n  }",
+        test:   "All list items should be lime green",
+        hints: [
+            'S is not valid Hex character',
+            'What number looks like an S?',
+            'Change both S\'s to 5\'s'
         ]
     },
 ]

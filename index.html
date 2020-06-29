@@ -226,11 +226,19 @@
                 <h2>Today's score: {{ score }}/15</h2>
             </div>
             <h2>Play again tomorrow!</h2>
+            <p>Clock resets at 8:00 PM EST</p>
             <p>Your {{priorSessions.length}}-day score: 
                 <a class="button" :href=`https://twitter.com/intent/tweet?hashtags=javascript&ref_src=twsrc%5Etfw&text=My%20${priorSessions.length}-day%20score%20is%20${accumulatedScore}%20playing%20%22Fix%20a%20function%22!%20Can%20you%20beat%20that%3F%20Play%20free%20to%20practice%20your%20JavaScript%20skills!&tw_p=tweetbutton&url=http%3A%2F%2Ffixafunction.com&via=putmionyourteam`>
                     {{accumulatedScore}} <i class="fab fa-twitter fa-sm"></i>
                 </a>
             </p>
+            <p>
+                In the meantime, use these other free resources to practice and learn frontend development:
+            </p>
+            <ul>
+                <li><a href="https://freecodecamp.org">FreeCodeCamp.org</a></li>
+                <li><a href="https://frontendmentor.io">FrontEndMentor.io</a></li>
+            </ul>
             <form action="" @submit.prevent="recordEmailAfterGameOver" v-show="!isRepeatCustomer || !hasSubscribed">
                 <fieldset>
                     <legend>
