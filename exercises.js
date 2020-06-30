@@ -2567,4 +2567,100 @@ var listOfExercises = [
             'Change both S\'s to 5\'s'
         ]
     },
+    {
+        language: 'css',
+        difficulty: 'easy',
+        code:   "\n  li {\n    margin: var(-extra-space);\n  }",
+        answer: "\n  li {\n    margin: var(--extra-space);\n  }",
+        test:   "All list items should have margin set to custom variable extra-space",
+        hints: [
+            'Needs another dash',
+            'Double the dashes',
+            'Insert one more dash before extra'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'easy',
+        code:   "\n  root {\n    --special-color: purple;\n  }",
+        answer: "\n  :root {\n    --special-color: purple;\n  }",
+        test:   "Create global custom variable special-color",
+        hints: [
+            'Find the root cause',
+            'That\'s not a valid HTML element',
+            'Insert colon before root to make it a pseudo-selector'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'hard',
+        code:   "\n  :root {\n    dead-center: 50%;\n  }",
+        answer: "\n  :root {\n    --dead-center: 50%;\n  }",
+        test:   "Create global custom variable dead-center",
+        hints: [
+            'Double-dose o\' dashes',
+            'That\'s not a valid CSS property',
+            'Insert two dashes before dead'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'easy',
+        code:   "\n  a {\n    color: var(--important-link blue);\n  }",
+        answer: "\n  a {\n    color: var(--important-link, blue);\n  }",
+        test:   "All links should have color set to custom variable extra-space or fallback to blue",
+        hints: [
+            'It separates two parts of a sentence',
+            'It is a period with a tail',
+            'Insert comma between custom variable name and blue'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'hard',
+        code:   "\n  @media just screen and (min-width: 768px) {\n    .wrapper {\n      margin: 0 auto;\n    }\n  }",
+        answer: "\n  @media only screen and (min-width: 768px) {\n    .wrapper {\n      margin: 0 auto;\n    }\n  }",
+        test:   "At screen sizes wider than 768px, horizontally-center elements with class wrapper",
+        hints: [
+            'Consult a thesaurus',
+            'Four-letter word for unique',
+            'Change just to only'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'easy',
+        code:   "\n  media (min-width: 768px) {\n    .wrapper {\n      margin: 0 auto;\n    }\n  }",
+        answer: "\n  @media (min-width: 768px) {\n    .wrapper {\n      margin: 0 auto;\n    }\n  }",
+        test:   "At screen sizes wider than 768px, horizontally-center elements with class wrapper",
+        hints: [
+            'Think email addresses',
+            'Think twitter handles',
+            'Insert @ symbol before media'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'easy',
+        code:   "\n  @media (min-width=768px) {\n    .wrapper {\n      margin: 0 auto;\n    }\n  }",
+        answer: "\n  @media (min-width: 768px) {\n    .wrapper {\n      margin: 0 auto;\n    }\n  }",
+        test:   "At screen sizes wider than 768px, horizontally-center elements with class wrapper",
+        hints: [
+            'Wrong syntax in query',
+            'CSS doesn\'t use equal signs',
+            'Change equal sign to colon'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'hard',
+        code:   "\n  @media screen (min-width: 768px) {\n    .wrapper {\n      margin: 0 auto;\n    }\n  }",
+        answer: "\n  @media screen and (min-width: 768px) {\n    .wrapper {\n      margin: 0 auto;\n    }\n  }",
+        test:   "At screen sizes wider than 768px, horizontally-center elements with class wrapper",
+        hints: [
+            'Word that joins two parts of a sentence',
+            'Synonym is also',
+            'Add the word \'and\' after screen'
+        ]
+    },
 ]
