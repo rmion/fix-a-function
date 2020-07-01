@@ -2663,4 +2663,172 @@ var listOfExercises = [
             'Add the word \'and\' after screen'
         ]
     },
+    {
+        language: 'css',
+        difficulty: 'easy',
+        code:   "\n  p {\n    text-aline: center;\n  }",
+        answer: "\n  p {\n    text-align: center;\n  }",
+        test:   "All paragraphs should have their text aligment centered",
+        hints: [
+            'Too literal',
+            'Wrong property name',
+            'Change aline to align'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'normal',
+        code:   "\n  p {\n    text-align: right;\n  }",
+        answer: "\n  p {\n    text-align: left;\n  }",
+        test:   "All paragraphs should have their text aligned left",
+        hints: [
+            'Wrong direction',
+            'What\'s right is wrong',
+            'Change right to left'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'normal',
+        code:   "\n  p {\n    type-align: left;\n  }",
+        answer: "\n  p {\n    text-align: left;\n  }",
+        test:   "All paragraphs should have their text aligned left",
+        hints: [
+            'Not your type',
+            'Wrong 4-letter t-word',
+            'Change type to text'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'easy',
+        code:   "\n  strong {\n    font-weight: boulder;\n  }",
+        answer: "\n  strong {\n    font-weight: bolder;\n  }",
+        test:   "All strong elements should be thicker than all other surrounding text",
+        hints: [
+            'u rock',
+            'It\'s not me. It\'s u.',
+            'Delete u in boulder'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'normal',
+        code:   "\n  h1 {\n    font-wait: bold;\n  }",
+        answer: "\n  h1 {\n    font-weight: bold;\n  }",
+        test:   "All level-1 headings should be bold",
+        hints: [
+            'Too literal',
+            'Wait for it',
+            'Change wait to weight'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'easy',
+        code:   "\n  em {\n    font-style: italics;\n  }",
+        answer: "\n  em {\n    font-style: italic;\n  }",
+        test:   "All em elements should feature properly slanted text",
+        hints: [
+            'Start at the end',
+            'De-pluralize',
+            'Delete s in italics'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'easy',
+        code:   "\n  nav {\n    background-color: rgba(255,-255,255,0.8);\n  }",
+        answer: "\n  nav {\n    background-color: rgba(255,-255,255,0.8);\n  }",
+        test:   "All nav elements should have a slightly transparent white background",
+        hints: [
+            'Color can\'t be negative',
+            'An unwanted dash',
+            'Remove negative sign before second 255'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'hard',
+        code:   "\n  .card {\n    box-shadow: 0 10px 10px  10px rgba(0,0,0,0.5);\n  }",
+        answer: "\n  .card {\n    box-shadow: 0 10px 10px -10px rgba(0,0,0,0.5);\n  }",
+        test:   "Elements with class card should have a shadow that spreads 10px inward",
+        hints: [
+            'One number should be negative',
+            'Find the extra space...and fill it',
+            'Insert a negative sign before the second 10px'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'normal',
+        code:   "\n  .card {\n    box-shadow: 0 10px 10px gray 0 20px 10px blue;\n  }",
+        answer: "\n  .card {\n    box-shadow: 0 10px 10px gray, 0 20px 10px blue;\n  }",
+        test:   "Elements with class card should have two shadows: one gray, the other blue",
+        hints: [
+            'A single puzzle piece is missing',
+            'Separate the similar parts with a comma',
+            'Insert a comma after gray'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'easy',
+        code:   "\n  .see-thru {\n    opacity: 1;\n  }",
+        answer: "\n  .see-thru {\n    opacity: 0;\n  }",
+        test:   "Elements with class see-thru should be fully transparent",
+        hints: [
+            'Fully transparent means lacking in...?',
+            'Count down from 1, by 1',
+            'Change 1 to 0'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'normal',
+        code:   "\n  .all-caps {\n    text-transform: lowercase;\n  }",
+        answer: "\n  .all-caps {\n    text-transform: uppercase;\n  }",
+        test:   "Elements with class all-caps should be all capital letters",
+        hints: [
+            'Wrong case',
+            'Not upper, but...',
+            'Change lower to upper'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'normal',
+        code:   "\n  .title-case {\n    text-transform: capitalies;\n  }",
+        answer: "\n  .title-case {\n    text-transform: capitalize;\n  }",
+        test:   "Elements with class title-case should be Title Cased",
+        hints: [
+            'Misspelling',
+            'Capital lies?',
+            'Change lies to lize'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'normal',
+        code:   "\n  .small-letters {\n    text-transformers: lowercase;\n  }",
+        answer: "\n  .small-letters {\n    text-transform: lowercase;\n  }",
+        test:   "Elements with class small-letters should be lowercase",
+        hints: [
+            'Verb, not franchise',
+            'Optimus Prime?',
+            'Delete \'ers\' after transform'
+        ]
+    },
+    {
+        language: 'css',
+        difficulty: 'easy',
+        code:   "\n  p {\n    lime-height: 24px;\n  }",
+        answer: "\n  p {\n    line-height: 24px;\n  }",
+        test:   "Each line in all paragraphs should be 24px tall",
+        hints: [
+            'Wait...limes?',
+            'Anyone got a line?',
+            'Change lime to line'
+        ]
+    },
 ]
