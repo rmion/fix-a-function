@@ -2739,7 +2739,7 @@ var listOfExercises = [
         language: 'css',
         difficulty: 'easy',
         code:   "\n  nav {\n    background-color: rgba(255,-255,255,0.8);\n  }",
-        answer: "\n  nav {\n    background-color: rgba(255,-255,255,0.8);\n  }",
+        answer: "\n  nav {\n    background-color: rgba(255,255,255,0.8);\n  }",
         test:   "All nav elements should have a slightly transparent white background",
         hints: [
             'Color can\'t be negative',
