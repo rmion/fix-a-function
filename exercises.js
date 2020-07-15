@@ -964,7 +964,7 @@ var listOfExercises = [
         difficulty: 'hard',
         code:   "\n  function newTail(list,item) {\n    return list.pass(item);\n  }",
         answer: "\n  function newTail(list,item) {\n    return list.push(item);\n  }",
-        test:   "newTail([1,2],3) → [1,2,3]",
+        test:   "newTail([1,2],3) → 3",
         hints: [
             'Bad pass',
             'Wrong method name',
@@ -976,7 +976,7 @@ var listOfExercises = [
         difficulty: 'easy',
         code:   "\n  function newTail(list,item) {\n    retun list.push(item);\n  }",
         answer: "\n  function newTail(list,item) {\n    return list.push(item);\n  }",
-        test:   "newTail([2,4],6) → [2,4,6]",
+        test:   "newTail([2,4],6) → 3",
         hints: [
             'That\'s not a word, silly',
             'Send it back',
@@ -988,7 +988,7 @@ var listOfExercises = [
         difficulty: 'hard',
         code:   "\n  function newTail(list,item) {\n    return list.tail(item);\n  }",
         answer: "\n  function newTail(list,item) {\n    return list.push(item);\n  }",
-        test:   "newTail([3,4],5) → [3,4,5]",
+        test:   "newTail([3,4],5) → 3",
         hints: [
             'Use your head',
             'Wrong method name',
@@ -1000,7 +1000,7 @@ var listOfExercises = [
         difficulty: 'easy',
         code:   "\n  function newTail(list,item) {\n    return list.push(item]);\n  }",
         answer: "\n  function newTail(list,item) {\n    return list.push(item);\n  }",
-        test:   "newTail([3,5],7) → [3,5,7]",
+        test:   "newTail([3,5],7) → 3",
         hints: [
             'Hard right wall',
             'Start at the end',
@@ -1012,7 +1012,7 @@ var listOfExercises = [
         difficulty: 'easy',
         code:   "\n  function newTai(list,item) {\n    return list.push(item);\n  }",
         answer: "\n  function newTail(list,item) {\n    return list.push(item);\n  }",
-        test:   "newTail([3,2],1) → [3,2,1]",
+        test:   "newTail([3,2],1) → 3",
         hints: [
             'Use your head',
             'Naming is important',
@@ -1156,7 +1156,7 @@ var listOfExercises = [
         difficulty: 'hard',
         code:   "\n  function newHead(list,item) {\n    return list.unshift(list);\n  }",
         answer: "\n  function newHead(list,item) {\n    return list.unshift(item);\n  }",
-        test:   "newHead([3,2],1) → 1",
+        test:   "newHead([3,2],1) → 3",
         hints: [
             'Add list to list?',
             'Read between the curly lines',
@@ -1168,7 +1168,7 @@ var listOfExercises = [
         difficulty: 'normal',
         code:   "\n  function newHead(list,item) {\n    return list.shift(item);\n  }",
         answer: "\n  function newHead(list,item) {\n    return list.unshift(item);\n  }",
-        test:   "newHead([7,3],7) → 7",
+        test:   "newHead([7,3],7) → 3",
         hints: [
             'Shift, left',
             'un-acceptable',
@@ -1177,22 +1177,10 @@ var listOfExercises = [
     },
     {
         language: 'js',
-        difficulty: 'hard',
-        code:   "\n  function newHead(list,item) {\n    return list.push(item);\n  }",
-        answer: "\n  function newHead(list,item) {\n    return list.unshift(item);\n  }",
-        test:   "newHead([4,1],4) → 4",
-        hints: [
-            'Wrong end',
-            'Method names have \'sh\' in common',
-            'Change method name to unshift'
-        ]
-    },
-    {
-        language: 'js',
         difficulty: 'easy',
         code:   "\n  function newHead(list,item) {\n    return lift.unshift(item);\n  }",
         answer: "\n  function newHead(list,item) {\n    return list.unshift(item);\n  }",
-        test:   "newHead([4,1],4) → 4",
+        test:   "newHead([4,1],4) → 3",
         hints: [
             'Minor spelling error',
             'For f\'s sake',
